@@ -6,7 +6,7 @@ import generateMetadata from "utils/seo"
 export const metadata: Metadata = generateMetadata({
   path: "/",
   title: "Next.js App",
-  description: "Next.js Typescript Starter",
+  description: "A gallery of TailwindCSS animations that you can just copy-paste into your projects",
 })
 
 const Home: React.FC = () => {

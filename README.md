@@ -1,6 +1,8 @@
 <h1 align="center">
-  Next.js TypeScript Starter
+  Tailwind Animations
 </h1>
+
+A gallery of TailwindCSS animations that you can just copy-paste into your projects
 
 ---
 

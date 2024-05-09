@@ -4,9 +4,9 @@
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
-    "name": "Next.js TypeScript Starter",
-    "short_name": "Next.js TypeScript Starter",
-    "description": "Next.js TypeScript Starter with basic configuration",
+    "name": "Tailwind Animations",
+    "short_name": "Tailwind Animations",
+    "description": "A gallery of TailwindCSS animations that you can just copy-paste into your projects with basic configuration",
     "icons": [
         {
             "src": "/path-to-icons/icon-192x192.png",

@@ -1,6 +1,6 @@
 {
-  "name": "nextjs-typescript-starter",
-  "description": "Next.js TypeScript Starter",
+  "name": "tailwind-animations",
+  "description": "A gallery of TailwindCSS animations that you can just copy-paste into your projects",
   "version": "1.0.0",
   "author": "Jitendra Nirnejak <jeetnirnejak@gmail.com>",
   "scripts": {
@@ -66,9 +66,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nirnejak/nextjs-typescript-starter"
+    "url": "https://github.com/nirnejak/tailwind-animations"
   },
   "bugs": {
-    "url": "https://github.com/nirnejak/nextjs-typescript-starter/issues"
+    "url": "https://github.com/nirnejak/tailwind-animations/issues"
   }
 }
