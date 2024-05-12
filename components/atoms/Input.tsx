@@ -62,7 +62,7 @@ const Input: React.FC<Props> = ({
           <div className="mb-1 text-xs font-medium text-zinc-700">{label}</div>
         )}
         {typeof icon !== "undefined" && (
-          <span className="absolute left-2.5 top-[15px] text-zinc-400">
+          <span className="absolute left-4 top-[15px] text-zinc-400">
             {icon}
           </span>
         )}
@@ -73,7 +73,7 @@ const Input: React.FC<Props> = ({
           placeholder={placeholder}
           className={classNames(
             className,
-            typeof icon !== "undefined" && "pl-7",
+            typeof icon !== "undefined" && "pl-10",
             "w-full rounded-lg border-[1px] text-zinc-400 px-4 py-3 text-sm bg-zinc-950 border-zinc-900 outline-none"
           )}
           onChange={onChange}

@@ -9,6 +9,7 @@ import Input from "./atoms/Input"
 
 import AnimationCard from "./AnimationCard"
 import Container from "./Container"
+import { Search } from "akar-icons"
 
 interface Props {}
 
@@ -27,6 +28,7 @@ const AnimationGallery: React.FC<Props> = () => {
             placeholder="Search Animation..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
+            icon={<Search size={15} />}
           />
         </div>
         <div className="grid grid-cols-5 gap-3 mt-5">
