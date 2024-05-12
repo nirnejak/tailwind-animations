@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
 
           <Link
             href={"/help/"}
-            className="flex items-center gap-1 rounded-md p-2 bg-zinc-900 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-none transition-colors"
+            className="flex items-center gap-1 rounded-md py-2 px-3 bg-zinc-900 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-none transition-colors -mr-3"
           >
             <span>help</span>
             <span>
