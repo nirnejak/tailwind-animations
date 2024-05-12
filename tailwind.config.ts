@@ -25,6 +25,22 @@ const usedColors = [
   "rose",
 ]
 
+const animationClasses = [
+  "animate-shake",
+  "animate-swing",
+  "animate-bounce",
+  "animate-scale",
+  "animate-rise",
+  "animate-slideUp",
+  "animate-slideDown",
+  "animate-slideLeft",
+  "animate-slideRight",
+  "animate-slideDownAndFade",
+  "animate-slideLeftAndFade",
+  "animate-slideUpAndFade",
+  "animate-slideRightAndFade",
+]
+
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -32,6 +48,7 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   safelist: [
+    ...animationClasses,
     ...usedColors.map((c) => `text-${c}-50`),
     ...usedColors.map((c) => `text-${c}-100`),
     ...usedColors.map((c) => `text-${c}-200`),
@@ -102,6 +119,19 @@ const config: Config = {
           from: { transform: "translate(-50%, -40%) scale(0.95)" },
           to: { transform: "translate(-50%, -50%) scale(1)" },
         },
+        shake: {
+          "0%": { transform: "translate(1px, 1px) rotate(0deg)" },
+          "10%": { transform: "translate(-1px, -2px) rotate(-1deg)" },
+          "20%": { transform: "translate(-3px, 0px) rotate(1deg)" },
+          "30%": { transform: "translate(3px, 2px) rotate(0deg)" },
+          "40%": { transform: "translate(1px, -1px) rotate(1deg)" },
+          "50%": { transform: "translate(-1px, 2px) rotate(-1deg)" },
+          "60%": { transform: "translate(-3px, 1px) rotate(0deg)" },
+          "70%": { transform: "translate(3px, 1px) rotate(-1deg)" },
+          "80%": { transform: "translate(-1px, -1px) rotate(1deg)" },
+          "90%": { transform: "translate(1px, 2px) rotate(0deg)" },
+          "100%": { transform: "translate(1px, -2px) rotate(-1deg)" },
+        },
       },
       animation: {
         slideDownAndFade:
@@ -118,6 +148,7 @@ const config: Config = {
         swing: "swing 1s infinite ease-in-out alternate",
         scale: "scale 150ms cubic-bezier(0.4, 0, 0.2, 1)",
         rise: "rise 150ms cubic-bezier(0.4, 0, 0.2, 1)",
+        shake: "shake 150ms cubic-bezier(0.4, 0, 0.2, 1)",
       },
     },
     fontFamily: {

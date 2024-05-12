@@ -1,54 +1,54 @@
 export const animations = [
   {
     title: "Shake",
-    animationClass: "animated-shake",
+    animationClass: "animate-shake",
   },
   {
     title: "Swing",
-    animationClass: "animated",
+    animationClass: "animate-swing",
   },
   {
     title: "Bounce",
-    animationClass: "animated",
+    animationClass: "animate-bounce",
   },
   {
     title: "Scale",
-    animationClass: "animated",
+    animationClass: "animate-scale",
   },
   {
     title: "Rise",
-    animationClass: "animated",
+    animationClass: "animate-rise",
   },
   {
     title: "Slide Up",
-    animationClass: "animated",
+    animationClass: "animate-slideUp",
   },
   {
     title: "Slide Down",
-    animationClass: "animated",
+    animationClass: "animate-slideDown",
   },
   {
     title: "Slide Left",
-    animationClass: "animated",
+    animationClass: "animate-slideLeft",
   },
   {
     title: "Slide Right",
-    animationClass: "animated",
+    animationClass: "animate-slideRight",
   },
   {
     title: "Slide Down and Fade",
-    animationClass: "animated",
+    animationClass: "animate-slideDownAndFade",
   },
   {
     title: "Slide Left and Fade",
-    animationClass: "animated",
+    animationClass: "animate-slideLeftAndFade",
   },
   {
     title: "Slide Up and Fade",
-    animationClass: "animated",
+    animationClass: "animate-slideUpAndFade",
   },
   {
     title: "Slide Right and Fade",
-    animationClass: "animated",
+    animationClass: "animate-slideRightAndFade",
   },
 ]
