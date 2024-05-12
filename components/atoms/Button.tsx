@@ -4,7 +4,14 @@ import * as React from "react"
 import classNames from "utils/classNames"
 
 interface Props {
-  variant?: "primary" | "danger" | "success" | "warning" | "info" | "purple"
+  variant?:
+    | "purple"
+    | "pink"
+    | "danger"
+    | "warning"
+    | "success"
+    | "info"
+    | "primary"
   children: React.ReactNode
   type?: "reset" | "button" | "submit"
   className?: string
@@ -25,6 +32,8 @@ const Button: React.FC<Props> = ({
     switch (variant) {
       case "purple":
         return "bg-purple-600 text-purple-50 hover:bg-purple-700 focus:bg-purple-700"
+      case "pink":
+        return "bg-pink-600 text-pink-50 hover:bg-pink-700 focus:bg-pink-700"
       case "danger":
         return "bg-red-600 text-red-50 hover:bg-red-700 focus:bg-red-700"
       case "warning":
