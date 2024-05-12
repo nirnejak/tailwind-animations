@@ -13,6 +13,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@radix-ui/react-toggle-group": "^1.0.4",
     "@tanstack/react-query": "^5.35.5",
     "akar-icons": "^1.9.31",
     "dotenv": "^16.4.5",
