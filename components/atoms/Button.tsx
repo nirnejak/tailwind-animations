@@ -3,15 +3,17 @@ import * as React from "react"
 
 import classNames from "utils/classNames"
 
+export type IColorVariants =
+  | "purple"
+  | "pink"
+  | "red"
+  | "amber"
+  | "green"
+  | "sky"
+  | "primary"
+
 interface Props {
-  variant?:
-    | "purple"
-    | "pink"
-    | "danger"
-    | "warning"
-    | "success"
-    | "info"
-    | "primary"
+  variant?: IColorVariants
   children: React.ReactNode
   type?: "reset" | "button" | "submit"
   className?: string
@@ -34,13 +36,13 @@ const Button: React.FC<Props> = ({
         return "bg-purple-600 text-purple-50 hover:bg-purple-700 focus:bg-purple-700"
       case "pink":
         return "bg-pink-600 text-pink-50 hover:bg-pink-700 focus:bg-pink-700"
-      case "danger":
+      case "red":
         return "bg-red-600 text-red-50 hover:bg-red-700 focus:bg-red-700"
-      case "warning":
+      case "amber":
         return "bg-amber-600 text-amber-50 hover:bg-amber-700 focus:bg-amber-700"
-      case "success":
+      case "green":
         return "bg-green-600 text-green-50 hover:bg-green-700 focus:bg-green-700"
-      case "info":
+      case "sky":
         return "bg-sky-600 text-sky-50 hover:bg-sky-700 focus:bg-sky-700"
       case "primary":
       default:
