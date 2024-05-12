@@ -11,7 +11,7 @@ import HeroContent from "components/HeroContent"
 
 export const metadata: Metadata = generateMetadata({
   path: "/",
-  title: "Next.js App",
+  title: "Tailwind Animations - Copy Paste Animations for TailwindCSS",
   description:
     "A gallery of TailwindCSS animations that you can just copy-paste into your projects",
 })
