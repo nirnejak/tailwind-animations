@@ -31,14 +31,14 @@ const animationClasses = [
   "animate-bounce",
   "animate-scale",
   "animate-rise",
-  "animate-slideUp",
-  "animate-slideDown",
-  "animate-slideLeft",
-  "animate-slideRight",
-  "animate-slideDownAndFade",
-  "animate-slideLeftAndFade",
-  "animate-slideUpAndFade",
-  "animate-slideRightAndFade",
+  "animate-slide-up",
+  "animate-slide-down",
+  "animate-slide-left",
+  "animate-slide-right",
+  "animate-slide-down-and-fade",
+  "animate-slide-left-and-fade",
+  "animate-slide-up-and-fade",
+  "animate-slide-right-and-fade",
 ]
 
 const config: Config = {
@@ -75,35 +75,35 @@ const config: Config = {
   theme: {
     extend: {
       keyframes: {
-        slideDownAndFade: {
+        "slide-down-and-fade": {
           from: { opacity: "0", transform: "translateY(-10px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
-        slideLeftAndFade: {
+        "slide-left-and-fade": {
           from: { opacity: "0", transform: "translateX(-10px)" },
           to: { opacity: "1", transform: "translateX(0)" },
         },
-        slideUpAndFade: {
+        "slide-up-and-fade": {
           from: { opacity: "0", transform: "translateY(10px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
-        slideRightAndFade: {
+        "slide-right-and-fade": {
           from: { opacity: "0", transform: "translateX(10px)" },
           to: { opacity: "1", transform: "translateX(0)" },
         },
-        slideDown: {
+        "slide-down": {
           from: { transform: "translateY(-10px)" },
           to: { transform: "translateY(0)" },
         },
-        slideUp: {
+        "slide-up": {
           from: { transform: "translateY(10px)" },
           to: { transform: "translateY(0)" },
         },
-        slideLeft: {
+        "slide-left": {
           from: { transform: "translateX(-10px)" },
           to: { transform: "translateX(0)" },
         },
-        slideRight: {
+        "slide-right": {
           from: { transform: "translateX(10px)" },
           to: { transform: "translateX(0)" },
         },
@@ -134,21 +134,26 @@ const config: Config = {
         },
       },
       animation: {
-        slideDownAndFade:
-          "slideDownAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
-        slideLeftAndFade:
-          "slideLeftAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
-        slideUpAndFade: "slideUpAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
-        slideRightAndFade:
-          "slideRightAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
-        slideDown: "slideDown 400ms cubic-bezier(0.16, 1, 0.3, 1)",
-        slideUp: "slideUp 400ms cubic-bezier(0.16, 1, 0.3, 1)",
-        slideLeft: "slideLeft 400ms cubic-bezier(0.16, 1, 0.3, 1)",
-        slideRight: "slideRight 400ms cubic-bezier(0.16, 1, 0.3, 1)",
-        swing: "swing 150ms infinite ease-in-out alternate",
-        scale: "scale 150ms cubic-bezier(0.4, 0, 0.2, 1)",
-        rise: "rise 150ms cubic-bezier(0.4, 0, 0.2, 1)",
-        shake: "shake 150ms cubic-bezier(0.4, 0, 0.2, 1)",
+        "slide-down-and-fade":
+          "slide-down-and-fade 400ms infinite cubic-bezier(0.16, 1, 0.3, 1) alternate",
+        "slide-left-and-fade":
+          "slide-left-and-fade 400ms infinite cubic-bezier(0.16, 1, 0.3, 1) alternate",
+        "slide-up-and-fade":
+          "slide-up-and-fade 400ms infinite cubic-bezier(0.16, 1, 0.3, 1) alternate",
+        "slide-right-and-fade":
+          "slide-right-and-fade 400ms infinite cubic-bezier(0.16, 1, 0.3, 1) alternate",
+        "slide-down":
+          "slide-down 400ms infinite cubic-bezier(0.16, 1, 0.3, 1) alternate",
+        "slide-up":
+          "slide-up 400ms infinite cubic-bezier(0.16, 1, 0.3, 1) alternate",
+        "slide-left":
+          "slide-left 400ms infinite cubic-bezier(0.16, 1, 0.3, 1) alternate",
+        "slide-right":
+          "slide-right 400ms infinite cubic-bezier(0.16, 1, 0.3, 1) alternate",
+        swing: "swing 400ms infinite ease-in-out alternate",
+        scale: "scale 400ms infinite cubic-bezier(0.4, 0, 0.2, 1) alternate",
+        rise: "rise 400ms infinite cubic-bezier(0.4, 0, 0.2, 1) alternate",
+        shake: "shake 400ms infinite cubic-bezier(0.4, 0, 0.2, 1) alternate",
       },
     },
     fontFamily: {

@@ -21,34 +21,34 @@ export const animations = [
   },
   {
     title: "Slide Up",
-    animationClass: "animate-slideUp",
+    animationClass: "animate-slide-up",
   },
   {
     title: "Slide Down",
-    animationClass: "animate-slideDown",
+    animationClass: "animate-slide-down",
   },
   {
     title: "Slide Left",
-    animationClass: "animate-slideLeft",
+    animationClass: "animate-slide-left",
   },
   {
     title: "Slide Right",
-    animationClass: "animate-slideRight",
+    animationClass: "animate-slide-right",
   },
   {
     title: "Slide Down and Fade",
-    animationClass: "animate-slideDownAndFade",
+    animationClass: "animate-slide-down-and-fade",
   },
   {
     title: "Slide Left and Fade",
-    animationClass: "animate-slideLeftAndFade",
+    animationClass: "animate-slide-left-and-fade",
   },
   {
     title: "Slide Up and Fade",
-    animationClass: "animate-slideUpAndFade",
+    animationClass: "animate-slide-up-and-fade",
   },
   {
     title: "Slide Right and Fade",
-    animationClass: "animate-slideRightAndFade",
+    animationClass: "animate-slide-right-and-fade",
   },
 ]
