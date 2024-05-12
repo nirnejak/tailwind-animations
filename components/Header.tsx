@@ -6,7 +6,7 @@ import Button from "./atoms/Button"
 
 const Header: React.FC = () => {
   return (
-    <header className="fixed top-0 w-full pt-5">
+    <header className="pt-5">
       <Container>
         <div className="flex items-center justify-between">
           <Link href={"/"} className="flex text-zinc-100">

@@ -17,7 +17,7 @@ const AnimationGallery: React.FC<Props> = () => {
 
   return (
     <Container>
-      <div className="mt-32">
+      <div>
         <ColorSelector color={color} setColor={setColor} />
         <div className="mt-5">
           <Input

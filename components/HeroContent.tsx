@@ -6,7 +6,7 @@ interface Props {}
 
 const HeroContent: React.FC<Props> = () => {
   return (
-    <Container className="mt-48">
+    <Container className="my-40">
       <h1 className="text-2xl mb-5 text-zinc-100">
         Copy Paste animations for TailwindCSS
       </h1>
