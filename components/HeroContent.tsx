@@ -6,12 +6,11 @@ interface Props {}
 
 const HeroContent: React.FC<Props> = () => {
   return (
-    <Container className="mt-32">
-      <p>
-        Explore a curated collection of Tailwind animation classes. Elevate your
-        websites with ease.
-      </p>
-      <p className="mt-5">Just Copy. Paste. Start animating now!</p>
+    <Container className="mt-48">
+      <h1 className="text-2xl mb-5 text-zinc-100">
+        Copy Paste animations for TailwindCSS
+      </h1>
+      <p>Explore a curated collection of Tailwind animation classes.</p>
     </Container>
   )
 }
