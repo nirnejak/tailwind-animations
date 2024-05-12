@@ -1,9 +1,9 @@
 import * as React from "react"
 import Link from "next/link"
 
-import Container from "./Container"
-import Button from "./atoms/Button"
 import { GithubFill } from "akar-icons"
+
+import Container from "./Container"
 
 const Header: React.FC = () => {
   return (

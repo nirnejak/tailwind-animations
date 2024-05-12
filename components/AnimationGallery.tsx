@@ -5,9 +5,10 @@ import { animations } from "@/utils/animations"
 
 import ColorSelector from "./atoms/ColorSelector"
 import { IColorVariants } from "./atoms/Button"
+import Input from "./atoms/Input"
+
 import AnimationCard from "./AnimationCard"
 import Container from "./Container"
-import Input from "./atoms/Input"
 
 interface Props {}
 
