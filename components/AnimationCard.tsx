@@ -23,7 +23,7 @@ const AnimationCard: React.FC<Props> = ({ color, title, animationClass }) => {
       </button>
       <p className="text-sm absolute top-4 left-5">{title}</p>
       <Button variant={color} className={animationClass}>
-        Click Me
+        Hover
       </Button>
     </div>
   )

@@ -116,8 +116,8 @@ const config: Config = {
           to: { opacity: "1", transform: "scale(1)" },
         },
         rise: {
-          from: { transform: "translate(-50%, -40%) scale(0.95)" },
-          to: { transform: "translate(-50%, -50%) scale(1)" },
+          from: { transform: "translate(0, 20%) scale(0.95)" },
+          to: { transform: "translate(0, 0) scale(1)" },
         },
         shake: {
           "0%": { transform: "translate(1px, 1px) rotate(0deg)" },
@@ -145,7 +145,7 @@ const config: Config = {
         slideUp: "slideUp 400ms cubic-bezier(0.16, 1, 0.3, 1)",
         slideLeft: "slideLeft 400ms cubic-bezier(0.16, 1, 0.3, 1)",
         slideRight: "slideRight 400ms cubic-bezier(0.16, 1, 0.3, 1)",
-        swing: "swing 1s infinite ease-in-out alternate",
+        swing: "swing 150ms infinite ease-in-out alternate",
         scale: "scale 150ms cubic-bezier(0.4, 0, 0.2, 1)",
         rise: "rise 150ms cubic-bezier(0.4, 0, 0.2, 1)",
         shake: "shake 150ms cubic-bezier(0.4, 0, 0.2, 1)",
