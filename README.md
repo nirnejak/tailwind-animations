@@ -6,19 +6,11 @@ A gallery of TailwindCSS animations that you can just copy-paste into your proje
 
 ---
 
-## Included
+## Animations
 
-- `seo.ts` util to generate SEO metadata
-- `manifest.json` for site info
-- `classnames` util for easily managing classes
-
-## Additional Packages Used
-
-- Tailwind CSS - for styling
-- Framer Motion - for animations
-- Akar Icons - library for rounded icons
-- use-sound - for using sounds
-- React Query - for data fetching and caching
+- Shake when wrong value is entered
+- Bounce
+- Fade In
 
 ## Available Scripts
 
