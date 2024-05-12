@@ -1,82 +1,82 @@
 export const animations = [
   {
-    title: "Swing",
-    animationClass: "animation animation-swing",
+    title: "Shake",
+    animationClass: "animated",
   },
   {
     title: "Swing",
-    animationClass: "animation animation-swing",
+    animationClass: "animated",
+  },
+  {
+    title: "Bounce",
+    animationClass: "animated",
+  },
+  {
+    title: "Scale",
+    animationClass: "animated",
+  },
+  {
+    title: "Rise",
+    animationClass: "animated",
+  },
+  {
+    title: "Slide Up",
+    animationClass: "animated",
+  },
+  {
+    title: "Slide Down",
+    animationClass: "animated",
+  },
+  {
+    title: "Slide Left",
+    animationClass: "animated",
+  },
+  {
+    title: "Slide Right",
+    animationClass: "animated",
   },
   {
     title: "Swing",
-    animationClass: "animation animation-swing",
+    animationClass: "animated",
   },
   {
     title: "Swing",
-    animationClass: "animation animation-swing",
+    animationClass: "animated",
   },
   {
     title: "Swing",
-    animationClass: "animation animation-swing",
+    animationClass: "animated",
   },
   {
     title: "Swing",
-    animationClass: "animation animation-swing",
+    animationClass: "animated",
   },
   {
     title: "Swing",
-    animationClass: "animation animation-swing",
+    animationClass: "animated",
   },
   {
     title: "Swing",
-    animationClass: "animation animation-swing",
+    animationClass: "animated",
   },
   {
     title: "Swing",
-    animationClass: "animation animation-swing",
+    animationClass: "animated",
   },
   {
     title: "Swing",
-    animationClass: "animation animation-swing",
+    animationClass: "animated",
   },
   {
     title: "Swing",
-    animationClass: "animation animation-swing",
+    animationClass: "animated",
   },
   {
     title: "Swing",
-    animationClass: "animation animation-swing",
+    animationClass: "animated",
   },
   {
     title: "Swing",
-    animationClass: "animation animation-swing",
-  },
-  {
-    title: "Swing",
-    animationClass: "animation animation-swing",
-  },
-  {
-    title: "Swing",
-    animationClass: "animation animation-swing",
-  },
-  {
-    title: "Swing",
-    animationClass: "animation animation-swing",
-  },
-  {
-    title: "Swing",
-    animationClass: "animation animation-swing",
-  },
-  {
-    title: "Swing",
-    animationClass: "animation animation-swing",
-  },
-  {
-    title: "Swing",
-    animationClass: "animation animation-swing",
-  },
-  {
-    title: "Swing",
-    animationClass: "animation animation-swing",
+    animationClass: "animated",
   },
 ]
