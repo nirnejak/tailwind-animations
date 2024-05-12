@@ -3,6 +3,7 @@ import Link from "next/link"
 
 import Container from "./Container"
 import Button from "./atoms/Button"
+import { GithubFill } from "akar-icons"
 
 const Header: React.FC = () => {
   return (
@@ -14,8 +15,16 @@ const Header: React.FC = () => {
             <span className="font-semibold">Animations</span>
           </Link>
           <div className="flex">
-            <Link href={"/home"}>
-              <Button>Try now</Button>
+            <Link
+              href={"https://github.com/nirnejak/tailwind-animations/"}
+              target="_blank"
+            >
+              <button className="flex gap-2 items-center rounded-md p-2 text-sm px-4 py-2 bg-zinc-900 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-none transition-colors -mt-2">
+                <span>View Source</span>
+                <span>
+                  <GithubFill size={16} />
+                </span>
+              </button>
             </Link>
           </div>
         </div>
