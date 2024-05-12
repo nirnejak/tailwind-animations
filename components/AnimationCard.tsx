@@ -1,15 +1,18 @@
 import * as React from "react"
-import Button from "./atoms/Button"
 import { Copy } from "akar-icons"
+
 import copyToClipboard from "@/utils/copyToClipboard"
 import classNames from "@/utils/classNames"
 
+import Button, { IColorVariants } from "./atoms/Button"
+
 interface Props {
+  color: IColorVariants
   title: string
   animationClass: string
 }
 
-const AnimationCard: React.FC<Props> = ({ title, animationClass }) => {
+const AnimationCard: React.FC<Props> = ({ color, title, animationClass }) => {
   return (
     <div className="rounded-xl bg-zinc-800 text-center px-18 pb-20 pt-24 relative">
       <button
@@ -22,7 +25,7 @@ const AnimationCard: React.FC<Props> = ({ title, animationClass }) => {
         <Copy size={16} />
       </button>
       <p className="text-sm absolute top-4 left-5">{title}</p>
-      <Button variant="purple">Click Me</Button>
+      <Button variant={color}>Click Me</Button>
     </div>
   )
 }
