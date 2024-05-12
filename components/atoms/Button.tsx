@@ -4,7 +4,7 @@ import * as React from "react"
 import classNames from "utils/classNames"
 
 interface Props {
-  variant?: "primary" | "danger" | "success"
+  variant?: "primary" | "danger" | "success" | "warning" | "purple"
   children: React.ReactNode
   type?: "reset" | "button" | "submit"
   className?: string
@@ -23,8 +23,14 @@ const Button: React.FC<Props> = ({
 }) => {
   const buttonStyleClassName = React.useMemo(() => {
     switch (variant) {
+      case "purple":
+        return "bg-purple-600 text-purple-50 hover:bg-purple-700 focus:bg-purple-700"
       case "danger":
         return "bg-red-600 text-red-50 hover:bg-red-700 focus:bg-red-700"
+      case "success":
+        return "bg-green-600 text-green-50 hover:bg-green-700 focus:bg-green-700"
+      case "warning":
+        return "bg-amber-600 text-amber-50 hover:bg-amber-700 focus:bg-amber-700"
       case "primary":
       default:
         return "bg-gray-100 text-gray-700 hover:bg-gray-300 focus:bg-gray-300"
