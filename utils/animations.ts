@@ -36,47 +36,19 @@ export const animations = [
     animationClass: "animated",
   },
   {
-    title: "Swing",
+    title: "Slide Down and Fade",
     animationClass: "animated",
   },
   {
-    title: "Swing",
+    title: "Slide Left and Fade",
     animationClass: "animated",
   },
   {
-    title: "Swing",
+    title: "Slide Up and Fade",
     animationClass: "animated",
   },
   {
-    title: "Swing",
-    animationClass: "animated",
-  },
-  {
-    title: "Swing",
-    animationClass: "animated",
-  },
-  {
-    title: "Swing",
-    animationClass: "animated",
-  },
-  {
-    title: "Swing",
-    animationClass: "animated",
-  },
-  {
-    title: "Swing",
-    animationClass: "animated",
-  },
-  {
-    title: "Swing",
-    animationClass: "animated",
-  },
-  {
-    title: "Swing",
-    animationClass: "animated",
-  },
-  {
-    title: "Swing",
+    title: "Slide Right and Fade",
     animationClass: "animated",
   },
 ]
