@@ -1,7 +1,7 @@
 export const animations = [
   {
     title: "Shake",
-    animationClass: "animated",
+    animationClass: "animated-shake",
   },
   {
     title: "Swing",
