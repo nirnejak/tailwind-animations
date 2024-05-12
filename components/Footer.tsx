@@ -1,7 +1,7 @@
 import * as React from "react"
+import Link from "next/link"
 
 import { Question, SoundOn, Sun } from "akar-icons"
-import Link from "next/link"
 
 import Container from "./Container"
 

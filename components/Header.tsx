@@ -1,6 +1,4 @@
 import * as React from "react"
-
-import { Gear } from "akar-icons"
 import Link from "next/link"
 
 import Container from "./Container"
