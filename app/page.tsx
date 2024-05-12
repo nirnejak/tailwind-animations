@@ -3,8 +3,9 @@ import { type Metadata } from "next"
 
 import generateMetadata from "utils/seo"
 
+import Footer from "components/Footer"
+import Header from "components/Header"
 import AnimationGallery from "components/AnimationGallery"
-import Footer from "@/components/Footer"
 
 export const metadata: Metadata = generateMetadata({
   path: "/",
@@ -16,6 +17,7 @@ export const metadata: Metadata = generateMetadata({
 const Home: React.FC = () => {
   return (
     <>
+      <Header />
       <main className="grid h-screen place-content-center">
         <h1 className="text-center text-xl font-medium text-zinc-300">
           <AnimationGallery />
