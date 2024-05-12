@@ -11,7 +11,15 @@ interface Props {}
 const AnimationGallery: React.FC<Props> = () => {
   return (
     <Container>
-      <div className="grid grid-cols-4 gap-3">
+      <div className="grid grid-cols-5 gap-3 mt-32">
+        <AnimationCard />
+        <AnimationCard />
+        <AnimationCard />
+        <AnimationCard />
+        <AnimationCard />
+        <AnimationCard />
+        <AnimationCard />
+        <AnimationCard />
         <AnimationCard />
         <AnimationCard />
         <AnimationCard />
