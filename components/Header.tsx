@@ -9,7 +9,7 @@ const Header: React.FC = () => {
     <header className="fixed top-0 w-full pt-5">
       <Container>
         <div className="flex items-center justify-between">
-          <Link href={"/"} className="flex text-zinc-300">
+          <Link href={"/"} className="flex text-zinc-100">
             <span className="font-light">Tailwind</span>
             <span className="font-semibold">Animations</span>
           </Link>
