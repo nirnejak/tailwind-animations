@@ -7,7 +7,7 @@ import Container from "./Container"
 
 const Footer: React.FC = () => {
   return (
-    <footer className="fixed bottom-0 w-full border-t-[1px] border-zinc-800 py-2">
+    <footer className="mt-40 w-full border-t-[1px] border-zinc-800 py-2">
       <Container>
         <div className="-mx-2 flex justify-between text-xs">
           <p className="flex gap-1">
