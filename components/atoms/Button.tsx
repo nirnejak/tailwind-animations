@@ -37,7 +37,7 @@ interface Props {
 }
 
 const Button: React.FC<Props> = ({
-  variant = "primary",
+  variant = "violet",
   children,
   type = "button",
   className,

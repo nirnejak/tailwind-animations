@@ -11,7 +11,8 @@ import Container from "./Container"
 interface Props {}
 
 const AnimationGallery: React.FC<Props> = () => {
-  const [color, setColor] = React.useState<IColorVariants>("green")
+  const [color, setColor] = React.useState<IColorVariants>("violet")
+
   return (
     <Container>
       <div className="mt-32">
