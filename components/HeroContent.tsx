@@ -10,7 +10,10 @@ const HeroContent: React.FC<Props> = () => {
       <h1 className="text-2xl mb-5 text-zinc-100">
         Copy Paste animations for TailwindCSS
       </h1>
-      <p>Explore a curated collection of Tailwind animation classes.</p>
+      <p>
+        Explore a curated collection of Tailwind animation classes. Just copy
+        and paste them into your code.
+      </p>
     </Container>
   )
 }
