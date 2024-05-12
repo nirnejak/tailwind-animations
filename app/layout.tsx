@@ -34,7 +34,7 @@ const RootLayout: React.FC<Props> = ({ children }) => {
       <body
         className={classNames(
           inter.variable,
-          "overflow-x-hidden bg-zinc-900 font-sans"
+          "overflow-x-hidden bg-zinc-900 text-zinc-400 font-sans"
         )}
       >
         {children}
