@@ -5,7 +5,9 @@ import generateMetadata from "utils/seo"
 
 import Footer from "components/Footer"
 import Header from "components/Header"
+
 import AnimationGallery from "components/AnimationGallery"
+import HeroContent from "components/HeroContent"
 
 export const metadata: Metadata = generateMetadata({
   path: "/",
@@ -18,6 +20,7 @@ const Home: React.FC = () => {
   return (
     <>
       <Header />
+      <HeroContent />
       <AnimationGallery />
       <Footer />
     </>
