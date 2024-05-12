@@ -11,17 +11,17 @@ const Footer: React.FC = () => {
       <Container>
         <div className="-mx-2 flex justify-between text-xs">
           <p className="flex gap-1">
-            <button className="rounded-md p-2 text-zinc-300 bg-zinc-900 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-none">
+            <button className="rounded-md p-2 bg-zinc-900 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-none transition-colors">
               <SoundOn size={17} />
             </button>
-            <button className="rounded-md p-2 text-zinc-300 bg-zinc-900 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-none">
+            <button className="rounded-md p-2 bg-zinc-900 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-none transition-colors">
               <Sun size={17} />
             </button>
           </p>
 
           <Link
             href={"/help/"}
-            className="flex items-center gap-1 rounded-md p-2 text-zinc-300 bg-zinc-900 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-none"
+            className="flex items-center gap-1 rounded-md p-2 bg-zinc-900 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-none transition-colors"
           >
             <span>help</span>
             <span>
