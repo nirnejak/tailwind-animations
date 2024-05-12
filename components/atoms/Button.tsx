@@ -44,6 +44,8 @@ const Button: React.FC<Props> = ({
         return "bg-green-600 text-green-50 hover:bg-green-700 focus:bg-green-700"
       case "sky":
         return "bg-sky-600 text-sky-50 hover:bg-sky-700 focus:bg-sky-700"
+      case "blue":
+        return "bg-blue-600 text-blue-50 hover:bg-blue-700 focus:bg-blue-700"
       case "primary":
       default:
         return "bg-zinc-100 text-zinc-700 hover:bg-zinc-300 focus:bg-zinc-300"
