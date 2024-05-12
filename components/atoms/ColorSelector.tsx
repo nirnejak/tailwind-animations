@@ -7,8 +7,30 @@ interface Props {
   setColor: (val) => void
 }
 
-const toggleGroupItemClasses =
-  "hover:bg-zinc-950 data-[state=on]:bg-zinc-700 flex p-3 items-center justify-center bg-zinc-800 text-base leading-4 first:rounded-l-lg last:rounded-r-lg focus:z-10 focus:outline-none"
+const colorOptions = [
+  "slate",
+  "gray",
+  "zinc",
+  "neutral",
+  "stone",
+  "red",
+  "orange",
+  "amber",
+  "yellow",
+  "lime",
+  "green",
+  "emerald",
+  "teal",
+  "cyan",
+  "sky",
+  "blue",
+  "indigo",
+  "violet",
+  "purple",
+  "fuchsia",
+  "pink",
+  "rose",
+]
 
 const ColorSelector: React.FC<Props> = ({ color, setColor }) => {
   return (
@@ -20,55 +42,17 @@ const ColorSelector: React.FC<Props> = ({ color, setColor }) => {
         onValueChange={setColor}
         aria-label="Button Themes"
       >
-        <ToggleGroup.Item
-          className={toggleGroupItemClasses}
-          value="purple"
-          aria-label="Purple Theme"
-        >
-          <div className="rounded-full bg-purple-600 h-[20px] w-[20px]" />
-        </ToggleGroup.Item>
-        <ToggleGroup.Item
-          className={toggleGroupItemClasses}
-          value="pink"
-          aria-label="Pink Theme"
-        >
-          <div className="rounded-full bg-pink-600 h-[20px] w-[20px]" />
-        </ToggleGroup.Item>
-        <ToggleGroup.Item
-          className={toggleGroupItemClasses}
-          value="red"
-          aria-label="Red Theme"
-        >
-          <div className="rounded-full bg-red-600 h-[20px] w-[20px]" />
-        </ToggleGroup.Item>
-        <ToggleGroup.Item
-          className={toggleGroupItemClasses}
-          value="amber"
-          aria-label="Amber Theme"
-        >
-          <div className="rounded-full bg-amber-600 h-[20px] w-[20px]" />
-        </ToggleGroup.Item>
-        <ToggleGroup.Item
-          className={toggleGroupItemClasses}
-          value="green"
-          aria-label="Green Theme"
-        >
-          <div className="rounded-full bg-green-600 h-[20px] w-[20px]" />
-        </ToggleGroup.Item>
-        <ToggleGroup.Item
-          className={toggleGroupItemClasses}
-          value="sky"
-          aria-label="Sky Theme"
-        >
-          <div className="rounded-full bg-sky-600 h-[20px] w-[20px]" />
-        </ToggleGroup.Item>
-        <ToggleGroup.Item
-          className={toggleGroupItemClasses}
-          value="blue"
-          aria-label="Blue Theme"
-        >
-          <div className="rounded-full bg-blue-600 h-[20px] w-[20px]" />
-        </ToggleGroup.Item>
+        {colorOptions.map((color, index) => (
+          <ToggleGroup.Item
+            key={index}
+            className="hover:bg-zinc-950 data-[state=on]:bg-zinc-700 flex p-3 items-center justify-center bg-zinc-800 text-base leading-4 first:rounded-l-lg last:rounded-r-lg focus:z-10 focus:outline-none"
+            value={color}
+            aria-label={`${color} Theme`}
+            title={color}
+          >
+            <div className={`rounded-full bg-${color}-600 h-[20px] w-[20px]`} />
+          </ToggleGroup.Item>
+        ))}
       </ToggleGroup.Root>
     </div>
   )
