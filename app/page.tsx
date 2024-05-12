@@ -18,11 +18,7 @@ const Home: React.FC = () => {
   return (
     <>
       <Header />
-      <main className="grid h-screen place-content-center">
-        <h1 className="text-center text-xl font-medium text-zinc-300">
-          <AnimationGallery />
-        </h1>
-      </main>
+      <AnimationGallery />
       <Footer />
     </>
   )
