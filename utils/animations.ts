@@ -1,4 +1,9 @@
-export const animations = [
+export interface IAnimation {
+  title: string
+  animationClass: string
+}
+
+export const animations: IAnimation[] = [
   {
     title: "Shake",
     animationClass: "animate-shake",
