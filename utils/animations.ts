@@ -1,8 +1,8 @@
 export interface IAnimation {
   title: string
   animationClass: string
-  tailwindKeyframesProperty: any
-  tailwindAnimationProperty: any
+  tailwindKeyframesProperty: Record<string, any> | null
+  tailwindAnimationProperty: Record<string, any> | null
 }
 
 export const animations: IAnimation[] = [
@@ -44,8 +44,8 @@ export const animations: IAnimation[] = [
   {
     title: "Bounce",
     animationClass: "animate-bounce",
-    tailwindKeyframesProperty: {},
-    tailwindAnimationProperty: {},
+    tailwindKeyframesProperty: null,
+    tailwindAnimationProperty: null,
   },
   {
     title: "Scale",
