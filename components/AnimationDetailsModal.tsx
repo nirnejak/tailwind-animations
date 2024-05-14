@@ -96,21 +96,19 @@ const AnimationDetailsModal: React.FC<Props> = ({
             </div>
             <div>
               <p className="mb-2 font-sm">When to animate:</p>
-              <div className="flex gap-2">
+              <div className="flex gap-4">
                 {allModifiers.map((modifier, index) => (
                   <div className="flex items-center gap-2">
                     <Checkbox.Root
-                      className="hover:bg-zinc-950 flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-[4px] bg-zinc-700 outline-none"
+                      className="hover:bg-zinc-900 flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-md bg-zinc-700 outline-none"
                       checked={modifiers.includes(modifier)}
                       onCheckedChange={(checked: boolean) =>
                         handleCheckedChange(checked, modifier)
                       }
                       id={`${modifier}-id`}
                     >
-                      <Checkbox.Indicator
-                        className={`text-${color}-500 bg-zinc-700`}
-                      >
-                        <Check />
+                      <Checkbox.Indicator className={`text-${color}-500`}>
+                        <Check size={15} />
                       </Checkbox.Indicator>
                     </Checkbox.Root>
                     <label
@@ -123,15 +121,13 @@ const AnimationDetailsModal: React.FC<Props> = ({
                 ))}
                 <div className="flex items-center gap-2 ml-7">
                   <Checkbox.Root
-                    className="hover:bg-zinc-950 flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-[4px] bg-zinc-700 outline-none"
+                    className="hover:bg-zinc-900 flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-md bg-zinc-700 outline-none"
                     checked={isAlwaysEnabled}
                     onCheckedChange={() => setModifiers([])}
                     id="is-always-enabled"
                   >
-                    <Checkbox.Indicator
-                      className={`text-${color}-500 bg-zinc-700`}
-                    >
-                      <Check />
+                    <Checkbox.Indicator className={`text-${color}-500`}>
+                      <Check size={15} />
                     </Checkbox.Indicator>
                   </Checkbox.Root>
                   <label
