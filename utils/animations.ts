@@ -7,6 +7,30 @@ export interface IAnimation {
 
 export const animations: IAnimation[] = [
   {
+    title: "Spin",
+    animationClass: "animate-spin",
+    tailwindKeyframesProperty: null,
+    tailwindAnimationProperty: null,
+  },
+  {
+    title: "Ping",
+    animationClass: "animate-ping",
+    tailwindKeyframesProperty: null,
+    tailwindAnimationProperty: null,
+  },
+  {
+    title: "Pulse",
+    animationClass: "animate-pulse",
+    tailwindKeyframesProperty: null,
+    tailwindAnimationProperty: null,
+  },
+  {
+    title: "Bounce",
+    animationClass: "animate-bounce",
+    tailwindKeyframesProperty: null,
+    tailwindAnimationProperty: null,
+  },
+  {
     title: "Shake",
     animationClass: "animate-shake",
     tailwindKeyframesProperty: {
@@ -40,12 +64,6 @@ export const animations: IAnimation[] = [
     tailwindAnimationProperty: {
       swing: "swing 400ms infinite ease-in-out alternate",
     },
-  },
-  {
-    title: "Bounce",
-    animationClass: "animate-bounce",
-    tailwindKeyframesProperty: null,
-    tailwindAnimationProperty: null,
   },
   {
     title: "Scale",

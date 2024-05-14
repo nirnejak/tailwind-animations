@@ -26,9 +26,13 @@ const usedColors = [
 ]
 
 const animationClasses = [
+  "animate-spin",
+  "animate-ping",
+  "animate-pulse",
+  "animate-bounce",
+
   "animate-shake",
   "animate-swing",
-  "animate-bounce",
   "animate-scale",
   "animate-rise",
   "animate-slide-up",
