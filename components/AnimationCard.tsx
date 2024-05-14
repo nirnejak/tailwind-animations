@@ -1,28 +1,31 @@
 import * as React from "react"
-import { Copy } from "akar-icons"
+import { Enlarge } from "akar-icons"
 
-import copyToClipboard from "@/utils/copyToClipboard"
-import classNames from "@/utils/classNames"
+import { IAnimation } from "@/utils/animations"
 
 import Button, { IColorVariants } from "./atoms/Button"
 
 interface Props {
   color: IColorVariants
-  title: string
-  animationClass: string
+  animation: IAnimation
+  setSelectedAnimation: (animation: IAnimation) => void
 }
 
-const AnimationCard: React.FC<Props> = ({ color, title, animationClass }) => {
+const AnimationCard: React.FC<Props> = ({
+  color,
+  animation,
+  setSelectedAnimation,
+}) => {
   return (
     <div className="rounded-xl bg-zinc-800 text-center px-18 pb-20 pt-24 relative">
       <button
         className="absolute top-2 right-2 rounded-md p-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-none"
-        onClick={() => copyToClipboard(animationClass)}
+        onClick={() => setSelectedAnimation(animation)}
       >
-        <Copy size={16} />
+        <Enlarge size={16} />
       </button>
-      <p className="text-sm absolute top-4 left-5">{title}</p>
-      <Button variant={color} className={animationClass}>
+      <p className="text-sm absolute top-4 left-5">{animation.title}</p>
+      <Button variant={color} className={animation.animationClass}>
         Click Me
       </Button>
     </div>
