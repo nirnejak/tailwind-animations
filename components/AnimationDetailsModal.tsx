@@ -166,7 +166,7 @@ const AnimationDetailsModal: React.FC<Props> = ({
             )}
             <div className={codeHTML ? "" : "mt-auto"}>
               <p className="mb-2 font-sm">Class Name:</p>
-              <code className="bg-zinc-900 pl-3 py-1 pr-1 flex items-center justify-between rounded-md text-sm">
+              <code className="bg-zinc-900 pl-3 py-1 pr-1 flex items-center justify-between rounded-md text-sm leading-7">
                 {modifiers.length
                   ? modifiers.map(
                       (modifier) => `${modifier}:${animation.animationClass} `
