@@ -110,9 +110,12 @@ const AnimationDetailsModal: React.FC<Props> = ({
               <p className="mb-2 font-sm">When to animate:</p>
               <div className="flex gap-4">
                 {allModifiers.map((modifier, index) => (
-                  <div className="flex items-center gap-2">
+                  <label
+                    className="text-sm leading-none text-zinc-400 capitalize flex items-center gap-2"
+                    htmlFor={`${modifier}-id`}
+                  >
                     <Checkbox.Root
-                      className="hover:bg-zinc-900 flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-md bg-zinc-700 outline-none"
+                      className="hover:bg-zinc-900/40 flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-md bg-zinc-700 outline-none"
                       checked={modifiers.includes(modifier)}
                       onCheckedChange={(checked: boolean) =>
                         handleCheckedChange(checked, modifier)
@@ -123,15 +126,14 @@ const AnimationDetailsModal: React.FC<Props> = ({
                         <Check size={15} />
                       </Checkbox.Indicator>
                     </Checkbox.Root>
-                    <label
-                      className="text-sm leading-none text-zinc-400 capitalize"
-                      htmlFor={`${modifier}-id`}
-                    >
-                      {modifier}
-                    </label>
-                  </div>
+
+                    {modifier}
+                  </label>
                 ))}
-                <div className="flex items-center gap-2 ml-7">
+                <label
+                  className="text-sm leading-none text-zinc-400 flex items-center gap-2 ml-6"
+                  htmlFor="is-always-enabled"
+                >
                   <Checkbox.Root
                     className="hover:bg-zinc-900 flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-md bg-zinc-700 outline-none"
                     checked={isAlwaysEnabled}
@@ -142,13 +144,8 @@ const AnimationDetailsModal: React.FC<Props> = ({
                       <Check size={15} />
                     </Checkbox.Indicator>
                   </Checkbox.Root>
-                  <label
-                    className="text-sm leading-none text-zinc-400"
-                    htmlFor="is-always-enabled"
-                  >
-                    Always
-                  </label>
-                </div>
+                  Always
+                </label>
               </div>
             </div>
             {codeHTML && (
