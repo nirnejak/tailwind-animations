@@ -51,7 +51,7 @@ const AnimationDetailsModal: React.FC<Props> = ({
   }, [animation])
   const codeHTML = highlight(code)
 
-  const [modifiers, setModifiers] = React.useState<string[]>([])
+  const [modifiers, setModifiers] = React.useState<string[]>(["hover"])
 
   const isAlwaysEnabled = React.useMemo(
     () => modifiers.length === 0,
@@ -68,13 +68,13 @@ const AnimationDetailsModal: React.FC<Props> = ({
       onClick={onClose}
     >
       <div
-        className="bg-zinc-800 rounded-xl p-5 w-[1080px]"
+        className="bg-zinc-800 rounded-xl p-5 w-[880px]"
         onClick={handleCardClick}
       >
         <div className="mb-3">{animation.title}</div>
         <div className="flex gap-4">
           <div className="flex-1">
-            <div className="rounded-xl bg-zinc-900 text-center px-18 pb-20 pt-24 relative ">
+            <div className="rounded-xl bg-zinc-900 text-center px-18 pb-20 pt-24 relative mb-5">
               <Button variant={color} className={animation.animationClass}>
                 Click Me
               </Button>
@@ -85,9 +85,7 @@ const AnimationDetailsModal: React.FC<Props> = ({
                 </span>
               </p>
             </div>
-          </div>
-          <div className="flex-1 flex flex-col">
-            <div className="flex gap-2 mb-2">
+            <div className="flex gap-2 justify-center">
               <button
                 className={classNames(
                   isAlwaysEnabled ? "bg-zinc-900" : "bg-zinc-700",
@@ -117,8 +115,10 @@ const AnimationDetailsModal: React.FC<Props> = ({
                 ))}
               </ToggleGroup.Root>
             </div>
-            <div className="relative bg-zinc-900 px-3 py-1 mt-auto mb-2 rounded-md">
-              <pre className="max-h-[300px] overflow-auto">
+          </div>
+          <div className="flex-1 flex flex-col">
+            <div className="relative bg-zinc-900 px-3 py-1 mb-2 rounded-md">
+              <pre className="max-h-[300px] max-w-[400px] overflow-auto">
                 <code
                   className="text-sm"
                   dangerouslySetInnerHTML={{ __html: codeHTML }}
