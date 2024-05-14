@@ -38,15 +38,25 @@ const AnimationDetailsModal: React.FC<Props> = ({
   }, [])
 
   const code = React.useMemo(() => {
-    const config = {
-      keyframes: {
-        ...animation.tailwindKeyframesProperty,
-      },
-      animation: {
-        ...animation.tailwindAnimationProperty,
-      },
+    if (
+      animation.tailwindKeyframesProperty &&
+      animation.tailwindAnimationProperty
+    ) {
+      return JSON.stringify(
+        {
+          keyframes: {
+            ...animation.tailwindKeyframesProperty,
+          },
+          animation: {
+            ...animation.tailwindAnimationProperty,
+          },
+        },
+        null,
+        4
+      )
+    } else {
+      return ""
     }
-    return JSON.stringify(config, null, 4)
   }, [animation])
   const codeHTML = highlight(code)
 
@@ -77,13 +87,13 @@ const AnimationDetailsModal: React.FC<Props> = ({
       onClick={onClose}
     >
       <div
-        className="bg-zinc-800 rounded-xl p-5 w-[880px]"
+        className="bg-zinc-800 rounded-xl p-5 w-[780px]"
         onClick={handleCardClick}
       >
         <div className="mb-3">{animation.title}</div>
         <div className="flex gap-4">
           <div className="flex-1">
-            <div className="rounded-xl bg-zinc-900 text-center px-18 pb-20 pt-24 relative mb-5">
+            <div className="rounded-xl bg-zinc-900 text-center px-18 pb-20 pt-24 relative">
               <Button variant={color} className={animation.animationClass}>
                 Click Me
               </Button>
@@ -94,7 +104,9 @@ const AnimationDetailsModal: React.FC<Props> = ({
                 </span>
               </p>
             </div>
-            <div>
+          </div>
+          <div className="flex-1 flex flex-col">
+            <div className="mb-4">
               <p className="mb-2 font-sm">When to animate:</p>
               <div className="flex gap-4">
                 {allModifiers.map((modifier, index) => (
@@ -139,35 +151,38 @@ const AnimationDetailsModal: React.FC<Props> = ({
                 </div>
               </div>
             </div>
-          </div>
-          <div className="flex-1 flex flex-col">
-            <div className="relative bg-zinc-900 px-3 py-1 mb-2 rounded-md">
-              <pre className="max-h-[300px] max-w-[400px] overflow-auto">
-                <code
-                  className="text-sm"
-                  dangerouslySetInnerHTML={{ __html: codeHTML }}
-                />
-              </pre>
-              <button
-                className="rounded p-2 absolute top-2 right-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-none"
-                onClick={() => copyToClipboard(animation.animationClass)}
-              >
-                <Copy size={16} />
-              </button>
+            {codeHTML && (
+              <div className="relative bg-zinc-900 px-3 py-1 mb-2 rounded-md">
+                <pre className="max-h-[300px] max-w-[400px] overflow-auto">
+                  <code
+                    className="text-sm"
+                    dangerouslySetInnerHTML={{ __html: codeHTML }}
+                  />
+                </pre>
+                <button
+                  className="rounded p-2 absolute top-2 right-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-none"
+                  onClick={() => copyToClipboard(animation.animationClass)}
+                >
+                  <Copy size={16} />
+                </button>
+              </div>
+            )}
+            <div className={codeHTML ? "" : "mt-auto"}>
+              <p className="mb-2 font-sm">Class Name:</p>
+              <code className="bg-zinc-900 pl-3 py-1 pr-1 flex items-center justify-between rounded-md text-sm">
+                {modifiers.length
+                  ? modifiers.map(
+                      (modifier) => `${modifier}:${animation.animationClass} `
+                    )
+                  : animation.animationClass}
+                <button
+                  className="rounded p-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-none"
+                  onClick={() => copyToClipboard(animation.animationClass)}
+                >
+                  <Copy size={16} />
+                </button>
+              </code>
             </div>
-            <code className="bg-zinc-900 pl-3 py-1 pr-1 flex items-center justify-between rounded-md text-sm">
-              {modifiers.length
-                ? modifiers.map(
-                    (modifier) => `${modifier}:${animation.animationClass} `
-                  )
-                : animation.animationClass}
-              <button
-                className="rounded p-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-none"
-                onClick={() => copyToClipboard(animation.animationClass)}
-              >
-                <Copy size={16} />
-              </button>
-            </code>
           </div>
         </div>
       </div>
