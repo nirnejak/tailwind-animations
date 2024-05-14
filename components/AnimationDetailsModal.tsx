@@ -1,7 +1,7 @@
 import * as React from "react"
 
 import { highlight } from "sugar-high"
-import { Check, Copy, Telescope } from "akar-icons"
+import { Check, Copy, Telescope, XSmall } from "akar-icons"
 import * as Checkbox from "@radix-ui/react-checkbox"
 
 import { IAnimation } from "@/utils/animations"
@@ -90,7 +90,15 @@ const AnimationDetailsModal: React.FC<Props> = ({
         className="bg-zinc-800 rounded-xl p-5 w-[780px]"
         onClick={handleCardClick}
       >
-        <div className="mb-3">{animation.title}</div>
+        <div className="mb-3 flex justify-between">
+          <p>{animation.title}</p>
+          <button
+            onClick={onClose}
+            className="rounded-full bg-zinc-700 p-1 -mt-1 -mr-1 hover:bg-zinc-900/40"
+          >
+            <XSmall />
+          </button>
+        </div>
         <div className="flex gap-4">
           <div className="flex-1">
             <div className="rounded-xl bg-zinc-900 text-center px-18 pb-20 pt-24 relative">
@@ -166,7 +174,7 @@ const AnimationDetailsModal: React.FC<Props> = ({
             )}
             <div className={codeHTML ? "" : "mt-auto"}>
               <p className="mb-2 font-sm">Class Name:</p>
-              <code className="bg-zinc-900 pl-3 py-1 pr-1 flex items-center justify-between rounded-md text-sm leading-7">
+              <code className="bg-zinc-900 pl-3 py-1 pr-1 flex items-center justify-between rounded-md text-sm leading-7 w-[400px]">
                 {modifiers.length
                   ? modifiers.map(
                       (modifier) => `${modifier}:${animation.animationClass} `
