@@ -1,6 +1,8 @@
 "use client"
 import * as React from "react"
 
+import { Search } from "akar-icons"
+
 import { IAnimation, animations } from "@/utils/animations"
 
 import ColorSelector from "./atoms/ColorSelector"
@@ -9,7 +11,6 @@ import Input from "./atoms/Input"
 
 import AnimationCard from "./AnimationCard"
 import Container from "./Container"
-import { Search } from "akar-icons"
 import AnimationDetailsModal from "./AnimationDetailsModal"
 
 interface Props {}

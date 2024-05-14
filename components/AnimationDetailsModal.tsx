@@ -1,5 +1,6 @@
 import * as React from "react"
 
+import { highlight } from "sugar-high"
 import { Copy, Telescope } from "akar-icons"
 import * as ToggleGroup from "@radix-ui/react-toggle-group"
 
@@ -35,9 +36,18 @@ const AnimationDetailsModal: React.FC<Props> = ({
     }
   }, [])
 
-  const handleCardClick = (e) => {
-    e.stopPropagation()
-  }
+  const code = React.useMemo(() => {
+    const config = {
+      keyframes: {
+        ...animation.tailwindKeyframesProperty,
+      },
+      animation: {
+        ...animation.tailwindAnimationProperty,
+      },
+    }
+    return JSON.stringify(config, null, 4)
+  }, [animation])
+  const codeHTML = highlight(code)
 
   const [modifiers, setModifiers] = React.useState<string[]>([])
 
@@ -46,13 +56,17 @@ const AnimationDetailsModal: React.FC<Props> = ({
     [modifiers]
   )
 
+  const handleCardClick = (e) => {
+    e.stopPropagation()
+  }
+
   return (
     <div
       className="fixed left-0 top-0 z-max h-screen w-full bg-zinc-900/30 backdrop-blur-lg grid place-content-center"
       onClick={onClose}
     >
       <div
-        className="bg-zinc-800 rounded-xl p-5 w-[880px]"
+        className="bg-zinc-800 rounded-xl p-5 w-[1080px]"
         onClick={handleCardClick}
       >
         <div className="mb-3">{animation.title}</div>
@@ -71,7 +85,7 @@ const AnimationDetailsModal: React.FC<Props> = ({
             </div>
           </div>
           <div className="flex-1 flex flex-col">
-            <div className="flex gap-2">
+            <div className="flex gap-2 mb-2">
               <button
                 className={classNames(
                   isAlwaysEnabled ? "bg-zinc-900" : "bg-zinc-700",
@@ -101,7 +115,21 @@ const AnimationDetailsModal: React.FC<Props> = ({
                 ))}
               </ToggleGroup.Root>
             </div>
-            <code className="bg-zinc-900 pl-3 py-1 pr-1 flex items-center justify-between rounded-md text-sm mt-auto">
+            <div className="relative bg-zinc-900 px-3 py-1 mt-auto mb-2 rounded-md">
+              <pre className="max-h-[300px] overflow-auto">
+                <code
+                  className="text-sm"
+                  dangerouslySetInnerHTML={{ __html: codeHTML }}
+                />
+              </pre>
+              <button
+                className="rounded p-2 absolute top-2 right-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-none"
+                onClick={() => copyToClipboard(animation.animationClass)}
+              >
+                <Copy size={16} />
+              </button>
+            </div>
+            <code className="bg-zinc-900 pl-3 py-1 pr-1 flex items-center justify-between rounded-md text-sm">
               {modifiers.length
                 ? modifiers.map(
                     (modifier) => `${modifier}:${animation.animationClass} `
