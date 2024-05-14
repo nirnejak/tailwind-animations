@@ -6,9 +6,9 @@ import * as ToggleGroup from "@radix-ui/react-toggle-group"
 
 import { IAnimation } from "@/utils/animations"
 import copyToClipboard from "@/utils/copyToClipboard"
+import classNames from "@/utils/classNames"
 
 import Button, { IColorVariants } from "./atoms/Button"
-import classNames from "@/utils/classNames"
 
 interface Props {
   animation: IAnimation

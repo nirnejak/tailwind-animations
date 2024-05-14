@@ -1,7 +1,7 @@
 import * as React from "react"
 import Link from "next/link"
 
-import { GithubFill } from "akar-icons"
+import { GithubFill, LinkOut } from "akar-icons"
 
 import Container from "./Container"
 
@@ -15,7 +15,7 @@ const Header: React.FC = () => {
             <span className="font-semibold">Animations</span>
           </Link>
           <div className="flex">
-            <Link
+            {/* <Link
               href={"https://github.com/nirnejak/tailwind-animations/"}
               target="_blank"
             >
@@ -25,7 +25,17 @@ const Header: React.FC = () => {
                   <GithubFill size={16} />
                 </span>
               </button>
-            </Link>
+            </Link> */}
+            <p className="text-sm">
+              <span>Designed and built by </span>
+              <Link
+                href={"https://nirnejak.com/"}
+                target="_blank"
+                className="underline underline-offset-4 hover:no-underline"
+              >
+                Jitendra Nirnejak
+              </Link>
+            </p>
           </div>
         </div>
       </Container>
