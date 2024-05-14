@@ -74,8 +74,8 @@ const AnimationDetailsModal: React.FC<Props> = ({
             <div className="flex gap-2">
               <button
                 className={classNames(
-                  isAlwaysEnabled ? "bg-zinc-950" : "bg-zinc-700",
-                  "hover:bg-zinc-900 py-3 px-6 text-base leading-4 rounded-lg focus:outline-none"
+                  isAlwaysEnabled ? "bg-zinc-900" : "bg-zinc-700",
+                  "hover:bg-zinc-950 py-3 px-6 text-base leading-4 rounded-lg focus:outline-none"
                 )}
                 onClick={() => setModifiers([])}
               >
@@ -84,14 +84,14 @@ const AnimationDetailsModal: React.FC<Props> = ({
               <ToggleGroup.Root
                 className="inline-flex rounded space-x-px"
                 type="multiple"
-                defaultValue={modifiers}
+                value={modifiers}
                 onValueChange={setModifiers}
                 aria-label="Button Themes"
               >
                 {allModifiers.map((modifier, index) => (
                   <ToggleGroup.Item
                     key={index}
-                    className="hover:bg-zinc-900 data-[state=on]:bg-zinc-950 flex p-3 items-center justify-center bg-zinc-700 text-base leading-4 first:rounded-l-lg last:rounded-r-lg focus:z-10 focus:outline-none"
+                    className="hover:bg-zinc-950 data-[state=on]:bg-zinc-900 flex p-3 items-center justify-center bg-zinc-700 text-base leading-4 first:rounded-l-lg last:rounded-r-lg focus:z-10 focus:outline-none"
                     value={modifier}
                     aria-label={`${modifier}`}
                     title={modifier}
