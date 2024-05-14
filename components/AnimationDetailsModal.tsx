@@ -87,11 +87,11 @@ const AnimationDetailsModal: React.FC<Props> = ({
       onClick={onClose}
     >
       <div
-        className="bg-zinc-800 rounded-xl p-5 w-[780px]"
+        className="bg-zinc-800 rounded-xl p-5 w-[820px]"
         onClick={handleCardClick}
       >
         <div className="mb-3 flex justify-between">
-          <p>{animation.title}</p>
+          <p className="text-zinc-200">{animation.title}</p>
           <button
             onClick={onClose}
             className="rounded-full bg-zinc-700 p-1 -mt-1 -mr-1 hover:bg-zinc-900/40"
@@ -99,7 +99,7 @@ const AnimationDetailsModal: React.FC<Props> = ({
             <XSmall />
           </button>
         </div>
-        <div className="flex gap-4">
+        <div className="flex gap-5">
           <div className="flex-1">
             <div className="rounded-xl bg-zinc-900 text-center px-18 pb-20 pt-24 relative">
               <Button variant={color} className={animation.animationClass}>
@@ -115,7 +115,7 @@ const AnimationDetailsModal: React.FC<Props> = ({
           </div>
           <div className="flex-1 flex flex-col">
             <div className="mb-5">
-              <p className="mb-2 font-sm">When to animate:</p>
+              <p className="mb-2 text-zinc-200">When to animate:</p>
               <div className="flex gap-4">
                 {allModifiers.map((modifier, index) => (
                   <label
@@ -158,7 +158,7 @@ const AnimationDetailsModal: React.FC<Props> = ({
             </div>
             {codeHTML && (
               <div className="mb-5">
-                <p className="mb-2 font-sm">Tailwind Config:</p>
+                <p className="mb-2 text-zinc-200">Tailwind Config:</p>
                 <div className="relative bg-zinc-900 px-3 py-1 rounded-md">
                   <pre className="max-h-[300px] max-w-[400px] overflow-auto">
                     <code
@@ -176,7 +176,7 @@ const AnimationDetailsModal: React.FC<Props> = ({
               </div>
             )}
             <div className={codeHTML ? "" : "mt-auto"}>
-              <p className="mb-2 font-sm">Class Name:</p>
+              <p className="mb-2 text-zinc-200">Class Name:</p>
               <code className="bg-zinc-900 pl-3 py-1 pr-1 flex items-center justify-between rounded-md text-sm leading-7 min-w-[400px]">
                 {modifiers.length
                   ? modifiers.map(
