@@ -22,6 +22,19 @@ const AnimationDetailsModal: React.FC<Props> = ({
   color,
   onClose,
 }) => {
+  React.useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        onClose()
+      }
+    }
+
+    window.addEventListener("keyup", handleKeyDown)
+    return () => {
+      window.removeEventListener("keyup", handleKeyDown)
+    }
+  }, [])
+
   const handleCardClick = (e) => {
     e.stopPropagation()
   }
