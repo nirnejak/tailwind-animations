@@ -1,12 +1,11 @@
 import * as React from "react"
 
 import { highlight } from "sugar-high"
-import { Copy, Telescope } from "akar-icons"
-import * as ToggleGroup from "@radix-ui/react-toggle-group"
+import { Check, Copy, Telescope } from "akar-icons"
+import * as Checkbox from "@radix-ui/react-checkbox"
 
 import { IAnimation } from "@/utils/animations"
 import copyToClipboard from "@/utils/copyToClipboard"
-import classNames from "@/utils/classNames"
 
 import Button, { IColorVariants } from "./atoms/Button"
 
@@ -62,6 +61,16 @@ const AnimationDetailsModal: React.FC<Props> = ({
     e.stopPropagation()
   }
 
+  const handleCheckedChange = (checked: boolean, modifier: string) => {
+    if (checked) {
+      setModifiers([...modifiers, modifier])
+    } else {
+      setModifiers((modifiers) => {
+        return modifiers.filter((m) => m !== modifier)
+      })
+    }
+  }
+
   return (
     <div
       className="fixed left-0 top-0 z-max h-screen w-full bg-zinc-900/30 backdrop-blur-lg grid place-content-center"
@@ -85,35 +94,54 @@ const AnimationDetailsModal: React.FC<Props> = ({
                 </span>
               </p>
             </div>
-            <div className="flex gap-2 justify-center">
-              <button
-                className={classNames(
-                  isAlwaysEnabled ? "bg-zinc-900" : "bg-zinc-700",
-                  "hover:bg-zinc-950 py-3 px-6 text-base leading-4 rounded-lg focus:outline-none"
-                )}
-                onClick={() => setModifiers([])}
-              >
-                Always
-              </button>
-              <ToggleGroup.Root
-                className="inline-flex rounded space-x-px"
-                type="multiple"
-                value={modifiers}
-                onValueChange={setModifiers}
-                aria-label="Button Themes"
-              >
+            <div>
+              <p className="mb-2 font-sm">When to animate:</p>
+              <div className="flex gap-2">
                 {allModifiers.map((modifier, index) => (
-                  <ToggleGroup.Item
-                    key={index}
-                    className="hover:bg-zinc-950 data-[state=on]:bg-zinc-900 flex p-3 items-center justify-center bg-zinc-700 text-base leading-4 first:rounded-l-lg last:rounded-r-lg focus:z-10 focus:outline-none"
-                    value={modifier}
-                    aria-label={`${modifier}`}
-                    title={modifier}
-                  >
-                    <div className="capitalize px-3">{modifier}</div>
-                  </ToggleGroup.Item>
+                  <div className="flex items-center gap-2">
+                    <Checkbox.Root
+                      className="hover:bg-zinc-950 flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-[4px] bg-zinc-700 outline-none"
+                      checked={modifiers.includes(modifier)}
+                      onCheckedChange={(checked: boolean) =>
+                        handleCheckedChange(checked, modifier)
+                      }
+                      id={`${modifier}-id`}
+                    >
+                      <Checkbox.Indicator
+                        className={`text-${color}-500 bg-zinc-700`}
+                      >
+                        <Check />
+                      </Checkbox.Indicator>
+                    </Checkbox.Root>
+                    <label
+                      className="text-sm leading-none text-zinc-400 capitalize"
+                      htmlFor={`${modifier}-id`}
+                    >
+                      {modifier}
+                    </label>
+                  </div>
                 ))}
-              </ToggleGroup.Root>
+                <div className="flex items-center gap-2 ml-7">
+                  <Checkbox.Root
+                    className="hover:bg-zinc-950 flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-[4px] bg-zinc-700 outline-none"
+                    checked={isAlwaysEnabled}
+                    onCheckedChange={() => setModifiers([])}
+                    id="is-always-enabled"
+                  >
+                    <Checkbox.Indicator
+                      className={`text-${color}-500 bg-zinc-700`}
+                    >
+                      <Check />
+                    </Checkbox.Indicator>
+                  </Checkbox.Root>
+                  <label
+                    className="text-sm leading-none text-zinc-400"
+                    htmlFor="is-always-enabled"
+                  >
+                    Always
+                  </label>
+                </div>
+              </div>
             </div>
           </div>
           <div className="flex-1 flex flex-col">
