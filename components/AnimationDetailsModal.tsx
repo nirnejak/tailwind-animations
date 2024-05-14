@@ -30,8 +30,10 @@ const AnimationDetailsModal: React.FC<Props> = ({
       }
     }
 
+    document.body.style.overflow = "hidden"
     window.addEventListener("keyup", handleKeyDown)
     return () => {
+      document.body.style.overflow = "unset"
       window.removeEventListener("keyup", handleKeyDown)
     }
   }, [])
