@@ -5,7 +5,7 @@ export interface IAnimation {
   tailwindAnimationProperty: Record<string, any> | null
 }
 
-export const animations: IAnimation[] = [
+export const allAnimations: IAnimation[] = [
   {
     title: "Spin",
     animationClass: "animate-spin",

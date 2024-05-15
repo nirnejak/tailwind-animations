@@ -2,6 +2,8 @@ import * as React from "react"
 import type { Viewport } from "next"
 import { Inter } from "next/font/google"
 
+import { Toaster } from "sonner"
+
 import classNames from "utils/classNames"
 
 import Footer from "components/Footer"
@@ -9,7 +11,6 @@ import Header from "components/Header"
 import Container from "components/Container"
 
 import "../styles/main.css"
-import { Toaster } from "sonner"
 
 const sansFont = Inter({
   variable: "--sans-font",

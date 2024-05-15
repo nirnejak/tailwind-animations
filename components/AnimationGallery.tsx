@@ -3,7 +3,7 @@ import * as React from "react"
 
 import { Search } from "akar-icons"
 
-import { IAnimation, animations } from "utils/animations"
+import { IAnimation, allAnimations } from "utils/animations"
 
 import ColorSelector from "./atoms/ColorSelector"
 import { IColorVariants } from "./atoms/Button"
@@ -37,7 +37,7 @@ const AnimationGallery: React.FC<Props> = () => {
             />
           </div>
           <div className="grid grid-cols-5 gap-3 mt-5">
-            {animations
+            {allAnimations
               .filter((animation) =>
                 animation.title
                   .toLocaleLowerCase()
