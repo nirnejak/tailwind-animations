@@ -25,6 +25,21 @@ const FeedbackWidget: React.FC = () => {
     setIsWidgetOpen(false)
   })
 
+  React.useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setIsWidgetOpen(false)
+      }
+    }
+
+    if (isWidgetOpen) {
+      window.addEventListener("keyup", handleKeyDown)
+    }
+    return () => {
+      window.removeEventListener("keyup", handleKeyDown)
+    }
+  }, [isWidgetOpen])
+
   const [formState, setFormState] = React.useState(defaultFormState)
   const [isSending, setIsSending] = React.useState(false)
   const [isSent, setIsSent] = React.useState(false)
