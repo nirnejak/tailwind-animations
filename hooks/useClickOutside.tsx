@@ -2,7 +2,7 @@ import * as React from "react"
 
 type Event = MouseEvent | TouchEvent
 
-const useClickOutside = <T extends HTMLElement = HTMLElement>(
+const useClickOutside = <T extends HTMLDivElement = HTMLDivElement>(
   ref: React.RefObject<T>,
   handler: (event: Event) => void
 ): void => {
