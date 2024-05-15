@@ -18,7 +18,6 @@ interface Props {
 
 const Textarea: React.FC<Props> = ({
   id,
-  type,
   value,
   checked,
   required,
