@@ -12,7 +12,8 @@ interface ResponseDataType {
 }
 
 const defaultFormState = {
-  name: "",
+  title: "",
+  email: "",
   description: "",
 }
 
@@ -72,20 +73,29 @@ const FeedbackWidget: React.FC = () => {
         }}
       >
         <form onSubmit={handleSubmit}>
-          <p className="text-zinc-300 mb-2">Request Animation</p>
+          <p className="text-zinc-300 mb-2">Feedback or Request Animation</p>
 
           <Input
-            id="animation-name"
+            id="title"
             type="text"
-            placeholder="Animation Name"
-            value={formState.name}
+            placeholder="Title"
+            value={formState.title}
             onChange={handleChange}
-            name="name"
+            name="title"
             className="mb-2"
             required
           />
+          <Input
+            id="email"
+            type="email"
+            placeholder="Email(optional)"
+            value={formState.email}
+            onChange={handleChange}
+            name="email"
+            className="mb-2"
+          />
           <Textarea
-            id="animation-description"
+            id="description"
             placeholder="Description and/or links.."
             value={formState.description}
             onChange={handleChange}
