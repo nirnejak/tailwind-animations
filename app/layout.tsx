@@ -1,6 +1,6 @@
 import * as React from "react"
 import type { Viewport } from "next"
-import { Inter } from "next/font/google"
+import localFont from "next/font/local"
 
 import classNames from "utils/classNames"
 
@@ -11,9 +11,18 @@ import FeedbackWidget from "components/FeedbackWidget"
 
 import "../styles/main.css"
 
-const sansFont = Inter({
+const sansFont = localFont({
   variable: "--sans-font",
-  subsets: ["latin"],
+  src: [
+    {
+      path: "../fonts/GeneralSans-Variable.ttf",
+      style: "normal",
+    },
+    {
+      path: "../fonts/GeneralSans-VariableItalic.ttf",
+      style: "italic",
+    },
+  ],
 })
 
 export const viewport: Viewport = {

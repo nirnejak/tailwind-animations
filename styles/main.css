@@ -4,6 +4,7 @@
 
 * {
   @apply font-sans;
+  font-weight: 450;
 }
 
 :root {
