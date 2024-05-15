@@ -34,6 +34,8 @@ const animationClasses = [
   "animate-flash",
   "animate-rubber-band",
   "animate-shake",
+  "animate-shake",
+  "animate-shake",
   "animate-swing",
   "animate-scale",
   "animate-rise",
@@ -47,6 +49,16 @@ const animationClasses = [
   "animate-slide-right-and-fade",
 ]
 
+const modifiers = ["hover", "focus", "active"]
+
+const animationClassesWithModifier = animationClasses
+
+animationClasses.forEach((cls) => {
+  modifiers.forEach((m) => {
+    animationClassesWithModifier.push(`${m}:${cls}`)
+  })
+})
+
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -54,7 +66,7 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   safelist: [
-    ...animationClasses,
+    ...animationClassesWithModifier,
     ...usedColors.map((c) => `text-${c}-50`),
     ...usedColors.map((c) => `text-${c}-100`),
     ...usedColors.map((c) => `text-${c}-200`),

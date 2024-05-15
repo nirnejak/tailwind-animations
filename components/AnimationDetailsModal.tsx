@@ -108,7 +108,7 @@ const AnimationDetailsModal: React.FC<Props> = ({
         <div className="flex gap-5">
           <div className="flex-1">
             <div className="rounded-xl bg-zinc-900 text-center px-18 pb-20 pt-24 relative">
-              <Button variant={color} className={animation.animationClass}>
+              <Button variant={color} className={animationClassName}>
                 Click Me
               </Button>
               <p className="text-zinc-600 absolute left-1/2 bottom-3 -translate-x-1/2 text-sm flex items-center gap-1">
