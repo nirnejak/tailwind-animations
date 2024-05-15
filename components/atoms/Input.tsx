@@ -69,9 +69,7 @@ const Input: React.FC<Props> = ({
           <div className="mb-1 text-xs font-medium text-zinc-700">{label}</div>
         )}
         {typeof icon !== "undefined" && (
-          <span className="absolute left-4 top-[15px] text-zinc-400">
-            {icon}
-          </span>
+          <span className="absolute left-4 top-3 text-zinc-400">{icon}</span>
         )}
         <input
           id={id}
