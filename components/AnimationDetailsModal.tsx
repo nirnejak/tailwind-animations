@@ -127,6 +127,7 @@ const AnimationDetailsModal: React.FC<Props> = ({
                   <label
                     className="text-sm leading-none text-zinc-400 capitalize flex items-center gap-2"
                     htmlFor={`${modifier}-id`}
+                    key={index}
                   >
                     <Checkbox.Root
                       className="hover:bg-zinc-900/40 flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-md bg-zinc-700 outline-none"

@@ -43,8 +43,9 @@ const AnimationGallery: React.FC<Props> = () => {
                   .toLocaleLowerCase()
                   .includes(search.toLocaleLowerCase())
               )
-              .map((animation) => (
+              .map((animation, index) => (
                 <AnimationCard
+                  key={index}
                   color={color}
                   animation={animation}
                   setSelectedAnimation={setSelectedAnimation}

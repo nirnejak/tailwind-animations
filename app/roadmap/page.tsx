@@ -29,7 +29,10 @@ const Roadmap: React.FC = () => {
         <h1 className="text-xl mb-20">Roadmap</h1>
         <div className="flex flex-col gap-2 mb-40">
           {features.map((feature, index) => (
-            <div className="text-sm leading-none text-zinc-400 flex items-center gap-2">
+            <div
+              key={index}
+              className="text-sm leading-none text-zinc-400 flex items-center gap-2"
+            >
               <CircleCheckFill size={15} />
               {feature.title}
             </div>
