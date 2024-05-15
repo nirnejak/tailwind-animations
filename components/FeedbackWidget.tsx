@@ -90,7 +90,7 @@ const FeedbackWidget: React.FC = () => {
         }}
       >
         <form onSubmit={handleSubmit}>
-          <p className="text-zinc-300 mb-2">Feedback or Request Animation</p>
+          <p className="text-zinc-100 mb-3">Feedback or Request Animation</p>
 
           <Input
             id="title"
