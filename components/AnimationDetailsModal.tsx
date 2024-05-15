@@ -115,7 +115,7 @@ const AnimationDetailsModal: React.FC<Props> = ({
                 Click Me
               </Button>
               <p className="text-zinc-600 absolute left-1/2 bottom-3 -translate-x-1/2 text-sm flex items-center gap-1">
-                <span>Preview</span>
+                <span className="select-none">Preview</span>
                 <span>
                   <Telescope size={14} />
                 </span>
