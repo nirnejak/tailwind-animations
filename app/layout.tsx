@@ -9,6 +9,7 @@ import Header from "components/Header"
 import Container from "components/Container"
 
 import "../styles/main.css"
+import { Toaster } from "sonner"
 
 const sansFont = Inter({
   variable: "--sans-font",
@@ -48,6 +49,7 @@ const RootLayout: React.FC<Props> = ({ children }) => {
         <Header />
         {children}
         <Footer />
+        <Toaster />
       </body>
     </html>
   )
