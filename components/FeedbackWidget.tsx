@@ -5,6 +5,7 @@ import useClickOutside from "@/hooks/useClickOutside"
 
 import Input from "./atoms/Input"
 import Button from "./atoms/Button"
+import Textarea from "./atoms/Textarea"
 
 interface ResponseDataType {
   ok: boolean
@@ -81,16 +82,18 @@ const FeedbackWidget: React.FC = () => {
             onChange={handleChange}
             name="name"
             className="mb-2"
+            required
           />
-          <textarea
-            id="animation-name"
+          <Textarea
+            id="animation-description"
             placeholder="Description and/or links.."
-            className="w-full rounded-lg text-zinc-300 px-4 py-2.5 text-sm bg-zinc-800 outline-none placeholder:text-zinc-500 mb-2"
             value={formState.description}
             onChange={handleChange}
             name="description"
+            required
+            className="mb-2"
           />
-          <Button type="submit" variant="purple" disabled={isSending}>
+          <Button type="submit" variant="violet" disabled={isSending}>
             {isSending ? "Sending..." : isSent ? "Sent!" : "Send Feedback"}
           </Button>
         </form>
@@ -99,12 +102,13 @@ const FeedbackWidget: React.FC = () => {
   } else {
     return (
       <>
-        <button
-          className="fixed bottom-4 right-4 bg-violet-600 rounded-full px-4 py-2 text-zinc-100 text-sm"
+        <Button
+          variant="violet"
           onClick={() => setIsWidgetOpen(true)}
+          className="fixed bottom-4 right-4"
         >
-          Request animation
-        </button>
+          Feedback
+        </Button>
       </>
     )
   }
