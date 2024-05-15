@@ -178,6 +178,7 @@ const AnimationDetailsModal: React.FC<Props> = ({
                   </pre>
                   <button
                     className="rounded p-2 absolute top-2 right-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-none"
+                    disabled={isConfigCopied}
                     onClick={() => {
                       copyToClipboard(code)
                       setIsConfigCopied(true)
@@ -197,6 +198,7 @@ const AnimationDetailsModal: React.FC<Props> = ({
                 {animationClassName}
                 <button
                   className="rounded p-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-none"
+                  disabled={isClassCopied}
                   onClick={() => {
                     copyToClipboard(animationClassName)
                     setIsClassCopied(true)
