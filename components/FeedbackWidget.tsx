@@ -1,13 +1,14 @@
 "use client"
 import * as React from "react"
+import Link from "next/link"
 
-import useClickOutside from "@/hooks/useClickOutside"
+import { GithubFill, ThumbsUp } from "akar-icons"
+
+import useClickOutside from "hooks/useClickOutside"
 
 import Input from "./atoms/Input"
 import Button from "./atoms/Button"
 import Textarea from "./atoms/Textarea"
-import Link from "next/link"
-import { GithubFill } from "akar-icons"
 
 interface ResponseDataType {
   ok: boolean
@@ -143,9 +144,10 @@ const FeedbackWidget: React.FC = () => {
         <Button
           variant="violet"
           onClick={() => setIsWidgetOpen(true)}
-          className="fixed bottom-4 right-4"
+          className="fixed bottom-4 right-4 flex items-center gap-1.5"
         >
-          Feedback
+          <span>Feedback</span>
+          <ThumbsUp size={15} />
         </Button>
       </>
     )
