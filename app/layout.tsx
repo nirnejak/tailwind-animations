@@ -2,8 +2,6 @@ import * as React from "react"
 import type { Viewport } from "next"
 import { Inter } from "next/font/google"
 
-import { Toaster } from "sonner"
-
 import classNames from "utils/classNames"
 
 import Footer from "components/Footer"
@@ -50,7 +48,6 @@ const RootLayout: React.FC<Props> = ({ children }) => {
         <Header />
         {children}
         <Footer />
-        <Toaster />
       </body>
     </html>
   )
