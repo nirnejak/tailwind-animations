@@ -32,6 +32,7 @@ const animationClasses = [
   "animate-bounce",
 
   "animate-flash",
+  "animate-rubber-band",
   "animate-shake",
   "animate-swing",
   "animate-scale",
@@ -120,6 +121,29 @@ const config: Config = {
             opacity: "0",
           },
         },
+        "rubber-band": {
+          from: {
+            transform: "scale3d(1, 1, 1)",
+          },
+          "30%": {
+            transform: "scale3d(1.25, 0.75, 1)",
+          },
+          "40%": {
+            transform: "scale3d(0.75, 1.25, 1)",
+          },
+          "50%": {
+            transform: "scale3d(1.15, 0.85, 1)",
+          },
+          "65%": {
+            transform: "scale3d(0.95, 1.05, 1)",
+          },
+          "75%": {
+            transform: "scale3d(1.05, 0.95, 1)",
+          },
+          to: {
+            transform: "scale3d(1, 1, 1)",
+          },
+        },
         swing: {
           from: { transform: "rotate(3deg)" },
           to: { transform: "rotate(-3deg)" },
@@ -164,6 +188,8 @@ const config: Config = {
         "slide-right":
           "slide-right 400ms infinite cubic-bezier(0.16, 1, 0.3, 1) alternate",
         flash: "flash 1s infinite cubic-bezier(0.4, 0, 0.2, 1) alternate",
+        "rubber-band":
+          "rubber-band 2s infinite cubic-bezier(0.4, 0, 0.2, 1) alternate",
         swing: "swing 400ms infinite ease-in-out alternate",
         scale: "scale 400ms infinite cubic-bezier(0.4, 0, 0.2, 1) alternate",
         rise: "rise 400ms infinite cubic-bezier(0.4, 0, 0.2, 1) alternate",
