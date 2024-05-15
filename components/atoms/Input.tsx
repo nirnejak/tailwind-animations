@@ -35,7 +35,7 @@ const Input: React.FC<Props> = ({
   placeholder,
   className,
   onChange,
-  label,
+  label = "",
   icon,
   ...restProps
 }) => {
@@ -66,10 +66,17 @@ const Input: React.FC<Props> = ({
     return (
       <label htmlFor={id} className="relative">
         {label !== "undefined" && (
-          <div className="mb-1 text-xs font-medium text-zinc-700">{label}</div>
+          <div className="mb-2 text-sm font-medium text-zinc-200">{label}</div>
         )}
         {typeof icon !== "undefined" && (
-          <span className="absolute left-4 top-3 text-zinc-400">{icon}</span>
+          <span
+            className={classNames(
+              label === "" ? "top-3" : "top-10",
+              "absolute left-4 text-zinc-400"
+            )}
+          >
+            {icon}
+          </span>
         )}
         <input
           id={id}
