@@ -5,6 +5,8 @@ export interface IAnimation {
   tailwindAnimationProperty: Record<string, any> | null
 }
 
+export const allModifiers = ["hover", "active", "focus"]
+
 export const allAnimations: IAnimation[] = [
   {
     title: "Spin",

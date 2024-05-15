@@ -4,7 +4,7 @@ import { highlight } from "sugar-high"
 import { Check, Copy, Telescope, XSmall } from "akar-icons"
 import * as Checkbox from "@radix-ui/react-checkbox"
 
-import { IAnimation } from "utils/animations"
+import { IAnimation, allModifiers } from "utils/animations"
 import copyToClipboard from "utils/copyToClipboard"
 
 import Button, { IColorVariants } from "./atoms/Button"
@@ -14,8 +14,6 @@ interface Props {
   color: IColorVariants
   onClose: () => void
 }
-
-const allModifiers = ["hover", "active", "focus"]
 
 const AnimationDetailsModal: React.FC<Props> = ({
   animation,
@@ -36,6 +34,9 @@ const AnimationDetailsModal: React.FC<Props> = ({
       window.removeEventListener("keyup", handleKeyDown)
     }
   }, [])
+
+  const [isClassCopied, setIsClassCopied] = React.useState(false)
+  const [isConfigCopied, setIsConfigCopied] = React.useState(false)
 
   const code = React.useMemo(() => {
     if (
@@ -58,33 +59,32 @@ const AnimationDetailsModal: React.FC<Props> = ({
       return ""
     }
   }, [animation])
-  const codeHTML = highlight(code)
 
-  const [modifiers, setModifiers] = React.useState<string[]>(["hover"])
+  const codeHTML = React.useMemo(() => {
+    return highlight(code)
+  }, [code])
 
+  const [selectedModifiers, setSelectedModifiers] = React.useState<string[]>([
+    "hover",
+  ])
   const isAlwaysEnabled = React.useMemo(
-    () => modifiers.length === 0,
-    [modifiers]
+    () => selectedModifiers.length === 0,
+    [selectedModifiers]
   )
 
   const animationClassName = React.useMemo(() => {
-    return modifiers.length
-      ? modifiers.map((m) => `${m}:${animation.animationClass}`).join(" ")
+    return selectedModifiers.length
+      ? selectedModifiers
+          .map((m) => `${m}:${animation.animationClass}`)
+          .join(" ")
       : animation.animationClass
-  }, [animation, modifiers])
-
-  const [isClassCopied, setIsClassCopied] = React.useState(false)
-  const [isConfigCopied, setIsConfigCopied] = React.useState(false)
-
-  const handleCardClick = (e) => {
-    e.stopPropagation()
-  }
+  }, [animation, selectedModifiers])
 
   const handleCheckedChange = (checked: boolean, modifier: string) => {
     if (checked) {
-      setModifiers([...modifiers, modifier])
+      setSelectedModifiers([...selectedModifiers, modifier])
     } else {
-      setModifiers((modifiers) => {
+      setSelectedModifiers((modifiers) => {
         return modifiers.filter((m) => m !== modifier)
       })
     }
@@ -97,7 +97,7 @@ const AnimationDetailsModal: React.FC<Props> = ({
     >
       <div
         className="bg-zinc-800 rounded-xl p-5 w-[820px]"
-        onClick={handleCardClick}
+        onClick={(e) => e.stopPropagation()}
       >
         <div className="mb-3 flex justify-between">
           <p className="text-zinc-200">{animation.title}</p>
@@ -134,7 +134,7 @@ const AnimationDetailsModal: React.FC<Props> = ({
                   >
                     <Checkbox.Root
                       className="hover:bg-zinc-900/40 flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-md bg-zinc-700 outline-none"
-                      checked={modifiers.includes(modifier)}
+                      checked={selectedModifiers.includes(modifier)}
                       onCheckedChange={(checked: boolean) =>
                         handleCheckedChange(checked, modifier)
                       }
@@ -155,7 +155,7 @@ const AnimationDetailsModal: React.FC<Props> = ({
                   <Checkbox.Root
                     className="hover:bg-zinc-900 flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-md bg-zinc-700 outline-none"
                     checked={isAlwaysEnabled}
-                    onCheckedChange={() => setModifiers([])}
+                    onCheckedChange={() => setSelectedModifiers([])}
                     id="is-always-enabled"
                   >
                     <Checkbox.Indicator className={`text-${color}-500`}>
