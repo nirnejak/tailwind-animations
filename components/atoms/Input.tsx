@@ -15,6 +15,7 @@ interface Props {
   id: string
   placeholder?: string
   className?: string
+  name?: string
   checked?: boolean
   value?: string
   label?: string
@@ -74,7 +75,7 @@ const Input: React.FC<Props> = ({
           className={classNames(
             className,
             typeof icon !== "undefined" && "pl-10",
-            "w-full rounded-lg border-[1px] text-zinc-400 px-4 py-3 text-sm bg-zinc-950 border-zinc-900 outline-none"
+            "w-full rounded-lg text-zinc-300 px-4 py-2.5 text-sm bg-zinc-800 outline-none placeholder:text-zinc-500"
           )}
           onChange={onChange}
           {...restProps}
