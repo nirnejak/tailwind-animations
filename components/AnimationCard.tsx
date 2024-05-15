@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Enlarge } from "akar-icons"
 
-import { IAnimation } from "@/utils/animations"
+import { IAnimation } from "utils/animations"
 
 import Button, { IColorVariants } from "./atoms/Button"
 

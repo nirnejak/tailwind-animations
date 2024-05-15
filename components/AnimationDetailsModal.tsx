@@ -4,8 +4,8 @@ import { highlight } from "sugar-high"
 import { Check, Copy, Telescope, XSmall } from "akar-icons"
 import * as Checkbox from "@radix-ui/react-checkbox"
 
-import { IAnimation } from "@/utils/animations"
-import copyToClipboard from "@/utils/copyToClipboard"
+import { IAnimation } from "utils/animations"
+import copyToClipboard from "utils/copyToClipboard"
 
 import Button, { IColorVariants } from "./atoms/Button"
 

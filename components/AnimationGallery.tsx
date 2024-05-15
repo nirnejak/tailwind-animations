@@ -3,7 +3,7 @@ import * as React from "react"
 
 import { Search } from "akar-icons"
 
-import { IAnimation, animations } from "@/utils/animations"
+import { IAnimation, animations } from "utils/animations"
 
 import ColorSelector from "./atoms/ColorSelector"
 import { IColorVariants } from "./atoms/Button"

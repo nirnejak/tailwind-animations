@@ -6,9 +6,9 @@ import classNames from "utils/classNames"
 
 import Footer from "components/Footer"
 import Header from "components/Header"
+import Container from "components/Container"
 
 import "../styles/main.css"
-import Container from "@/components/Container"
 
 const sansFont = Inter({
   variable: "--sans-font",
