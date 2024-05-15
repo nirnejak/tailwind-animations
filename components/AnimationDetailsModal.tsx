@@ -67,6 +67,12 @@ const AnimationDetailsModal: React.FC<Props> = ({
     [modifiers]
   )
 
+  const animationClassName = React.useMemo(() => {
+    return modifiers.length
+      ? modifiers.map((m) => `${m}:${animation.animationClass}`).join(" ")
+      : animation.animationClass
+  }, [animation, modifiers])
+
   const handleCardClick = (e) => {
     e.stopPropagation()
   }
@@ -178,14 +184,10 @@ const AnimationDetailsModal: React.FC<Props> = ({
             <div className={codeHTML ? "" : "mt-auto"}>
               <p className="mb-2 text-zinc-200">Class Name:</p>
               <code className="bg-zinc-900 pl-3 py-1 pr-1 flex items-center justify-between rounded-md text-sm leading-7 min-w-[400px]">
-                {modifiers.length
-                  ? modifiers.map(
-                      (modifier) => `${modifier}:${animation.animationClass} `
-                    )
-                  : animation.animationClass}
+                {animationClassName}
                 <button
                   className="rounded p-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-none"
-                  onClick={() => copyToClipboard(animation.animationClass)}
+                  onClick={() => copyToClipboard(animationClassName)}
                 >
                   <Copy size={16} />
                 </button>
