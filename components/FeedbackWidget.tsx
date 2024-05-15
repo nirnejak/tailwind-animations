@@ -6,6 +6,8 @@ import useClickOutside from "@/hooks/useClickOutside"
 import Input from "./atoms/Input"
 import Button from "./atoms/Button"
 import Textarea from "./atoms/Textarea"
+import Link from "next/link"
+import { GithubFill } from "akar-icons"
 
 interface ResponseDataType {
   ok: boolean
@@ -118,9 +120,20 @@ const FeedbackWidget: React.FC = () => {
             required
             className="mb-2"
           />
-          <Button type="submit" variant="violet" disabled={isSending}>
-            {isSending ? "Sending..." : isSent ? "Sent!" : "Send Feedback"}
-          </Button>
+          <div className="flex gap-4 items-center text-sm">
+            <Button type="submit" variant="violet" disabled={isSending}>
+              {isSending ? "Sending..." : isSent ? "Sent!" : "Send Feedback"}
+            </Button>
+            <span className="text-zinc-400">or</span>
+            <Link
+              href="https://github.com/nirnejak/tailwind-animations/issues/new"
+              className="text-zinc-400 flex items-center gap-1.5 hover:bg-zinc-800 rounded-lg px-4 py-2 transition-all"
+              target="_blank"
+            >
+              <GithubFill size={14} />
+              <span>Submit an Issue</span>
+            </Link>
+          </div>
         </form>
       </div>
     )
