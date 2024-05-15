@@ -17,6 +17,8 @@ interface Props {
   className?: string
   name?: string
   checked?: boolean
+  required?: boolean
+  disabled?: boolean
   value?: string
   label?: string
   icon?: JSX.Element
@@ -28,6 +30,8 @@ const Input: React.FC<Props> = ({
   type,
   value,
   checked,
+  required,
+  disabled,
   placeholder,
   className,
   onChange,
@@ -48,6 +52,8 @@ const Input: React.FC<Props> = ({
           checked={checked}
           placeholder={placeholder}
           onChange={onChange}
+          required={required}
+          disabled={disabled}
           className="mr-0.5 h-3.5 w-3.5 accent-zinc-800"
           {...restProps}
         />
@@ -78,6 +84,8 @@ const Input: React.FC<Props> = ({
             "w-full rounded-lg text-zinc-300 px-4 py-2.5 text-sm bg-zinc-800 outline-none placeholder:text-zinc-500"
           )}
           onChange={onChange}
+          required={required}
+          disabled={disabled}
           {...restProps}
         />
       </label>
