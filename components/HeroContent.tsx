@@ -7,12 +7,12 @@ interface Props {}
 const HeroContent: React.FC<Props> = () => {
   return (
     <Container className="my-40">
-      <h1 className="text-2xl mb-5 text-zinc-100">
+      <h1 className="text-4xl mb-5 text-zinc-100 font-medium">
         Copy Paste animations for TailwindCSS
       </h1>
       <p>
-        Explore a curated collection of Tailwind animation classes. Just copy
-        and paste them into your code.
+        Explore a curated collection of TailwindCSS animation classes. Just copy
+        and paste them into your code for free.
       </p>
     </Container>
   )
