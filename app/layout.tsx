@@ -41,7 +41,9 @@ const RootLayout: React.FC<Props> = ({ children }) => {
         )}
       >
         <div className="py-3 bg-violet-500 text-white text-xs px-3">
-          <Container>This project is still in development.</Container>
+          <Container className="text-center">
+            This project is still in development.
+          </Container>
         </div>
         <Header />
         {children}
