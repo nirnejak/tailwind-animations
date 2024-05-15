@@ -7,6 +7,7 @@ import classNames from "utils/classNames"
 import Footer from "components/Footer"
 import Header from "components/Header"
 import Container from "components/Container"
+import FeedbackWidget from "components/FeedbackWidget"
 
 import "../styles/main.css"
 
@@ -48,6 +49,8 @@ const RootLayout: React.FC<Props> = ({ children }) => {
         <Header />
         {children}
         <Footer />
+
+        <FeedbackWidget />
       </body>
     </html>
   )
