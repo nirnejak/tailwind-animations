@@ -32,6 +32,7 @@ interface Props {
   children: React.ReactNode
   type?: "reset" | "button" | "submit"
   className?: string
+  disabled?: boolean
   isBlock?: boolean
   onClick?: () => void
 }
@@ -42,6 +43,7 @@ const Button: React.FC<Props> = ({
   type = "button",
   className,
   onClick,
+  disabled,
   isBlock = false,
   ...props
 }) => {
@@ -68,6 +70,7 @@ const Button: React.FC<Props> = ({
         isBlock && "block",
         className
       )}
+      disabled={disabled}
       {...props}
     >
       {children}
