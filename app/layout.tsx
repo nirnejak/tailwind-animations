@@ -43,7 +43,8 @@ const RootLayout: React.FC<Props> = ({ children }) => {
       >
         <div className="py-3 bg-violet-500 text-white text-xs px-3">
           <Container className="text-center">
-            This project is still in development.
+            This project is still in development. Please take a minute to submit
+            your feedback!
           </Container>
         </div>
         <Header />
