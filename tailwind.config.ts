@@ -31,6 +31,7 @@ const animationClasses = [
   "animate-pulse",
   "animate-bounce",
 
+  "animate-flash",
   "animate-shake",
   "animate-swing",
   "animate-scale",
@@ -111,6 +112,14 @@ const config: Config = {
           from: { transform: "translateX(10px)" },
           to: { transform: "translateX(0)" },
         },
+        flash: {
+          "from, 50%, to": {
+            opacity: "1",
+          },
+          "25%, 75%": {
+            opacity: "0",
+          },
+        },
         swing: {
           from: { transform: "rotate(3deg)" },
           to: { transform: "rotate(-3deg)" },
@@ -154,6 +163,7 @@ const config: Config = {
           "slide-left 400ms infinite cubic-bezier(0.16, 1, 0.3, 1) alternate",
         "slide-right":
           "slide-right 400ms infinite cubic-bezier(0.16, 1, 0.3, 1) alternate",
+        flash: "flash 1s infinite cubic-bezier(0.4, 0, 0.2, 1) alternate",
         swing: "swing 400ms infinite ease-in-out alternate",
         scale: "scale 400ms infinite cubic-bezier(0.4, 0, 0.2, 1) alternate",
         rise: "rise 400ms infinite cubic-bezier(0.4, 0, 0.2, 1) alternate",

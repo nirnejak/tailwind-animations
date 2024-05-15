@@ -31,6 +31,23 @@ export const animations: IAnimation[] = [
     tailwindAnimationProperty: null,
   },
   {
+    title: "Flash",
+    animationClass: "animate-flash",
+    tailwindKeyframesProperty: {
+      flash: {
+        "from, 50%, to": {
+          opacity: "1",
+        },
+        "25%, 75%": {
+          opacity: "0",
+        },
+      },
+    },
+    tailwindAnimationProperty: {
+      flash: "flash 400ms infinite cubic-bezier(0.4, 0, 0.2, 1) alternate",
+    },
+  },
+  {
     title: "Shake",
     animationClass: "animate-shake",
     tailwindKeyframesProperty: {
