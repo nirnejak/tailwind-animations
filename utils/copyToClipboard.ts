@@ -3,9 +3,7 @@ import { toast } from "sonner"
 const copyToClipboard = (link): void => {
   navigator.clipboard
     .writeText(link)
-    .then(() => {
-      toast("Copied to clipboard")
-    })
+    .then(() => {})
     .catch((error) => {
       toast.error("Unable to copy")
       console.log(error)

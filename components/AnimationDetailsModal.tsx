@@ -73,6 +73,9 @@ const AnimationDetailsModal: React.FC<Props> = ({
       : animation.animationClass
   }, [animation, modifiers])
 
+  const [isClassCopied, setIsClassCopied] = React.useState(false)
+  const [isConfigCopied, setIsConfigCopied] = React.useState(false)
+
   const handleCardClick = (e) => {
     e.stopPropagation()
   }
@@ -175,9 +178,15 @@ const AnimationDetailsModal: React.FC<Props> = ({
                   </pre>
                   <button
                     className="rounded p-2 absolute top-2 right-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-none"
-                    onClick={() => copyToClipboard(animation.animationClass)}
+                    onClick={() => {
+                      copyToClipboard(code)
+                      setIsConfigCopied(true)
+                      setTimeout(() => {
+                        setIsConfigCopied(false)
+                      }, 3000)
+                    }}
                   >
-                    <Copy size={16} />
+                    {isConfigCopied ? <Check size={16} /> : <Copy size={16} />}
                   </button>
                 </div>
               </div>
@@ -188,9 +197,15 @@ const AnimationDetailsModal: React.FC<Props> = ({
                 {animationClassName}
                 <button
                   className="rounded p-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-none"
-                  onClick={() => copyToClipboard(animationClassName)}
+                  onClick={() => {
+                    copyToClipboard(animationClassName)
+                    setIsClassCopied(true)
+                    setTimeout(() => {
+                      setIsClassCopied(false)
+                    }, 3000)
+                  }}
                 >
-                  <Copy size={16} />
+                  {isClassCopied ? <Check size={16} /> : <Copy size={16} />}
                 </button>
               </code>
             </div>
