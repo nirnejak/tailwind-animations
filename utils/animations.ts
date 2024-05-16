@@ -5,6 +5,9 @@ export interface IAnimation {
   tailwindAnimationProperty: Record<string, any> | null
 }
 
+// TODO: Base animation class - to update upon
+// TODO: Display animation class - to show in gallery
+
 export const allModifiers = ["hover", "active", "focus"]
 
 export const allAnimations: IAnimation[] = [
