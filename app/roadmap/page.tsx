@@ -18,8 +18,9 @@ export const metadata: Metadata = generateMetadata({
 })
 
 const features = [
-  { title: "Request an animation", isReleased: false },
+  { title: "Request an animation", isReleased: true },
   { title: "Examples Section", isReleased: false },
+  { title: "SVG Animations", isReleased: false },
 ]
 
 const Roadmap: React.FC = () => {
