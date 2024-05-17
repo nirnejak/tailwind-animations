@@ -140,16 +140,14 @@ const FeedbackWidget: React.FC = () => {
     )
   } else {
     return (
-      <>
-        <Button
-          variant="violet"
-          onClick={() => setIsWidgetOpen(true)}
-          className="fixed bottom-4 right-4 flex items-center gap-1.5"
-        >
-          <span>Feedback</span>
-          <ThumbsUp size={15} />
-        </Button>
-      </>
+      <Button
+        variant="violet"
+        onClick={() => setIsWidgetOpen(true)}
+        className="fixed bottom-4 right-4 w-[120px] flex items-center justify-center gap-1.5"
+      >
+        <span>Feedback</span>
+        <ThumbsUp size={15} />
+      </Button>
     )
   }
 }
