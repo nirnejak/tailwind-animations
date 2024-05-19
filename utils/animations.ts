@@ -49,7 +49,7 @@ export const allAnimations: IAnimation[] = [
       },
     },
     tailwindAnimationProperty: {
-      flash: "flash 1s infinite cubic-bezier(0.4, 0, 0.2, 1) alternate",
+      flash: "flash 1s cubic-bezier(0.4, 0, 0.2, 1)",
     },
   },
   {
@@ -81,8 +81,7 @@ export const allAnimations: IAnimation[] = [
       },
     },
     tailwindAnimationProperty: {
-      "rubber-band":
-        "rubber-band 2s infinite cubic-bezier(0.4, 0, 0.2, 1) alternate",
+      "rubber-band": "rubber-band 2s cubic-bezier(0.4, 0, 0.2, 1)",
     },
   },
   {
@@ -104,7 +103,7 @@ export const allAnimations: IAnimation[] = [
       },
     },
     tailwindAnimationProperty: {
-      shake: "shake 400ms infinite cubic-bezier(0.4, 0, 0.2, 1) alternate",
+      shake: "shake 400ms cubic-bezier(0.4, 0, 0.2, 1)",
     },
   },
   {
@@ -117,7 +116,7 @@ export const allAnimations: IAnimation[] = [
       },
     },
     tailwindAnimationProperty: {
-      swing: "swing 400ms infinite ease-in-out alternate",
+      swing: "swing 400ms ease-in-out",
     },
   },
   {
@@ -130,7 +129,7 @@ export const allAnimations: IAnimation[] = [
       },
     },
     tailwindAnimationProperty: {
-      scale: "scale 400ms infinite cubic-bezier(0.4, 0, 0.2, 1) alternate",
+      scale: "scale 400ms cubic-bezier(0.4, 0, 0.2, 1)",
     },
   },
   {
@@ -143,7 +142,7 @@ export const allAnimations: IAnimation[] = [
       },
     },
     tailwindAnimationProperty: {
-      rise: "rise 400ms infinite cubic-bezier(0.4, 0, 0.2, 1) alternate",
+      rise: "rise 400ms cubic-bezier(0.4, 0, 0.2, 1)",
     },
   },
   {
@@ -156,8 +155,7 @@ export const allAnimations: IAnimation[] = [
       },
     },
     tailwindAnimationProperty: {
-      "slide-up":
-        "slide-up 400ms infinite cubic-bezier(0.16, 1, 0.3, 1) alternate",
+      "slide-up": "slide-up 400ms cubic-bezier(0.16, 1, 0.3, 1)",
     },
   },
   {
@@ -170,8 +168,7 @@ export const allAnimations: IAnimation[] = [
       },
     },
     tailwindAnimationProperty: {
-      "slide-down":
-        "slide-down 400ms infinite cubic-bezier(0.16, 1, 0.3, 1) alternate",
+      "slide-down": "slide-down 400ms cubic-bezier(0.16, 1, 0.3, 1)",
     },
   },
   {
@@ -184,8 +181,7 @@ export const allAnimations: IAnimation[] = [
       },
     },
     tailwindAnimationProperty: {
-      "slide-left":
-        "slide-left 400ms infinite cubic-bezier(0.16, 1, 0.3, 1) alternate",
+      "slide-left": "slide-left 400ms cubic-bezier(0.16, 1, 0.3, 1)",
     },
   },
   {
@@ -198,8 +194,7 @@ export const allAnimations: IAnimation[] = [
       },
     },
     tailwindAnimationProperty: {
-      "slide-right":
-        "slide-right 400ms infinite cubic-bezier(0.16, 1, 0.3, 1) alternate",
+      "slide-right": "slide-right 400ms cubic-bezier(0.16, 1, 0.3, 1)",
     },
   },
   {
@@ -213,7 +208,7 @@ export const allAnimations: IAnimation[] = [
     },
     tailwindAnimationProperty: {
       "slide-down-and-fade":
-        "slide-down-and-fade 400ms infinite cubic-bezier(0.16, 1, 0.3, 1) alternate",
+        "slide-down-and-fade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
     },
   },
   {
@@ -227,7 +222,7 @@ export const allAnimations: IAnimation[] = [
     },
     tailwindAnimationProperty: {
       "slide-left-and-fade":
-        "slide-left-and-fade 400ms infinite cubic-bezier(0.16, 1, 0.3, 1) alternate",
+        "slide-left-and-fade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
     },
   },
   {
@@ -241,7 +236,7 @@ export const allAnimations: IAnimation[] = [
     },
     tailwindAnimationProperty: {
       "slide-up-and-fade":
-        "slide-up-and-fade 400ms infinite cubic-bezier(0.16, 1, 0.3, 1) alternate",
+        "slide-up-and-fade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
     },
   },
   {
@@ -255,7 +250,7 @@ export const allAnimations: IAnimation[] = [
     },
     tailwindAnimationProperty: {
       "slide-right-and-fade":
-        "slide-right-and-fade 400ms infinite cubic-bezier(0.16, 1, 0.3, 1) alternate",
+        "slide-right-and-fade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
     },
   },
 ]
