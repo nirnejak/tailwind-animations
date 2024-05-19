@@ -28,10 +28,14 @@ const AnimationCard: React.FC<Props> = ({
       <Button
         variant={color}
         className={animation.animationClass}
-        style={{
-          animationDirection: "alternate",
-          animationIterationCount: "infinite",
-        }}
+        style={
+          animation.tailwindAnimationProperty
+            ? {
+                animationDirection: "alternate",
+                animationIterationCount: "infinite",
+              }
+            : {}
+        }
       >
         Click Me
       </Button>
