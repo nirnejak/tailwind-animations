@@ -96,7 +96,7 @@ const AnimationDetailsModal: React.FC<Props> = ({
       onClick={onClose}
     >
       <div
-        className="bg-zinc-800 rounded-xl p-5 w-[820px]"
+        className="bg-zinc-800 rounded-xl p-5 w-[820px] animate-rise"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="mb-3 flex justify-between">
