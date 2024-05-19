@@ -25,7 +25,14 @@ const AnimationCard: React.FC<Props> = ({
         <Enlarge size={16} />
       </button>
       <p className="text-sm absolute top-4 left-5">{animation.title}</p>
-      <Button variant={color} className={animation.animationClass}>
+      <Button
+        variant={color}
+        className={animation.animationClass}
+        style={{
+          animationDirection: "alternate",
+          animationIterationCount: "infinite",
+        }}
+      >
         Click Me
       </Button>
     </div>
