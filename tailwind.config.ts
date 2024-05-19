@@ -184,28 +184,23 @@ const config: Config = {
       },
       animation: {
         "slide-down-and-fade":
-          "slide-down-and-fade 400ms infinite cubic-bezier(0.16, 1, 0.3, 1) alternate",
+          "slide-down-and-fade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
         "slide-left-and-fade":
-          "slide-left-and-fade 400ms infinite cubic-bezier(0.16, 1, 0.3, 1) alternate",
+          "slide-left-and-fade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
         "slide-up-and-fade":
-          "slide-up-and-fade 400ms infinite cubic-bezier(0.16, 1, 0.3, 1) alternate",
+          "slide-up-and-fade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
         "slide-right-and-fade":
-          "slide-right-and-fade 400ms infinite cubic-bezier(0.16, 1, 0.3, 1) alternate",
-        "slide-down":
-          "slide-down 400ms infinite cubic-bezier(0.16, 1, 0.3, 1) alternate",
-        "slide-up":
-          "slide-up 400ms infinite cubic-bezier(0.16, 1, 0.3, 1) alternate",
-        "slide-left":
-          "slide-left 400ms infinite cubic-bezier(0.16, 1, 0.3, 1) alternate",
-        "slide-right":
-          "slide-right 400ms infinite cubic-bezier(0.16, 1, 0.3, 1) alternate",
-        flash: "flash 1s infinite cubic-bezier(0.4, 0, 0.2, 1) alternate",
-        "rubber-band":
-          "rubber-band 2s infinite cubic-bezier(0.4, 0, 0.2, 1) alternate",
-        swing: "swing 400ms infinite ease-in-out alternate",
-        scale: "scale 400ms infinite cubic-bezier(0.4, 0, 0.2, 1) alternate",
-        rise: "rise 400ms infinite cubic-bezier(0.4, 0, 0.2, 1) alternate",
-        shake: "shake 400ms infinite cubic-bezier(0.4, 0, 0.2, 1) alternate",
+          "slide-right-and-fade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "slide-down": "slide-down 400ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "slide-up": "slide-up 400ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "slide-left": "slide-left 400ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "slide-right": "slide-right 400ms cubic-bezier(0.16, 1, 0.3, 1)",
+        flash: "flash 1s cubic-bezier(0.4, 0, 0.2, 1)",
+        "rubber-band": "rubber-band 2s cubic-bezier(0.4, 0, 0.2, 1)",
+        swing: "swing 400ms ease-in-out",
+        scale: "scale 400ms cubic-bezier(0.4, 0, 0.2, 1)",
+        rise: "rise 400ms cubic-bezier(0.4, 0, 0.2, 1)",
+        shake: "shake 400ms cubic-bezier(0.4, 0, 0.2, 1)",
       },
     },
     fontFamily: {
