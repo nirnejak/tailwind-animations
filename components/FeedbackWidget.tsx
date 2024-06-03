@@ -1,14 +1,13 @@
 "use client"
 import * as React from "react"
-import Link from "next/link"
 
 import { GithubFill, ThumbsUp } from "akar-icons"
+import Link from "next/link"
 
-import useClickOutside from "hooks/useClickOutside"
-
-import Input from "./atoms/Input"
 import Button from "./atoms/Button"
+import Input from "./atoms/Input"
 import Textarea from "./atoms/Textarea"
+import useClickOutside from "hooks/useClickOutside"
 
 interface ResponseDataType {
   ok: boolean
@@ -29,7 +28,7 @@ const FeedbackWidget: React.FC = () => {
   })
 
   React.useEffect(() => {
-    const handleKeyDown = (e) => {
+    const handleKeyDown = (e): void => {
       if (e.key === "Escape") {
         setIsWidgetOpen(false)
       }
@@ -49,7 +48,7 @@ const FeedbackWidget: React.FC = () => {
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  ): void => {
     setFormState({
       ...formState,
       [e.target.name]: e.target.value,
@@ -84,14 +83,14 @@ const FeedbackWidget: React.FC = () => {
     return (
       <div
         ref={ref}
-        className="fixed bottom-4 right-4 bg-zinc-700 rounded-lg text-sm p-5 animate-scale min-w-[400px] max-w-[400px]"
+        className="fixed bottom-4 right-4 min-w-[400px] max-w-[400px] animate-scale rounded-lg bg-zinc-700 p-5 text-sm"
         style={{
           animationIterationCount: "1",
           transformOrigin: "bottom right",
         }}
       >
         <form onSubmit={handleSubmit}>
-          <p className="text-zinc-100 mb-3">Feedback or Request Animation</p>
+          <p className="mb-3 text-zinc-100">Feedback or Request Animation</p>
 
           <Input
             id="title"
@@ -121,14 +120,14 @@ const FeedbackWidget: React.FC = () => {
             required
             className="mb-2"
           />
-          <div className="flex gap-4 items-center text-sm">
+          <div className="flex items-center gap-4 text-sm">
             <Button type="submit" variant="violet" disabled={isSending}>
               {isSending ? "Sending..." : isSent ? "Sent!" : "Send Feedback"}
             </Button>
             <span className="text-zinc-400">or</span>
             <Link
               href="https://github.com/nirnejak/tailwind-animations/issues/new"
-              className="text-zinc-400 flex items-center gap-1.5 hover:bg-zinc-800 rounded-lg px-4 py-2 transition-all"
+              className="flex items-center gap-1.5 rounded-lg px-4 py-2 text-zinc-400 transition-all hover:bg-zinc-800"
               target="_blank"
             >
               <GithubFill size={14} />
@@ -142,8 +141,10 @@ const FeedbackWidget: React.FC = () => {
     return (
       <Button
         variant="violet"
-        onClick={() => setIsWidgetOpen(true)}
-        className="fixed bottom-4 right-4 w-[120px] flex items-center justify-center gap-1.5"
+        onClick={() => {
+          setIsWidgetOpen(true)
+        }}
+        className="fixed bottom-4 right-4 flex w-[120px] items-center justify-center gap-1.5"
       >
         <span>Feedback</span>
         <ThumbsUp size={15} />

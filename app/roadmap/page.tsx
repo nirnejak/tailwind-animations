@@ -1,13 +1,13 @@
 import * as React from "react"
-import Link from "next/link"
+
 import { type Metadata } from "next"
 
 import { ArrowRight, CircleCheckFill } from "akar-icons"
+import Link from "next/link"
 
-import generateMetadata from "utils/seo"
-
-import Container from "components/Container"
 import Button from "components/atoms/Button"
+import Container from "components/Container"
+import generateMetadata from "utils/seo"
 
 export const metadata: Metadata = generateMetadata({
   path: "/",
@@ -27,12 +27,12 @@ const Roadmap: React.FC = () => {
   return (
     <>
       <Container className="my-40">
-        <h1 className="text-xl mb-20">Roadmap</h1>
-        <div className="flex flex-col gap-2 mb-40">
+        <h1 className="mb-20 text-xl">Roadmap</h1>
+        <div className="mb-40 flex flex-col gap-2">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="text-sm leading-none text-zinc-400 flex items-center gap-2"
+              className="flex items-center gap-2 text-sm leading-none text-zinc-400"
             >
               <CircleCheckFill size={15} />
               {feature.title}
@@ -41,7 +41,7 @@ const Roadmap: React.FC = () => {
         </div>
         <div>
           <Link href={"/"}>
-            <Button variant="purple" className="flex gap-2 items-center">
+            <Button variant="purple" className="flex items-center gap-2">
               <span>Visit</span>
               <ArrowRight size={14} />
             </Button>

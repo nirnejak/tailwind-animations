@@ -3,19 +3,15 @@ import * as React from "react"
 
 import { Search } from "akar-icons"
 
-import { IAnimation, allAnimations } from "utils/animations"
-
-import ColorSelector from "./atoms/ColorSelector"
-import { IColorVariants } from "./atoms/Button"
-import Input from "./atoms/Input"
-
 import AnimationCard from "./AnimationCard"
-import Container from "./Container"
 import AnimationDetailsModal from "./AnimationDetailsModal"
+import { type IColorVariants } from "./atoms/Button"
+import ColorSelector from "./atoms/ColorSelector"
+import Input from "./atoms/Input"
+import Container from "./Container"
+import { type IAnimation, allAnimations } from "utils/animations"
 
-interface Props {}
-
-const AnimationGallery: React.FC<Props> = () => {
+const AnimationGallery: React.FC = () => {
   const [color, setColor] = React.useState<IColorVariants>("violet")
   const [search, setSearch] = React.useState("")
   const [selectedAnimation, setSelectedAnimation] =
@@ -32,11 +28,13 @@ const AnimationGallery: React.FC<Props> = () => {
               id="search-input"
               placeholder="Search Animation..."
               value={search}
-              onChange={(e) => setSearch(e.target.value)}
+              onChange={(e) => {
+                setSearch(e.target.value)
+              }}
               icon={<Search size={15} />}
             />
           </div>
-          <div className="grid grid-cols-5 gap-3 mt-5">
+          <div className="mt-5 grid grid-cols-5 gap-3">
             {allAnimations
               .filter((animation) =>
                 animation.title
@@ -54,11 +52,13 @@ const AnimationGallery: React.FC<Props> = () => {
           </div>
         </div>
       </Container>
-      {selectedAnimation && (
+      {selectedAnimation !== null && (
         <AnimationDetailsModal
           animation={selectedAnimation}
           color={color}
-          onClose={() => setSelectedAnimation(null)}
+          onClose={() => {
+            setSelectedAnimation(null)
+          }}
         />
       )}
     </>

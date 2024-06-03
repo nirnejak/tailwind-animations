@@ -1,9 +1,9 @@
 import * as React from "react"
+
 import { Enlarge } from "akar-icons"
 
-import { IAnimation } from "utils/animations"
-
-import Button, { IColorVariants } from "./atoms/Button"
+import Button, { type IColorVariants } from "./atoms/Button"
+import { type IAnimation } from "utils/animations"
 
 interface Props {
   color: IColorVariants
@@ -17,19 +17,21 @@ const AnimationCard: React.FC<Props> = ({
   setSelectedAnimation,
 }) => {
   return (
-    <div className="rounded-xl bg-zinc-800 text-center px-18 pb-20 pt-24 relative">
+    <div className="relative rounded-xl bg-zinc-800 px-16 pb-20 pt-24 text-center">
       <button
-        className="absolute top-2 right-2 rounded-md p-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-none"
-        onClick={() => setSelectedAnimation(animation)}
+        className="absolute right-2 top-2 rounded-md p-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-none"
+        onClick={() => {
+          setSelectedAnimation(animation)
+        }}
       >
         <Enlarge size={16} />
       </button>
-      <p className="text-sm absolute top-4 left-5">{animation.title}</p>
+      <p className="absolute left-5 top-4 text-sm">{animation.title}</p>
       <Button
         variant={color}
         className={animation.animationClass}
         style={
-          animation.tailwindAnimationProperty
+          animation.tailwindAnimationProperty === null
             ? {
                 animationDirection: "alternate",
                 animationIterationCount: "infinite",

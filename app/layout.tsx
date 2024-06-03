@@ -1,13 +1,14 @@
 import * as React from "react"
+
 import type { Viewport } from "next"
+
 import localFont from "next/font/local"
 
-import classNames from "utils/classNames"
-
-import Footer from "components/Footer"
-import Header from "components/Header"
 import Container from "components/Container"
 import FeedbackWidget from "components/FeedbackWidget"
+import Footer from "components/Footer"
+import Header from "components/Header"
+import classNames from "utils/classNames"
 
 import "../styles/main.css"
 
@@ -50,7 +51,7 @@ const RootLayout: React.FC<Props> = ({ children }) => {
           "overflow-x-hidden bg-zinc-900 text-zinc-400 font-sans"
         )}
       >
-        <div className="py-3 bg-violet-500 text-white text-xs px-3">
+        <div className="bg-violet-500 p-3 text-xs text-white">
           <Container className="text-center">
             This project is still in development. Please take a minute to submit
             your feedback!
