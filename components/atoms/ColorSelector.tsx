@@ -36,7 +36,7 @@ const ColorSelector: React.FC<Props> = ({ color, setColor }) => {
   return (
     <div>
       <ToggleGroup.Root
-        className="inline-flex bg-mauve6 rounded space-x-px"
+        className="inline-flex space-x-px rounded"
         type="single"
         defaultValue={color}
         onValueChange={setColor}
@@ -45,12 +45,12 @@ const ColorSelector: React.FC<Props> = ({ color, setColor }) => {
         {colorOptions.map((color, index) => (
           <ToggleGroup.Item
             key={index}
-            className="hover:bg-zinc-950 data-[state=on]:bg-zinc-700 flex p-3 items-center justify-center bg-zinc-800 text-base leading-4 first:rounded-l-lg last:rounded-r-lg focus:z-10 focus:outline-none"
+            className="flex items-center justify-center bg-zinc-800 p-3 text-base leading-4 first:rounded-l-lg last:rounded-r-lg hover:bg-zinc-950 focus:z-10 focus:outline-none data-[state=on]:bg-zinc-700"
             value={color}
             aria-label={`${color} Theme`}
             title={color}
           >
-            <div className={`rounded-full bg-${color}-600 h-[20px] w-[20px]`} />
+            <div className={`rounded-full${color}-600 size-[20px]`} />
           </ToggleGroup.Item>
         ))}
       </ToggleGroup.Root>

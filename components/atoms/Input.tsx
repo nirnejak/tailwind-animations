@@ -54,11 +54,11 @@ const Input: React.FC<Props> = ({
           onChange={onChange}
           required={required}
           disabled={disabled}
-          className="mr-0.5 h-3.5 w-3.5 accent-zinc-800"
+          className="mr-0.5 size-3.5 accent-zinc-800"
           {...restProps}
         />
         {label !== "undefined" && (
-          <span className="text-sm bg-zinc-700">{label}</span>
+          <span className="bg-zinc-700 text-sm">{label}</span>
         )}
       </label>
     )
