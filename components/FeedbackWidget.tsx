@@ -90,7 +90,7 @@ const FeedbackWidget: React.FC = () => {
         }}
       >
         <form onSubmit={handleSubmit}>
-          <p className="mb-3 text-zinc-100">Feedback or Request Animation</p>
+          <p className="mb-4 text-zinc-100">Feedback or Request Animation</p>
 
           <Input
             id="title"
@@ -121,7 +121,7 @@ const FeedbackWidget: React.FC = () => {
             className="mb-2"
           />
           <div className="flex items-center gap-4 text-sm">
-            <Button type="submit" variant="violet" disabled={isSending}>
+            <Button type="submit" disabled={isSending}>
               {isSending ? "Sending..." : isSent ? "Sent!" : "Send Feedback"}
             </Button>
             <span className="text-zinc-400">or</span>
@@ -140,7 +140,6 @@ const FeedbackWidget: React.FC = () => {
   } else {
     return (
       <Button
-        variant="violet"
         onClick={() => {
           setIsWidgetOpen(true)
         }}
