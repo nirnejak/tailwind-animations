@@ -1,6 +1,6 @@
-const copyToClipboard = (link): void => {
+const copyToClipboard = (content: string): void => {
   navigator.clipboard
-    .writeText(link)
+    .writeText(content)
     .then(() => {})
     .catch((error) => {
       console.log(error)
