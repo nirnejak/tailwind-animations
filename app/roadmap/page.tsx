@@ -2,7 +2,7 @@ import * as React from "react"
 
 import { type Metadata } from "next"
 
-import { ArrowRight, CircleCheckFill } from "akar-icons"
+import { ArrowRight, CircleCheckFill, CircleMinusFill } from "akar-icons"
 import Link from "next/link"
 
 import Button from "components/atoms/Button"
@@ -27,21 +27,24 @@ const Roadmap: React.FC = () => {
   return (
     <>
       <Container className="my-40">
-        <h1 className="mb-20 text-xl">Roadmap</h1>
+        <h1 className="mb-20 text-6xl font-medium leading-tight text-zinc-100">
+          Roadmap
+        </h1>
         <div className="mb-40 flex flex-col gap-2">
           {features.map((feature, index) => (
-            <div
-              key={index}
-              className="flex items-center gap-2 text-sm leading-none text-zinc-400"
-            >
-              <CircleCheckFill size={15} />
+            <div key={index} className="flex items-center gap-2 leading-none">
+              {feature.isReleased ? (
+                <CircleCheckFill size={15} />
+              ) : (
+                <CircleMinusFill size={15} />
+              )}
               {feature.title}
             </div>
           ))}
         </div>
         <div>
           <Link href={"/"}>
-            <Button variant="purple" className="flex items-center gap-2">
+            <Button className="flex items-center gap-2">
               <span>Visit</span>
               <ArrowRight size={14} />
             </Button>
