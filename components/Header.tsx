@@ -11,7 +11,13 @@ const Header: React.FC = () => {
     <motion.header
       initial={{ opacity: 0, translateY: "-100%" }}
       animate={{ opacity: 1, translateY: 0 }}
-      transition={{ duration: 1, delay: 0.4, type: "spring" }}
+      transition={{
+        duration: 1,
+        delay: 0.4,
+        type: "spring",
+        stiffness: 400,
+        damping: 30,
+      }}
     >
       <Container className="mt-5">
         <div className="flex items-center justify-between">
