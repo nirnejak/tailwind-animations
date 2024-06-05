@@ -2,17 +2,15 @@ import * as React from "react"
 
 import { Enlarge } from "akar-icons"
 
-import Button, { type IColorVariants } from "./atoms/Button"
+import Button from "./atoms/Button"
 import { type IAnimation } from "utils/animations"
 
 interface Props {
-  color: IColorVariants
   animation: IAnimation
   setSelectedAnimation: (animation: IAnimation) => void
 }
 
 const AnimationCard: React.FC<Props> = ({
-  color,
   animation,
   setSelectedAnimation,
 }) => {
@@ -28,7 +26,6 @@ const AnimationCard: React.FC<Props> = ({
       </button>
       <p className="absolute left-5 top-4 text-sm">{animation.title}</p>
       <Button
-        variant={color}
         className={animation.animationClass}
         style={
           animation.tailwindAnimationProperty === null

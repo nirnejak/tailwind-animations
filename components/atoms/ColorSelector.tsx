@@ -7,7 +7,31 @@ interface Props {
   setColor: (val) => void
 }
 
-const colorOptions = [
+export type IColorVariants =
+  | "slate"
+  | "gray"
+  | "zinc"
+  | "neutral"
+  | "stone"
+  | "red"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "green"
+  | "emerald"
+  | "teal"
+  | "cyan"
+  | "sky"
+  | "blue"
+  | "indigo"
+  | "violet"
+  | "purple"
+  | "fuchsia"
+  | "pink"
+  | "rose"
+
+const colorOptions: IColorVariants[] = [
   "slate",
   "gray",
   "zinc",
@@ -50,7 +74,7 @@ const ColorSelector: React.FC<Props> = ({ color, setColor }) => {
             aria-label={`${color} Theme`}
             title={color}
           >
-            <div className={`rounded-full${color}-600 size-[20px]`} />
+            <div className={`rounded-full ${color}-600 size-[20px]`} />
           </ToggleGroup.Item>
         ))}
       </ToggleGroup.Root>

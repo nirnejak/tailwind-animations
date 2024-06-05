@@ -1,30 +1,5 @@
 import type { Config } from "tailwindcss"
 
-const usedColors = [
-  "slate",
-  "gray",
-  "zinc",
-  "neutral",
-  "stone",
-  "red",
-  "orange",
-  "amber",
-  "yellow",
-  "lime",
-  "green",
-  "emerald",
-  "teal",
-  "cyan",
-  "sky",
-  "blue",
-  "indigo",
-  "violet",
-  "purple",
-  "fuchsia",
-  "pink",
-  "rose",
-]
-
 const animationClasses = [
   "animate-spin",
   "animate-ping",
@@ -65,31 +40,7 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  safelist: [
-    ...animationClassesWithModifier,
-    ...usedColors.map((c) => `text-${c}-50`),
-    ...usedColors.map((c) => `text-${c}-100`),
-    ...usedColors.map((c) => `text-${c}-200`),
-    ...usedColors.map((c) => `text-${c}-300`),
-    ...usedColors.map((c) => `text-${c}-400`),
-    ...usedColors.map((c) => `text-${c}-500`),
-    ...usedColors.map((c) => `text-${c}-600`),
-    ...usedColors.map((c) => `text-${c}-700`),
-    ...usedColors.map((c) => `text-${c}-800`),
-    ...usedColors.map((c) => `text-${c}-900`),
-    ...usedColors.map((c) => `text-${c}-950`),
-    ...usedColors.map((c) => `bg-${c}-50`),
-    ...usedColors.map((c) => `bg-${c}-100`),
-    ...usedColors.map((c) => `bg-${c}-200`),
-    ...usedColors.map((c) => `bg-${c}-300`),
-    ...usedColors.map((c) => `bg-${c}-400`),
-    ...usedColors.map((c) => `bg-${c}-500`),
-    ...usedColors.map((c) => `bg-${c}-600`),
-    ...usedColors.map((c) => `bg-${c}-700`),
-    ...usedColors.map((c) => `bg-${c}-800`),
-    ...usedColors.map((c) => `bg-${c}-900`),
-    ...usedColors.map((c) => `bg-${c}-950`),
-  ],
+  safelist: animationClassesWithModifier,
   theme: {
     extend: {
       keyframes: {

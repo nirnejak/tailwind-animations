@@ -3,32 +3,8 @@ import * as React from "react"
 
 import classNames from "utils/classNames"
 
-export type IColorVariants =
-  | "slate"
-  | "gray"
-  | "zinc"
-  | "neutral"
-  | "stone"
-  | "red"
-  | "orange"
-  | "amber"
-  | "yellow"
-  | "lime"
-  | "green"
-  | "emerald"
-  | "teal"
-  | "cyan"
-  | "sky"
-  | "blue"
-  | "indigo"
-  | "violet"
-  | "purple"
-  | "fuchsia"
-  | "pink"
-  | "rose"
-
 interface Props {
-  variant?: IColorVariants
+  variant?: "primary" | "light" | "dark"
   children: React.ReactNode
   type?: "reset" | "button" | "submit"
   className?: string
@@ -39,7 +15,7 @@ interface Props {
 }
 
 const Button: React.FC<Props> = ({
-  variant = "violet",
+  variant = "primary",
   children,
   type = "button",
   className,
@@ -50,7 +26,11 @@ const Button: React.FC<Props> = ({
   ...props
 }) => {
   const buttonStyleClassName = React.useMemo(() => {
-    return `bg-${variant}-600 text-${variant}-50 hover:bg-${variant}-700 focus:bg-${variant}-700`
+    switch (variant) {
+      case "primary":
+      default:
+        return `bg-violet-600 text-violet-50 hover:bg-violet-700 focus:bg-violet-700`
+    }
   }, [variant])
 
   return (
