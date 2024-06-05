@@ -33,7 +33,11 @@ const AnimationCard: React.FC<Props> = ({
                 animationDirection: "alternate",
                 animationIterationCount: "infinite",
               }
-            : {}
+            : {
+                /* TODO: pull this value from config */
+                animationDirection: "alternate",
+                animationIterationCount: "infinite",
+              }
         }
       >
         Click Me
