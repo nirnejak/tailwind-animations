@@ -12,7 +12,7 @@ const HeroContent: React.FC = () => {
         initial={{ opacity: 0, translateY: 10 }}
         animate={{ opacity: 1, translateY: 0 }}
         transition={{ duration: 1, type: "spring" }}
-        className="mb-5 text-6xl font-medium leading-tight text-zinc-100"
+        className="mx-auto mb-5 max-w-[800px] text-7xl font-semibold leading-tight text-zinc-100"
       >
         Copy Paste animations for TailwindCSS
       </motion.h1>
