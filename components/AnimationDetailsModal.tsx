@@ -185,7 +185,7 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
                 <div className="relative rounded-md bg-zinc-900 px-3 py-1">
                   <pre className="max-h-[300px] max-w-[400px] overflow-auto">
                     <code
-                      className="text-sm"
+                      className="font-mono text-sm"
                       dangerouslySetInnerHTML={{ __html: codeHTML }}
                     />
                   </pre>

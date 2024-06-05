@@ -25,6 +25,16 @@ const sansFont = localFont({
   ],
 })
 
+const monoFont = localFont({
+  variable: "--mono-font",
+  src: [
+    {
+      path: "../fonts/JetBrainsMono-Regular.ttf",
+      style: "normal",
+    },
+  ],
+})
+
 export const viewport: Viewport = {
   themeColor: "#000000",
 }
@@ -47,6 +57,7 @@ const RootLayout: React.FC<Props> = ({ children }) => {
       <body
         className={classNames(
           sansFont.variable,
+          monoFont.variable,
           "overflow-x-hidden bg-zinc-900 text-zinc-400 font-sans"
         )}
       >
