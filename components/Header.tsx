@@ -20,7 +20,7 @@ const Header: React.FC = () => {
       }}
     >
       <Container className="mt-5">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col items-center justify-between gap-3 md:flex-row">
           <Link href={"/"} className="flex text-zinc-100">
             <span className="font-light">Tailwind</span>
             <span className="font-semibold">Animations</span>

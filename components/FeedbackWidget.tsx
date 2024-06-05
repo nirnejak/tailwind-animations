@@ -83,7 +83,7 @@ const FeedbackWidget: React.FC = () => {
     return (
       <div
         ref={ref}
-        className="fixed bottom-4 right-4 min-w-[400px] max-w-[400px] animate-scale rounded-lg bg-zinc-700 p-5 text-sm"
+        className="fixed bottom-4 right-4 max-w-[400px] animate-scale rounded-lg bg-zinc-700 p-5 text-sm md:min-w-[400px]"
         style={{
           animationIterationCount: "1",
           transformOrigin: "bottom right",
