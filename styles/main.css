@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 * {
-  @apply font-sans;
   font-weight: 450;
 
   -webkit-font-smoothing: antialiased;
