@@ -15,7 +15,7 @@ interface Props {
 
 const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
   React.useEffect(() => {
-    const handleKeyDown = (e) => {
+    const handleKeyDown = (e): void => {
       if (e.key === "Escape") {
         onClose()
       }
@@ -41,8 +41,8 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
 
   const code = React.useMemo(() => {
     if (
-      animation.tailwindKeyframesProperty &&
-      animation.tailwindAnimationProperty
+      animation.tailwindKeyframesProperty !== null &&
+      animation.tailwindAnimationProperty !== null
     ) {
       return JSON.stringify(
         {
@@ -81,7 +81,7 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
       : animation.animationClass
   }, [animation, selectedModifiers])
 
-  const handleCheckedChange = (checked: boolean, modifier: string) => {
+  const handleCheckedChange = (checked: boolean, modifier: string): void => {
     if (checked) {
       setSelectedModifiers([...selectedModifiers, modifier])
     } else {
@@ -124,7 +124,12 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
         <div className="flex gap-5">
           <div className="flex-1">
             <div className="relative rounded-xl bg-zinc-900 pb-20 pt-24 text-center">
-              <Button className={animationClassName}>Click Me</Button>
+              <Button
+                className={animationClassName}
+                style={{ animationIterationCount, animationDirection }}
+              >
+                Click Me
+              </Button>
               <p className="absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-1 text-sm text-zinc-600">
                 <span className="select-none">Preview</span>
                 <span>
@@ -176,6 +181,51 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
                     </Checkbox.Indicator>
                   </Checkbox.Root>
                   Always
+                </label>
+              </div>
+            </div>
+            <div className="mb-5">
+              <p className="mb-2 text-zinc-200">Behavior:</p>
+              <div className="flex gap-4">
+                <label
+                  className="flex items-center gap-2 text-sm leading-none text-zinc-400"
+                  htmlFor="is-playing-infinite"
+                >
+                  <Checkbox.Root
+                    className="flex size-[25px] appearance-none items-center justify-center rounded-md bg-zinc-700 outline-none hover:bg-zinc-900"
+                    checked={animationIterationCount === "infinite"}
+                    onCheckedChange={(checked) => {
+                      setAnimationIterationCount(
+                        checked === true ? "infinite" : 1
+                      )
+                    }}
+                    id="is-playing-infinite"
+                  >
+                    <Checkbox.Indicator className="text-violet-500">
+                      <Check size={15} />
+                    </Checkbox.Indicator>
+                  </Checkbox.Root>
+                  Play Infinite
+                </label>
+                <label
+                  className="flex items-center gap-2 text-sm leading-none text-zinc-400"
+                  htmlFor="alternate-animation"
+                >
+                  <Checkbox.Root
+                    className="flex size-[25px] appearance-none items-center justify-center rounded-md bg-zinc-700 outline-none hover:bg-zinc-900"
+                    checked={animationDirection === "alternate"}
+                    onCheckedChange={(checked) => {
+                      setAnimationDirection(
+                        checked === true ? "alternate" : "normal"
+                      )
+                    }}
+                    id="alternate-animation"
+                  >
+                    <Checkbox.Indicator className="text-violet-500">
+                      <Check size={15} />
+                    </Checkbox.Indicator>
+                  </Checkbox.Root>
+                  Alternate
                 </label>
               </div>
             </div>
