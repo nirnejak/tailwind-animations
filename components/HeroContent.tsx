@@ -11,7 +11,12 @@ const HeroContent: React.FC = () => {
       <motion.h1
         initial={{ opacity: 0, translateY: 10 }}
         animate={{ opacity: 1, translateY: 0 }}
-        transition={{ duration: 1, type: "spring" }}
+        transition={{
+          duration: 1,
+          type: "spring",
+          stiffness: 400,
+          damping: 5,
+        }}
         className="mx-auto mb-5 max-w-[800px] text-7xl font-semibold leading-tight text-zinc-100"
       >
         Copy Paste animations for TailwindCSS
@@ -19,7 +24,13 @@ const HeroContent: React.FC = () => {
       <motion.p
         initial={{ opacity: 0, translateY: 10 }}
         animate={{ opacity: 1, translateY: 0 }}
-        transition={{ duration: 1, delay: 0.2, type: "spring" }}
+        transition={{
+          duration: 1,
+          delay: 0.2,
+          type: "spring",
+          stiffness: 400,
+          damping: 5,
+        }}
         className="mx-auto max-w-[560px] text-xl"
       >
         Explore a curated collection of TailwindCSS animation classes. Just copy
