@@ -14,8 +14,8 @@ const HeroContent: React.FC = () => {
         transition={{
           duration: 1,
           type: "spring",
-          stiffness: 400,
-          damping: 5,
+          stiffness: 1000,
+          damping: 15,
         }}
         className="mx-auto mb-5 max-w-[800px] text-7xl font-semibold leading-tight text-zinc-100"
       >
@@ -28,8 +28,8 @@ const HeroContent: React.FC = () => {
           duration: 1,
           delay: 0.2,
           type: "spring",
-          stiffness: 400,
-          damping: 5,
+          stiffness: 1000,
+          damping: 15,
         }}
         className="mx-auto max-w-[560px] text-xl"
       >
