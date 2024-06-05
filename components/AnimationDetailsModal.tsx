@@ -207,7 +207,7 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
             )}
             <div className={codeHTML.length > 0 ? "" : "mt-auto"}>
               <p className="mb-2 text-zinc-200">Class Name:</p>
-              <code className="flex min-w-[400px] items-center justify-between rounded-md bg-zinc-900 py-1 pl-3 pr-1 text-sm leading-7">
+              <code className="flex min-w-[400px] items-center justify-between rounded-md bg-zinc-900 py-1 pl-3 pr-1 font-mono text-sm leading-7">
                 {animationClassName}
                 <button
                   className="rounded p-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-none"

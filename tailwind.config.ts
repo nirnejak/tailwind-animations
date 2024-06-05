@@ -156,6 +156,7 @@ const config: Config = {
     },
     fontFamily: {
       sans: ["var(--sans-font)"],
+      mono: ["monospace"],
     },
   },
   variants: {
