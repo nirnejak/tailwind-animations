@@ -40,7 +40,7 @@ const AnimationCard: React.FC<Props> = ({
               }
         }
       >
-        Click Me
+        Button
       </Button>
     </div>
   )

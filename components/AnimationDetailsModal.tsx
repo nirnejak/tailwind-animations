@@ -128,7 +128,7 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
                 className={animationClassName}
                 style={{ animationIterationCount, animationDirection }}
               >
-                Click Me
+                Button
               </Button>
               <p className="absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-1 text-sm text-zinc-600">
                 <span className="select-none">Preview</span>
