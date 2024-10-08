@@ -29,7 +29,7 @@ const Button: React.FC<Props> = ({
     switch (variant) {
       case "primary":
       default:
-        return `bg-violet-600 text-violet-50 hover:bg-violet-700 focus:bg-violet-700`
+        return `bg-neutral-200 text-neutral-800 hover:bg-neutral-300 focus:bg-neutral-300`
     }
   }, [variant])
 

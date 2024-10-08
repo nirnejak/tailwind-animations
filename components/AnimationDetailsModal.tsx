@@ -156,7 +156,7 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
                       }}
                       id={`${modifier}-id`}
                     >
-                      <Checkbox.Indicator className="text-violet-500">
+                      <Checkbox.Indicator className="text-neutral-300">
                         <Check size={15} />
                       </Checkbox.Indicator>
                     </Checkbox.Root>
@@ -176,7 +176,7 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
                     }}
                     id="is-always-enabled"
                   >
-                    <Checkbox.Indicator className="text-violet-500">
+                    <Checkbox.Indicator className="text-neutral-300">
                       <Check size={15} />
                     </Checkbox.Indicator>
                   </Checkbox.Root>
@@ -201,7 +201,7 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
                     }}
                     id="is-playing-infinite"
                   >
-                    <Checkbox.Indicator className="text-violet-500">
+                    <Checkbox.Indicator className="text-neutral-300">
                       <Check size={15} />
                     </Checkbox.Indicator>
                   </Checkbox.Root>
@@ -221,7 +221,7 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
                     }}
                     id="alternate-animation"
                   >
-                    <Checkbox.Indicator className="text-violet-500">
+                    <Checkbox.Indicator className="text-neutral-300">
                       <Check size={15} />
                     </Checkbox.Indicator>
                   </Checkbox.Root>
