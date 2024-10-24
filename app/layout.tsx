@@ -5,7 +5,6 @@ import type { Viewport } from "next"
 import localFont from "next/font/local"
 
 import FeedbackWidget from "components/FeedbackWidget"
-import Footer from "components/Footer"
 import Header from "components/Header"
 import classNames from "utils/classNames"
 
@@ -63,7 +62,6 @@ const RootLayout: React.FC<Props> = ({ children }) => {
       >
         <Header />
         {children}
-        <Footer />
 
         <FeedbackWidget />
       </body>
