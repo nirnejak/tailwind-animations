@@ -1,7 +1,6 @@
-"use client"
 import * as React from "react"
 
-import { motion } from "framer-motion"
+import * as motion from "framer-motion/client"
 
 import Container from "components/Container"
 
