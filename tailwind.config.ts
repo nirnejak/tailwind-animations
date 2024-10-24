@@ -41,6 +41,12 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   safelist: animationClassesWithModifier,
+  container: {
+    center: true,
+    screens: {
+      "2xl": "1200px",
+    },
+  },
   theme: {
     extend: {
       keyframes: {
