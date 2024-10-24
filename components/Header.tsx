@@ -1,10 +1,7 @@
-"use client"
 import * as React from "react"
 
-import { motion } from "framer-motion"
+import * as motion from "framer-motion/client"
 import Link from "next/link"
-
-import Container from "./Container"
 
 const Header: React.FC = () => {
   return (
@@ -19,7 +16,7 @@ const Header: React.FC = () => {
         damping: 30,
       }}
     >
-      <Container className="mt-5">
+      <div className="mx-auto mt-5 max-w-[1080px] px-4">
         <div className="flex flex-col items-center justify-between gap-3 md:flex-row">
           <Link href={"/"} className="flex text-zinc-100">
             <span className="font-light">Tailwind</span>
@@ -36,7 +33,7 @@ const Header: React.FC = () => {
             </Link>
           </p>
         </div>
-      </Container>
+      </div>
     </motion.header>
   )
 }
