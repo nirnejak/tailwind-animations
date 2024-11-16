@@ -20,10 +20,9 @@ const defaultFormState = {
 }
 
 const FeedbackWidget: React.FC = () => {
-  const ref = React.useRef<HTMLDivElement>(null)
   const [isWidgetOpen, setIsWidgetOpen] = React.useState(false)
 
-  useClickOutside(ref, () => {
+  const ref = useClickOutside(() => {
     setIsWidgetOpen(false)
   })
 
