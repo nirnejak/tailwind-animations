@@ -1,6 +1,6 @@
 import { type Metadata } from "next"
 
-export const BASE_URL = "https://example.com" // Don't include slash at the end
+export const BASE_URL = "https://tailwindanimations.vercel.app" // Don't include slash at the end
 
 interface MetadataArgs {
   path: string
@@ -23,22 +23,12 @@ const generateMetadata = ({
     title: metaTitle,
     description: metaDescription,
 
-    applicationName: "<Application Name>",
-    creator: "<Creator Name>",
-    authors: [{ name: "<Author Name>", url: "<Author Name or Email>" }],
+    applicationName: "Tailwind Animations",
+    creator: "Jitendra Nirnejak",
+    authors: [{ name: "Jitendra Nirnejak", url: "https://nirnejak.com/" }],
     robots:
       "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
-    keywords: [
-      "Next.js",
-      "TailwindCSS",
-      "Framer Motion",
-      "TypeScript",
-      "Akar Icons",
-      "ESLint",
-      "Prettier",
-      "JavaScript",
-      "Postgres",
-    ],
+    keywords: ["TailwindCSS", "Animation", "CSS"],
 
     icons: {
       icon: "/favicon.ico",
@@ -59,7 +49,7 @@ const generateMetadata = ({
     twitter: {
       card: "summary_large_image",
       site: "@site",
-      creator: "@creator",
+      creator: "@jeetnirnejak",
       title: metaTitle,
       description: metaDescription,
       images: metaImage,
