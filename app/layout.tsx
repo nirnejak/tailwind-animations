@@ -35,7 +35,7 @@ const monoFont = localFont({
 })
 
 export const viewport: Viewport = {
-  themeColor: "#000000",
+  themeColor: "#18181B",
 }
 
 interface Props {
