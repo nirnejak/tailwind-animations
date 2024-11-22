@@ -2,6 +2,7 @@ import * as React from "react"
 
 import type { Viewport } from "next"
 
+import { JetBrains_Mono } from "next/font/google"
 import localFont from "next/font/local"
 
 import FeedbackWidget from "components/FeedbackWidget"
@@ -24,14 +25,10 @@ const sansFont = localFont({
   ],
 })
 
-const monoFont = localFont({
+const monoFont = JetBrains_Mono({
   variable: "--mono-font",
-  src: [
-    {
-      path: "../fonts/JetBrainsMono-Regular.ttf",
-      style: "normal",
-    },
-  ],
+  weight: ["400"],
+  subsets: ["latin"],
 })
 
 export const viewport: Viewport = {
