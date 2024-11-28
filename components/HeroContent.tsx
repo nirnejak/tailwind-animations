@@ -11,10 +11,9 @@ const HeroContent: React.FC = () => {
         initial={{ opacity: 0, translateY: 10 }}
         animate={{ opacity: 1, translateY: 0 }}
         transition={{
-          duration: 1,
           type: "spring",
-          stiffness: 1000,
-          damping: 15,
+          stiffness: 530,
+          damping: 20,
         }}
         className="mx-auto mb-5 max-w-[800px] text-4xl font-semibold leading-normal tracking-tight text-zinc-100 md:text-6xl lg:text-7xl"
       >
@@ -24,11 +23,10 @@ const HeroContent: React.FC = () => {
         initial={{ opacity: 0, translateY: 10 }}
         animate={{ opacity: 1, translateY: 0 }}
         transition={{
-          duration: 1,
-          delay: 0.2,
+          delay: 0.1,
           type: "spring",
-          stiffness: 1000,
-          damping: 15,
+          stiffness: 530,
+          damping: 20,
         }}
         className="mx-auto max-w-[560px] text-base md:text-xl"
       >

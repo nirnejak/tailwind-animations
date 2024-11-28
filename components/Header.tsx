@@ -9,11 +9,9 @@ const Header: React.FC = () => {
       initial={{ opacity: 0, translateY: "-100%" }}
       animate={{ opacity: 1, translateY: 0 }}
       transition={{
-        duration: 1,
-        delay: 0.4,
         type: "spring",
-        stiffness: 400,
-        damping: 30,
+        stiffness: 530,
+        damping: 20,
       }}
     >
       <div className="mx-auto mt-5 max-w-[1080px] px-4">
