@@ -45,9 +45,9 @@ const RootLayout: React.FC<Props> = ({ children }) => {
       <head>
         <script
           defer
-          data-domain="tw-animations.vercel.app"
+          data-domain="tailwindanimations.vercel.app"
           src="https://plausible.io/js/script.js"
-        />
+        ></script>
       </head>
 
       <body
