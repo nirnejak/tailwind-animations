@@ -3,7 +3,7 @@ import * as React from "react"
 import * as Checkbox from "@radix-ui/react-checkbox"
 import { Check, Copy, Telescope, XSmall } from "akar-icons"
 import { AnimatePresence, motion } from "motion/react"
-import { highlight } from "sugar-high"
+import { codeToHtml } from "shiki"
 
 import { allModifiers } from "@/utils/animations"
 import copyToClipboard from "@/utils/copyToClipboard"
@@ -62,15 +62,21 @@ const AnimationDetailsModal: React.FC<Props> = ({
       : animationClass
   }, [animationClass, selectedModifiers])
 
-  const codeHTML = React.useMemo(() => {
-    if (tailwindKeyframes.length && tailwindAnimation.length) {
-      return highlight(`
-        ${tailwindKeyframes}
-        ${tailwindAnimation}
-      `)
-    } else {
-      return ""
+  const [codeHTML, setCodeHTML] = React.useState("")
+
+  React.useEffect(() => {
+    const generateCodeHTML = async () => {
+      if (tailwindKeyframes.length && tailwindAnimation.length) {
+        const code = await codeToHtml(tailwindKeyframes, {
+          lang: "css",
+          theme: "github-dark-default",
+        })
+        setCodeHTML(code)
+      } else {
+        setCodeHTML("")
+      }
     }
+    generateCodeHTML()
   }, [tailwindKeyframes, tailwindAnimation])
 
   const handleCheckChange = (checked: boolean, modifier: string): void => {
@@ -232,8 +238,8 @@ const AnimationDetailsModal: React.FC<Props> = ({
                   <p className="mb-2 text-zinc-200 font-medium">
                     Tailwind Config:
                   </p>
-                  <div className="relative rounded-md bg-zinc-900 px-3 py-1">
-                    <pre className="max-h-[300px] max-w-[400px] overflow-auto">
+                  <div className="relative rounded-md bg-[#0D1116] px-3 py-1">
+                    <pre className="max-h-[300px] max-w-[400px] overflow-auto p-3">
                       <code
                         className="font-mono text-sm"
                         dangerouslySetInnerHTML={{ __html: codeHTML }}
@@ -243,7 +249,7 @@ const AnimationDetailsModal: React.FC<Props> = ({
                       className="absolute right-2 top-2 rounded-sm cursor-pointer p-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-hidden"
                       disabled={isConfigCopied}
                       onClick={() => {
-                        copyToClipboard(code)
+                        copyToClipboard(tailwindKeyframes)
                         setIsConfigCopied(true)
                         setTimeout(() => {
                           setIsConfigCopied(false)
@@ -261,7 +267,7 @@ const AnimationDetailsModal: React.FC<Props> = ({
               )}
               <div>
                 <p className="mb-2 text-zinc-200 font-medium">Class Name:</p>
-                <code className="flex min-w-[400px] items-center justify-between rounded-md bg-zinc-900 py-1 pl-3 pr-1 font-mono text-sm leading-7">
+                <code className="flex min-w-[400px] items-center justify-between rounded-md bg-[#0D1116] text-[#FFA656] py-1 pl-3 pr-1 font-mono text-sm leading-7">
                   {animationClassName}
                   <button
                     className="rounded-sm cursor-pointer p-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-hidden"
