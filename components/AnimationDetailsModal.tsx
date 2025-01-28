@@ -72,9 +72,9 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
     if (checked) {
       setSelectedModifiers([...selectedModifiers, modifier])
     } else {
-      setSelectedModifiers((modifiers) => {
-        return modifiers.filter((m) => m !== modifier)
-      })
+      setSelectedModifiers((modifiers) =>
+        modifiers.filter((m) => m !== modifier)
+      )
     }
   }
 
@@ -90,9 +90,9 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
     >
       <AnimatePresence>
         <motion.div
-          initial={{ translateY: "20%", scale: 0.8, opacity: 0 }}
+          initial={{ translateY: 50, scale: 0.8, opacity: 0 }}
           animate={{ translateY: 0, scale: 1, opacity: 1 }}
-          exit={{ translateY: "20%", scale: 0.8, opacity: 0 }}
+          exit={{ translateY: 50, scale: 0.8, opacity: 0 }}
           tabIndex={0}
           role="button"
           onKeyUp={(e) => {
@@ -130,8 +130,10 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
               </div>
             </div>
             <div className="flex flex-1 flex-col">
-              <div className="mb-5">
-                <p className="mb-2 text-zinc-200">When to animate:</p>
+              <div className="mb-8">
+                <p className="mb-2 text-zinc-200 font-medium">
+                  When to animate:
+                </p>
                 <div className="flex gap-4">
                   {allModifiers.map((modifier, index) => (
                     <label
@@ -175,8 +177,8 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
                   </label>
                 </div>
               </div>
-              <div className="mb-5">
-                <p className="mb-2 text-zinc-200">Behavior:</p>
+              <div className="mb-8">
+                <p className="mb-2 text-zinc-200 font-medium">Behavior:</p>
                 <div className="flex gap-4">
                   <label
                     className="flex items-center gap-2 text-sm leading-none text-zinc-400"
@@ -221,8 +223,10 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
                 </div>
               </div>
               {codeHTML.length > 0 && (
-                <div className="mb-5">
-                  <p className="mb-2 text-zinc-200">Tailwind Config:</p>
+                <div className="mb-8">
+                  <p className="mb-2 text-zinc-200 font-medium">
+                    Tailwind Config:
+                  </p>
                   <div className="relative rounded-md bg-zinc-900 px-3 py-1">
                     <pre className="max-h-[300px] max-w-[400px] overflow-auto">
                       <code
@@ -250,8 +254,8 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
                   </div>
                 </div>
               )}
-              <div className={codeHTML.length > 0 ? "" : "mt-auto"}>
-                <p className="mb-2 text-zinc-200">Class Name:</p>
+              <div>
+                <p className="mb-2 text-zinc-200 font-medium">Class Name:</p>
                 <code className="flex min-w-[400px] items-center justify-between rounded-md bg-zinc-900 py-1 pl-3 pr-1 font-mono text-sm leading-7">
                   {animationClassName}
                   <button
