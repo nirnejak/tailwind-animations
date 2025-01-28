@@ -40,20 +40,6 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
     "normal" | "alternate"
   >("alternate")
 
-  const codeHTML = React.useMemo(() => {
-    if (
-      animation.tailwindKeyframes.length &&
-      animation.tailwindAnimation.length
-    ) {
-      return highlight(`
-        ${animation.tailwindKeyframes}
-        ${animation.tailwindAnimation}
-      `)
-    } else {
-      return ""
-    }
-  }, [animation])
-
   const [selectedModifiers, setSelectedModifiers] = React.useState<string[]>([])
   const isAlwaysEnabled = React.useMemo(
     () => selectedModifiers.length === 0,
@@ -67,6 +53,20 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
           .join(" ")
       : animation.animationClass
   }, [animation, selectedModifiers])
+
+  const codeHTML = React.useMemo(() => {
+    if (
+      animation.tailwindKeyframes.length &&
+      animation.tailwindAnimation.length
+    ) {
+      return highlight(`
+        ${animation.tailwindKeyframes}
+        ${animation.tailwindAnimation}
+      `)
+    } else {
+      return ""
+    }
+  }, [animation])
 
   const handleCheckChange = (checked: boolean, modifier: string): void => {
     if (checked) {
