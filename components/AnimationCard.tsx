@@ -31,18 +31,10 @@ const AnimationCard: React.FC<Props> = ({ animation, setAnimation }) => {
       <p className="absolute left-5 top-4 text-sm">{animation.title}</p>
       <Button
         className={animation.animationClass}
-        style={
-          animation.tailwindAnimation === null
-            ? {
-                animationDirection: "alternate",
-                animationIterationCount: "infinite",
-              }
-            : {
-                /* TODO: pull this value from config */
-                animationDirection: "alternate",
-                animationIterationCount: "infinite",
-              }
-        }
+        style={{
+          animationDirection: "alternate",
+          animationIterationCount: "infinite",
+        }}
       >
         Button
       </Button>
