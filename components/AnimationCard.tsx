@@ -2,8 +2,8 @@ import * as React from "react"
 
 import { Enlarge } from "akar-icons"
 
-import Button from "./atoms/Button"
-import { type IAnimation } from "utils/animations"
+import { type IAnimation } from "@/utils/animations"
+import Button from "@/components/atoms/Button"
 
 interface Props {
   animation: IAnimation

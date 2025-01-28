@@ -4,10 +4,11 @@ import * as React from "react"
 import { GithubFill, ThumbsUp } from "akar-icons"
 import Link from "next/link"
 
-import Button from "./atoms/Button"
-import Input from "./atoms/Input"
-import Textarea from "./atoms/Textarea"
-import useClickOutside from "hooks/useClickOutside"
+import useClickOutside from "@/hooks/useClickOutside"
+
+import Button from "@/components/atoms/Button"
+import Input from "@/components/atoms/Input"
+import Textarea from "@/components/atoms/Textarea"
 
 interface ResponseDataType {
   ok: boolean

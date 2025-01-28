@@ -2,7 +2,7 @@ import * as React from "react"
 
 import * as motion from "motion/react-client"
 
-import Container from "components/Container"
+import Container from "@/components/Container"
 
 const HeroContent: React.FC = () => {
   return (

@@ -30,7 +30,7 @@ const AnimationGallery: React.FC = () => {
               icon={<Search size={15} />}
             />
           </div>
-          <div className="my-5 grid gap-3 md:grid-cols-3 lg:grid-cols-5">
+          <div className="mt-5 grid gap-3 md:grid-cols-3 lg:grid-cols-5">
             {allAnimations
               .filter((animation) =>
                 animation.title

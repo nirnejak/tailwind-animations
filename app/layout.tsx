@@ -5,9 +5,9 @@ import type { Viewport } from "next"
 import { JetBrains_Mono } from "next/font/google"
 import localFont from "next/font/local"
 
-import FeedbackWidget from "components/FeedbackWidget"
-import Header from "components/Header"
-import classNames from "utils/classNames"
+import classNames from "@/utils/classNames"
+import FeedbackWidget from "@/components/FeedbackWidget"
+import Header from "@/components/Header"
 
 import "../styles/main.css"
 

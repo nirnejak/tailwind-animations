@@ -2,9 +2,9 @@ import * as React from "react"
 
 import { type Metadata } from "next"
 
-import AnimationGallery from "components/AnimationGallery"
-import HeroContent from "components/HeroContent"
-import generateMetadata from "utils/seo"
+import generateMetadata from "@/utils/seo"
+import AnimationGallery from "@/components/AnimationGallery"
+import HeroContent from "@/components/HeroContent"
 
 export const metadata: Metadata = generateMetadata({
   path: "/",

@@ -5,9 +5,9 @@ import { type Metadata } from "next"
 import { ArrowRight, CircleCheckFill, CircleMinusFill } from "akar-icons"
 import Link from "next/link"
 
-import Button from "components/atoms/Button"
-import Container from "components/Container"
-import generateMetadata from "utils/seo"
+import generateMetadata from "@/utils/seo"
+import Button from "@/components/atoms/Button"
+import Container from "@/components/Container"
 
 export const metadata: Metadata = generateMetadata({
   path: "/",

@@ -2,8 +2,8 @@ import * as React from "react"
 
 import { type Metadata } from "next"
 
-import Container from "components/Container"
-import generateMetadata from "utils/seo"
+import generateMetadata from "@/utils/seo"
+import Container from "@/components/Container"
 
 export const metadata: Metadata = generateMetadata({
   path: "/",

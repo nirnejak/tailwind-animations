@@ -1,7 +1,7 @@
 "use client"
 import * as React from "react"
 
-import classNames from "utils/classNames"
+import classNames from "@/utils/classNames"
 
 interface Props {
   variant?: "primary" | "light" | "dark"
