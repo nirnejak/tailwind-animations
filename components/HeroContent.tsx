@@ -15,7 +15,7 @@ const HeroContent: React.FC = () => {
           stiffness: 530,
           damping: 20,
         }}
-        className="mx-auto mb-5 max-w-[800px] text-4xl font-semibold leading-normal tracking-tight text-zinc-100 md:text-6xl lg:text-7xl"
+        className="mx-auto mb-5 max-w-[800px] text-5xl font-semibold leading-[1.2] tracking-tight text-zinc-100 md:text-6xl lg:text-7xl"
       >
         Copy Paste animations for TailwindCSS
       </motion.h1>
@@ -28,7 +28,7 @@ const HeroContent: React.FC = () => {
           stiffness: 530,
           damping: 20,
         }}
-        className="mx-auto max-w-[560px] text-base md:text-xl"
+        className="mx-auto max-w-[560px] text-base md:text-xl font-medium"
       >
         Explore a curated collection of TailwindCSS animation classes. Just copy
         and paste them into your code for free.
