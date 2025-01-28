@@ -1,41 +1,6 @@
 import type { Config } from "tailwindcss"
 
-const animationClasses = [
-  "animate-spin",
-  "animate-ping",
-  "animate-pulse",
-  "animate-bounce",
-
-  "animate-flash",
-  "animate-rubber-band",
-  "animate-shake",
-  "animate-shake",
-  "animate-shake",
-  "animate-swing",
-  "animate-scale",
-  "animate-rise",
-  "animate-slide-up",
-  "animate-slide-down",
-  "animate-slide-left",
-  "animate-slide-right",
-  "animate-slide-down-and-fade",
-  "animate-slide-left-and-fade",
-  "animate-slide-up-and-fade",
-  "animate-slide-right-and-fade",
-]
-
-const modifiers = ["hover", "focus", "active"]
-
-const animationClassesWithModifier = animationClasses
-
-animationClasses.forEach((cls) => {
-  modifiers.forEach((m) => {
-    animationClassesWithModifier.push(`${m}:${cls}`)
-  })
-})
-
 const config: Config = {
-  safelist: animationClassesWithModifier,
   theme: {
     extend: {
       keyframes: {
