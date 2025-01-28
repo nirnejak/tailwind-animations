@@ -46,7 +46,7 @@ const Textarea: React.FC<Props> = ({
         className={classNames(
           className,
           typeof icon !== "undefined" && "pl-10",
-          "w-full rounded-lg text-zinc-300 px-4 py-2.5 text-sm bg-zinc-800 outline-none placeholder:text-zinc-500"
+          "w-full rounded-lg text-zinc-300 px-4 py-2.5 text-sm bg-zinc-800 outline-hidden placeholder:text-zinc-500"
         )}
         onChange={onChange}
         required={required}

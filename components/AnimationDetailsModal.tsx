@@ -154,7 +154,7 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
                       key={index}
                     >
                       <Checkbox.Root
-                        className="flex size-[25px] appearance-none items-center justify-center rounded-md bg-zinc-700 outline-none hover:bg-zinc-900/40"
+                        className="flex size-[25px] appearance-none items-center justify-center rounded-md bg-zinc-700 outline-hidden hover:bg-zinc-900/40"
                         checked={selectedModifiers.includes(modifier)}
                         onCheckedChange={(checked: boolean) => {
                           handleCheckedChange(checked, modifier)
@@ -174,7 +174,7 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
                     htmlFor="is-always-enabled"
                   >
                     <Checkbox.Root
-                      className="flex size-[25px] appearance-none items-center justify-center rounded-md bg-zinc-700 outline-none hover:bg-zinc-900"
+                      className="flex size-[25px] appearance-none items-center justify-center rounded-md bg-zinc-700 outline-hidden hover:bg-zinc-900"
                       checked={isAlwaysEnabled}
                       onCheckedChange={() => {
                         setSelectedModifiers([])
@@ -197,7 +197,7 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
                     htmlFor="is-playing-infinite"
                   >
                     <Checkbox.Root
-                      className="flex size-[25px] appearance-none items-center justify-center rounded-md bg-zinc-700 outline-none hover:bg-zinc-900"
+                      className="flex size-[25px] appearance-none items-center justify-center rounded-md bg-zinc-700 outline-hidden hover:bg-zinc-900"
                       checked={animationIterationCount === "infinite"}
                       onCheckedChange={(checked) => {
                         setAnimationIterationCount(
@@ -217,7 +217,7 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
                     htmlFor="alternate-animation"
                   >
                     <Checkbox.Root
-                      className="flex size-[25px] appearance-none items-center justify-center rounded-md bg-zinc-700 outline-none hover:bg-zinc-900"
+                      className="flex size-[25px] appearance-none items-center justify-center rounded-md bg-zinc-700 outline-hidden hover:bg-zinc-900"
                       checked={animationDirection === "alternate"}
                       onCheckedChange={(checked) => {
                         setAnimationDirection(
@@ -245,7 +245,7 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
                       />
                     </pre>
                     <button
-                      className="absolute right-2 top-2 rounded p-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-none"
+                      className="absolute right-2 top-2 rounded-sm p-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-hidden"
                       disabled={isConfigCopied}
                       onClick={() => {
                         copyToClipboard(code)
@@ -269,7 +269,7 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
                 <code className="flex min-w-[400px] items-center justify-between rounded-md bg-zinc-900 py-1 pl-3 pr-1 font-mono text-sm leading-7">
                   {animationClassName}
                   <button
-                    className="rounded p-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-none"
+                    className="rounded-sm p-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-hidden"
                     disabled={isClassCopied}
                     onClick={() => {
                       copyToClipboard(animationClassName)
