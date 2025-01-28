@@ -1,8 +1,8 @@
 "use client"
 import * as React from "react"
 
-import { Enlarge } from "akar-icons"
 import { motion } from "motion/react"
+import { Enlarge } from "akar-icons"
 
 import { type IAnimation } from "@/utils/animations"
 import Button from "@/components/atoms/Button"
