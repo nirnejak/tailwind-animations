@@ -54,9 +54,7 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
     }
   }, [animation])
 
-  const [selectedModifiers, setSelectedModifiers] = React.useState<string[]>([
-    "hover",
-  ])
+  const [selectedModifiers, setSelectedModifiers] = React.useState<string[]>([])
   const isAlwaysEnabled = React.useMemo(
     () => selectedModifiers.length === 0,
     [selectedModifiers]
