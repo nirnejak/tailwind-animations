@@ -17,12 +17,12 @@ const AboutPage: React.FC = () => {
       <h1 className="mb-20 text-4xl font-semibold tracking-tight leading-normal text-zinc-100 md:text-6xl lg:text-7xl">
         About
       </h1>
-      <div className="mb-40">
+      <div className="mb-40 font-medium">
         <p>
           This project is built by{" "}
           <a
             href="https://nirnejak.com/"
-            className="underline underline-offset-2 hover:no-underline transition-all"
+            className="text-zinc-300 underline underline-offset-4 hover:no-underline"
             target="_blank"
           >
             Jitendra Nirnejak
