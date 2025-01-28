@@ -28,7 +28,7 @@ const AnimationCard: React.FC<Props> = ({
       <Button
         className={animation.animationClass}
         style={
-          animation.tailwindAnimationProperty === null
+          animation.tailwindAnimation === null
             ? {
                 animationDirection: "alternate",
                 animationIterationCount: "infinite",

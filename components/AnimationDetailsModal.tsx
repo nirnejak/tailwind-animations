@@ -42,12 +42,12 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
 
   const codeHTML = React.useMemo(() => {
     if (
-      animation.tailwindKeyframesProperty.length &&
-      animation.tailwindAnimationProperty.length
+      animation.tailwindKeyframes.length &&
+      animation.tailwindAnimation.length
     ) {
       return highlight(`
-        ${animation.tailwindKeyframesProperty}
-        ${animation.tailwindAnimationProperty}
+        ${animation.tailwindKeyframes}
+        ${animation.tailwindAnimation}
       `)
     } else {
       return ""

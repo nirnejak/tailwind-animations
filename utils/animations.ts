@@ -1,8 +1,8 @@
 export interface IAnimation {
   title: string
   animationClass: string
-  tailwindKeyframesProperty: string
-  tailwindAnimationProperty: string
+  tailwindKeyframes: string
+  tailwindAnimation: string
 }
 
 export const allModifiers = ["hover", "active", "focus"]
@@ -11,109 +11,109 @@ export const allAnimations: IAnimation[] = [
   {
     title: "Spin",
     animationClass: "animate-spin",
-    tailwindKeyframesProperty: "",
-    tailwindAnimationProperty: "",
+    tailwindKeyframes: "",
+    tailwindAnimation: "",
   },
   {
     title: "Ping",
     animationClass: "animate-ping",
-    tailwindKeyframesProperty: "",
-    tailwindAnimationProperty: "",
+    tailwindKeyframes: "",
+    tailwindAnimation: "",
   },
   {
     title: "Pulse",
     animationClass: "animate-pulse",
-    tailwindKeyframesProperty: "",
-    tailwindAnimationProperty: "",
+    tailwindKeyframes: "",
+    tailwindAnimation: "",
   },
   {
     title: "Bounce",
     animationClass: "animate-bounce",
-    tailwindKeyframesProperty: "",
-    tailwindAnimationProperty: "",
+    tailwindKeyframes: "",
+    tailwindAnimation: "",
   },
   {
     title: "Flash",
     animationClass: "animate-flash",
-    tailwindKeyframesProperty: "",
-    tailwindAnimationProperty: "",
+    tailwindKeyframes: "",
+    tailwindAnimation: "",
   },
   {
     title: "Rubber Band",
     animationClass: "animate-rubber-band",
-    tailwindKeyframesProperty: "",
-    tailwindAnimationProperty: "",
+    tailwindKeyframes: "",
+    tailwindAnimation: "",
   },
   {
     title: "Shake",
     animationClass: "animate-shake",
-    tailwindKeyframesProperty: "",
-    tailwindAnimationProperty: "",
+    tailwindKeyframes: "",
+    tailwindAnimation: "",
   },
   {
     title: "Swing",
     animationClass: "animate-swing",
-    tailwindKeyframesProperty: "",
-    tailwindAnimationProperty: "",
+    tailwindKeyframes: "",
+    tailwindAnimation: "",
   },
   {
     title: "Scale",
     animationClass: "animate-scale",
-    tailwindKeyframesProperty: "",
-    tailwindAnimationProperty: "",
+    tailwindKeyframes: "",
+    tailwindAnimation: "",
   },
   {
     title: "Rise",
     animationClass: "animate-rise",
-    tailwindKeyframesProperty: "",
-    tailwindAnimationProperty: "",
+    tailwindKeyframes: "",
+    tailwindAnimation: "",
   },
   {
     title: "Slide Up",
     animationClass: "animate-slide-up",
-    tailwindKeyframesProperty: "",
-    tailwindAnimationProperty: "",
+    tailwindKeyframes: "",
+    tailwindAnimation: "",
   },
   {
     title: "Slide Down",
     animationClass: "animate-slide-down",
-    tailwindKeyframesProperty: "",
-    tailwindAnimationProperty: "",
+    tailwindKeyframes: "",
+    tailwindAnimation: "",
   },
   {
     title: "Slide Left",
     animationClass: "animate-slide-left",
-    tailwindKeyframesProperty: "",
-    tailwindAnimationProperty: "",
+    tailwindKeyframes: "",
+    tailwindAnimation: "",
   },
   {
     title: "Slide Right",
     animationClass: "animate-slide-right",
-    tailwindKeyframesProperty: "",
-    tailwindAnimationProperty: "",
+    tailwindKeyframes: "",
+    tailwindAnimation: "",
   },
   {
     title: "Slide Down and Fade",
     animationClass: "animate-slide-down-and-fade",
-    tailwindKeyframesProperty: "",
-    tailwindAnimationProperty: "",
+    tailwindKeyframes: "",
+    tailwindAnimation: "",
   },
   {
     title: "Slide Left and Fade",
     animationClass: "animate-slide-left-and-fade",
-    tailwindKeyframesProperty: "",
-    tailwindAnimationProperty: "",
+    tailwindKeyframes: "",
+    tailwindAnimation: "",
   },
   {
     title: "Slide Up and Fade",
     animationClass: "animate-slide-up-and-fade",
-    tailwindKeyframesProperty: "",
-    tailwindAnimationProperty: "",
+    tailwindKeyframes: "",
+    tailwindAnimation: "",
   },
   {
     title: "Slide Right and Fade",
     animationClass: "animate-slide-right-and-fade",
-    tailwindKeyframesProperty: "",
-    tailwindAnimationProperty: "",
+    tailwindKeyframes: "",
+    tailwindAnimation: "",
   },
 ]
