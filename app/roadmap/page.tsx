@@ -1,9 +1,9 @@
 import * as React from "react"
 
 import { type Metadata } from "next"
+import { Link } from "next-view-transitions"
 
 import { ArrowRight, CircleCheckFill, CircleMinusFill } from "akar-icons"
-import Link from "next/link"
 
 import generateMetadata from "@/utils/seo"
 import Button from "@/components/atoms/Button"

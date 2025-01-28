@@ -1,7 +1,7 @@
 import * as React from "react"
 
+import { Link } from "next-view-transitions"
 import * as motion from "motion/react-client"
-import Link from "next/link"
 
 const Header: React.FC = () => {
   return (

@@ -1,9 +1,9 @@
 import * as React from "react"
 
 import type { Viewport } from "next"
-
 import { JetBrains_Mono } from "next/font/google"
 import localFont from "next/font/local"
+import { ViewTransitions } from "next-view-transitions"
 
 import classNames from "@/utils/classNames"
 import FeedbackWidget from "@/components/FeedbackWidget"
@@ -43,25 +43,27 @@ interface Props {
 
 const RootLayout: React.FC<Props> = ({ children }) => {
   return (
-    <html
-      lang="en"
-      className={classNames(sansFont.variable, monoFont.variable)}
-    >
-      <head>
-        <script
-          defer
-          data-domain="tailwindanimations.vercel.app"
-          src="https://plausible.io/js/script.js"
-        ></script>
-      </head>
+    <ViewTransitions>
+      <html
+        lang="en"
+        className={classNames(sansFont.variable, monoFont.variable)}
+      >
+        <head>
+          <script
+            defer
+            data-domain="tailwindanimations.vercel.app"
+            src="https://plausible.io/js/script.js"
+          ></script>
+        </head>
 
-      <body className="overflow-x-hidden bg-zinc-900 text-zinc-400 font-sans">
-        <Header />
-        {children}
+        <body className="overflow-x-hidden bg-zinc-900 text-zinc-400 font-sans">
+          <Header />
+          {children}
 
-        <FeedbackWidget />
-      </body>
-    </html>
+          <FeedbackWidget />
+        </body>
+      </html>
+    </ViewTransitions>
   )
 }
 
