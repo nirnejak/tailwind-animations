@@ -1,25 +1,29 @@
+"use client"
 import * as React from "react"
 
 import { Enlarge } from "akar-icons"
+import { motion } from "motion/react"
 
 import { type IAnimation } from "@/utils/animations"
 import Button from "@/components/atoms/Button"
 
 interface Props {
   animation: IAnimation
-  setSelectedAnimation: (animation: IAnimation) => void
+  setAnimation: (animation: IAnimation) => void
 }
 
-const AnimationCard: React.FC<Props> = ({
-  animation,
-  setSelectedAnimation,
-}) => {
+const AnimationCard: React.FC<Props> = ({ animation, setAnimation }) => {
   return (
-    <div className="relative rounded-xl bg-zinc-800 px-14 pb-20 pt-24 text-center">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.95 }}
+      className="relative rounded-xl bg-zinc-800 px-14 pb-20 pt-24 text-center"
+    >
       <button
         className="absolute right-2 cursor-pointer top-2 rounded-md p-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-hidden"
         onClick={() => {
-          setSelectedAnimation(animation)
+          setAnimation(animation)
         }}
       >
         <Enlarge size={16} />
@@ -42,7 +46,7 @@ const AnimationCard: React.FC<Props> = ({
       >
         Button
       </Button>
-    </div>
+    </motion.div>
   )
 }
 
