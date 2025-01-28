@@ -121,7 +121,7 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
             <p className="text-zinc-200">{animation.title}</p>
             <button
               onClick={onClose}
-              className="-mr-1 -mt-1 rounded-full bg-zinc-700 p-1 hover:bg-zinc-900/40"
+              className="-mr-1 -mt-1 rounded-full bg-zinc-700 p-1 hover:bg-zinc-900/40 cursor-pointer"
             >
               <XSmall />
             </button>
@@ -245,7 +245,7 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
                       />
                     </pre>
                     <button
-                      className="absolute right-2 top-2 rounded-sm p-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-hidden"
+                      className="absolute right-2 top-2 rounded-sm cursor-pointer p-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-hidden"
                       disabled={isConfigCopied}
                       onClick={() => {
                         copyToClipboard(code)
@@ -269,7 +269,7 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
                 <code className="flex min-w-[400px] items-center justify-between rounded-md bg-zinc-900 py-1 pl-3 pr-1 font-mono text-sm leading-7">
                   {animationClassName}
                   <button
-                    className="rounded-sm p-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-hidden"
+                    className="rounded-sm cursor-pointer p-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-hidden"
                     disabled={isClassCopied}
                     onClick={() => {
                       copyToClipboard(animationClassName)

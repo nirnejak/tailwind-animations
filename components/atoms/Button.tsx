@@ -47,7 +47,7 @@ const Button: React.FC<Props> = ({
         }
       }}
       className={classNames(
-        "rounded-lg px-4 py-2 text-sm transition-all focus:outline-hidden active:scale-95",
+        "rounded-lg px-4 py-2 text-sm transition-all focus:outline-hidden active:scale-95 cursor-pointer",
         buttonStyleClassName,
         isBlock && "block",
         className

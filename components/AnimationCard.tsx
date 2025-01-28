@@ -17,7 +17,7 @@ const AnimationCard: React.FC<Props> = ({
   return (
     <div className="relative rounded-xl bg-zinc-800 px-14 pb-20 pt-24 text-center">
       <button
-        className="absolute right-2 top-2 rounded-md p-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-hidden"
+        className="absolute right-2 cursor-pointer top-2 rounded-md p-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-hidden"
         onClick={() => {
           setSelectedAnimation(animation)
         }}
