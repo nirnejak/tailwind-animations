@@ -27,7 +27,7 @@ const Roadmap: React.FC = () => {
   return (
     <>
       <Container className="my-40">
-        <h1 className="mb-20 text-4xl font-semibold leading-normal text-zinc-100 md:text-6xl lg:text-7xl">
+        <h1 className="mb-20 text-4xl font-semibold tracking-tight leading-normal text-zinc-100 md:text-6xl lg:text-7xl">
           Roadmap
         </h1>
         <div className="mb-40 flex flex-col gap-2">
