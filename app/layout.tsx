@@ -43,7 +43,10 @@ interface Props {
 
 const RootLayout: React.FC<Props> = ({ children }) => {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={classNames(sansFont.variable, monoFont.variable)}
+    >
       <head>
         <script
           defer
@@ -52,13 +55,7 @@ const RootLayout: React.FC<Props> = ({ children }) => {
         ></script>
       </head>
 
-      <body
-        className={classNames(
-          sansFont.variable,
-          monoFont.variable,
-          "overflow-x-hidden bg-zinc-900 text-zinc-400 font-sans"
-        )}
-      >
+      <body className="overflow-x-hidden bg-zinc-900 text-zinc-400 font-sans">
         <Header />
         {children}
 

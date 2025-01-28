@@ -3,9 +3,12 @@
 @config '../tailwind.config.ts';
 
 * {
-  font-weight: 450;
+  @apply antialiased;
+}
 
-  -webkit-font-smoothing: antialiased;
+@theme {
+  --font-sans: var(--sans-font);
+  --font-mono: var(--mono-font);
 }
 
 :root {

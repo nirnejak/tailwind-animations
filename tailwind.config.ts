@@ -35,18 +35,7 @@ animationClasses.forEach((cls) => {
 })
 
 const config: Config = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
   safelist: animationClassesWithModifier,
-  container: {
-    center: true,
-    screens: {
-      "2xl": "1200px",
-    },
-  },
   theme: {
     extend: {
       keyframes: {
@@ -160,15 +149,7 @@ const config: Config = {
         shake: "shake 400ms cubic-bezier(0.4, 0, 0.2, 1)",
       },
     },
-    fontFamily: {
-      sans: ["var(--sans-font)"],
-      mono: ["var(--mono-font)"],
-    },
   },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
 }
 
 export default config
