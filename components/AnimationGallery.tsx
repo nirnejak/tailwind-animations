@@ -3,11 +3,12 @@ import * as React from "react"
 
 import { Search } from "akar-icons"
 
-import AnimationCard from "./AnimationCard"
-import AnimationDetailsModal from "./AnimationDetailsModal"
-import Input from "./atoms/Input"
-import Container from "./Container"
-import { type IAnimation, allAnimations } from "utils/animations"
+import { type IAnimation, allAnimations } from "@/utils/animations"
+
+import Input from "@/components/atoms/Input"
+import Container from "@/components/Container"
+import AnimationCard from "@/components/AnimationCard"
+import AnimationDetailsModal from "@/components/AnimationDetailsModal"
 
 const AnimationGallery: React.FC = () => {
   const [search, setSearch] = React.useState("")
@@ -47,7 +48,10 @@ const AnimationGallery: React.FC = () => {
       </Container>
       {selectedAnimation !== null && (
         <AnimationDetailsModal
-          animation={selectedAnimation}
+          title={selectedAnimation.title}
+          animationClass={selectedAnimation.animationClass}
+          tailwindKeyframes={selectedAnimation.tailwindKeyframes}
+          tailwindAnimation={selectedAnimation.tailwindAnimation}
           onClose={() => {
             setSelectedAnimation(null)
           }}

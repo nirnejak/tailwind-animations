@@ -5,16 +5,26 @@ import { Check, Copy, Telescope, XSmall } from "akar-icons"
 import { AnimatePresence, motion } from "motion/react"
 import { highlight } from "sugar-high"
 
-import Button from "./atoms/Button"
-import { type IAnimation, allModifiers } from "utils/animations"
-import copyToClipboard from "utils/copyToClipboard"
+import { allModifiers } from "@/utils/animations"
+import copyToClipboard from "@/utils/copyToClipboard"
+
+import Button from "@/components/atoms/Button"
 
 interface Props {
-  animation: IAnimation
+  title: string
+  animationClass: string
+  tailwindKeyframes: string
+  tailwindAnimation: string
   onClose: () => void
 }
 
-const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
+const AnimationDetailsModal: React.FC<Props> = ({
+  title,
+  animationClass,
+  tailwindKeyframes,
+  tailwindAnimation,
+  onClose,
+}) => {
   React.useEffect(() => {
     const handleKeyDown = (e): void => {
       if (e.key === "Escape") {
@@ -48,25 +58,20 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
 
   const animationClassName = React.useMemo(() => {
     return selectedModifiers.length > 0
-      ? selectedModifiers
-          .map((m) => `${m}:${animation.animationClass}`)
-          .join(" ")
-      : animation.animationClass
-  }, [animation, selectedModifiers])
+      ? selectedModifiers.map((m) => `${m}:${animationClass}`).join(" ")
+      : animationClass
+  }, [animationClass, selectedModifiers])
 
   const codeHTML = React.useMemo(() => {
-    if (
-      animation.tailwindKeyframes.length &&
-      animation.tailwindAnimation.length
-    ) {
+    if (tailwindKeyframes.length && tailwindAnimation.length) {
       return highlight(`
-        ${animation.tailwindKeyframes}
-        ${animation.tailwindAnimation}
+        ${tailwindKeyframes}
+        ${tailwindAnimation}
       `)
     } else {
       return ""
     }
-  }, [animation])
+  }, [tailwindKeyframes, tailwindAnimation])
 
   const handleCheckChange = (checked: boolean, modifier: string): void => {
     if (checked) {
@@ -104,7 +109,7 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
           }}
         >
           <div className="mb-3 flex justify-between">
-            <p className="text-zinc-200">{animation.title}</p>
+            <p className="text-zinc-200">{title}</p>
             <button
               onClick={onClose}
               className="-mr-1 -mt-1 rounded-full bg-zinc-700 p-1 hover:bg-zinc-900/40 cursor-pointer"
