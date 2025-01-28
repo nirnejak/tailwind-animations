@@ -40,31 +40,19 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
     "normal" | "alternate"
   >("alternate")
 
-  const code = React.useMemo(() => {
+  const codeHTML = React.useMemo(() => {
     if (
-      animation.tailwindKeyframesProperty !== null &&
-      animation.tailwindAnimationProperty !== null
+      animation.tailwindKeyframesProperty.length &&
+      animation.tailwindAnimationProperty.length
     ) {
-      return JSON.stringify(
-        {
-          keyframes: {
-            ...animation.tailwindKeyframesProperty,
-          },
-          animation: {
-            ...animation.tailwindAnimationProperty,
-          },
-        },
-        null,
-        4
-      )
+      return highlight(`
+        ${animation.tailwindKeyframesProperty}
+        ${animation.tailwindAnimationProperty}
+      `)
     } else {
       return ""
     }
   }, [animation])
-
-  const codeHTML = React.useMemo(() => {
-    return highlight(code)
-  }, [code])
 
   const [selectedModifiers, setSelectedModifiers] = React.useState<string[]>([
     "hover",
@@ -82,7 +70,7 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
       : animation.animationClass
   }, [animation, selectedModifiers])
 
-  const handleCheckedChange = (checked: boolean, modifier: string): void => {
+  const handleCheckChange = (checked: boolean, modifier: string): void => {
     if (checked) {
       setSelectedModifiers([...selectedModifiers, modifier])
     } else {
@@ -157,7 +145,7 @@ const AnimationDetailsModal: React.FC<Props> = ({ animation, onClose }) => {
                         className="flex size-[25px] appearance-none items-center justify-center rounded-md bg-zinc-700 outline-hidden hover:bg-zinc-900/40"
                         checked={selectedModifiers.includes(modifier)}
                         onCheckedChange={(checked: boolean) => {
-                          handleCheckedChange(checked, modifier)
+                          handleCheckChange(checked, modifier)
                         }}
                         id={`${modifier}-id`}
                       >
