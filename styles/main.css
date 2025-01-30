@@ -216,10 +216,10 @@
 
 @keyframes rise {
   from {
-    transform: translate(0, 20%) scale(0.8);
+    transform: translateY(20%) scale(0.8);
   }
   to {
-    transform: translate(0, 0) scale(1);
+    transform: translateY(0) scale(1);
   }
 }
 
