@@ -9,7 +9,6 @@ interface Props {
   placeholder?: string
   className?: string
   name?: string
-  checked?: boolean
   required?: boolean
   disabled?: boolean
   value?: string
@@ -21,7 +20,6 @@ interface Props {
 const Textarea: React.FC<Props> = ({
   id,
   value,
-  checked,
   required,
   disabled,
   placeholder,
@@ -37,7 +35,7 @@ const Textarea: React.FC<Props> = ({
         <div className="mb-1 text-xs font-medium text-zinc-700">{label}</div>
       )}
       {typeof icon !== "undefined" && (
-        <span className="absolute left-4 top-[15px] text-zinc-400">{icon}</span>
+        <span className="absolute top-3.75 left-4 text-zinc-400">{icon}</span>
       )}
       <textarea
         id={id}

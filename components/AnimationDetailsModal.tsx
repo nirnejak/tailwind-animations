@@ -38,7 +38,7 @@ const AnimationDetailsModal: React.FC<Props> = ({
       document.body.style.overflow = "unset"
       window.removeEventListener("keyup", handleKeyDown)
     }
-  }, [])
+  }, [onClose])
 
   const [isClassCopied, setIsClassCopied] = React.useState(false)
   const [isConfigCopied, setIsConfigCopied] = React.useState(false)
@@ -94,9 +94,12 @@ const AnimationDetailsModal: React.FC<Props> = ({
       tabIndex={0}
       role="button"
       onKeyUp={(e) => {
-        e.key === "Enter" && onClose()
+        if (e.key === "Enter") onClose()
       }}
-      className="fixed left-0 top-0 grid h-screen w-full place-content-center bg-zinc-900/30 backdrop-blur-lg"
+      className="
+        fixed top-0 left-0 grid h-screen w-full place-content-center
+        bg-zinc-900/30 backdrop-blur-lg
+      "
       onClick={onClose}
     >
       <AnimatePresence>
@@ -107,9 +110,9 @@ const AnimationDetailsModal: React.FC<Props> = ({
           tabIndex={0}
           role="button"
           onKeyUp={(e) => {
-            e.key === "Enter" && e.stopPropagation()
+            if (e.key === "Enter") e.stopPropagation()
           }}
-          className="w-[820px] rounded-xl bg-zinc-800 p-5"
+          className="w-205 rounded-xl bg-zinc-800 p-5"
           onClick={(e) => {
             e.stopPropagation()
           }}
@@ -118,21 +121,33 @@ const AnimationDetailsModal: React.FC<Props> = ({
             <p className="text-zinc-200">{title}</p>
             <button
               onClick={onClose}
-              className="-mr-1 -mt-1 rounded-full bg-zinc-700 p-1 hover:bg-zinc-900/40 cursor-pointer"
+              className="
+                -mt-1 -mr-1 cursor-pointer rounded-full bg-zinc-700 p-1
+                hover:bg-zinc-900/40
+              "
             >
               <XSmall />
             </button>
           </div>
           <div className="flex gap-5">
             <div className="flex-1">
-              <div className="relative rounded-xl bg-zinc-900 pb-20 pt-24 text-center">
+              <div
+                className="
+                  relative rounded-xl bg-zinc-900 pt-24 pb-20 text-center
+                "
+              >
                 <Button
                   className={animationClassName}
                   style={{ animationIterationCount, animationDirection }}
                 >
                   Button
                 </Button>
-                <p className="absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-1 text-sm text-zinc-600">
+                <p
+                  className="
+                    absolute bottom-3 left-1/2 flex -translate-x-1/2
+                    items-center gap-1 text-sm text-zinc-600
+                  "
+                >
                   <span className="select-none">Preview</span>
                   <span>
                     <Telescope size={14} />
@@ -142,18 +157,25 @@ const AnimationDetailsModal: React.FC<Props> = ({
             </div>
             <div className="flex flex-1 flex-col">
               <div className="mb-8">
-                <p className="mb-2 text-zinc-200 font-medium">
+                <p className="mb-2 font-medium text-zinc-200">
                   When to animate:
                 </p>
                 <div className="flex gap-4">
                   {allModifiers.map((modifier, index) => (
                     <label
-                      className="flex items-center gap-2 text-sm capitalize leading-none text-zinc-400"
+                      className="
+                        flex items-center gap-2 text-sm leading-none
+                        text-zinc-400 capitalize
+                      "
                       htmlFor={`${modifier}-id`}
                       key={index}
                     >
                       <Checkbox.Root
-                        className="flex size-[25px] appearance-none items-center justify-center rounded-md bg-zinc-700 outline-hidden hover:bg-zinc-900/40"
+                        className="
+                          flex size-6.25 appearance-none items-center
+                          justify-center rounded-md bg-zinc-700 outline-hidden
+                          hover:bg-zinc-900/40
+                        "
                         checked={selectedModifiers.includes(modifier)}
                         onCheckedChange={(checked: boolean) => {
                           handleCheckChange(checked, modifier)
@@ -169,11 +191,18 @@ const AnimationDetailsModal: React.FC<Props> = ({
                     </label>
                   ))}
                   <label
-                    className="ml-6 flex items-center gap-2 text-sm leading-none text-zinc-400"
+                    className="
+                      ml-6 flex items-center gap-2 text-sm leading-none
+                      text-zinc-400
+                    "
                     htmlFor="is-always-enabled"
                   >
                     <Checkbox.Root
-                      className="flex size-[25px] appearance-none items-center justify-center rounded-md bg-zinc-700 outline-hidden hover:bg-zinc-900"
+                      className="
+                        flex size-6.25 appearance-none items-center
+                        justify-center rounded-md bg-zinc-700 outline-hidden
+                        hover:bg-zinc-900
+                      "
                       checked={isAlwaysEnabled}
                       onCheckedChange={() => {
                         setSelectedModifiers([])
@@ -189,14 +218,20 @@ const AnimationDetailsModal: React.FC<Props> = ({
                 </div>
               </div>
               <div className="mb-8">
-                <p className="mb-2 text-zinc-200 font-medium">Behavior:</p>
+                <p className="mb-2 font-medium text-zinc-200">Behavior:</p>
                 <div className="flex gap-4">
                   <label
-                    className="flex items-center gap-2 text-sm leading-none text-zinc-400"
+                    className="
+                      flex items-center gap-2 text-sm leading-none text-zinc-400
+                    "
                     htmlFor="is-playing-infinite"
                   >
                     <Checkbox.Root
-                      className="flex size-[25px] appearance-none items-center justify-center rounded-md bg-zinc-700 outline-hidden hover:bg-zinc-900"
+                      className="
+                        flex size-6.25 appearance-none items-center
+                        justify-center rounded-md bg-zinc-700 outline-hidden
+                        hover:bg-zinc-900
+                      "
                       checked={animationIterationCount === "infinite"}
                       onCheckedChange={(checked) => {
                         setAnimationIterationCount(
@@ -212,11 +247,17 @@ const AnimationDetailsModal: React.FC<Props> = ({
                     Play Infinite
                   </label>
                   <label
-                    className="flex items-center gap-2 text-sm leading-none text-zinc-400"
+                    className="
+                      flex items-center gap-2 text-sm leading-none text-zinc-400
+                    "
                     htmlFor="alternate-animation"
                   >
                     <Checkbox.Root
-                      className="flex size-[25px] appearance-none items-center justify-center rounded-md bg-zinc-700 outline-hidden hover:bg-zinc-900"
+                      className="
+                        flex size-6.25 appearance-none items-center
+                        justify-center rounded-md bg-zinc-700 outline-hidden
+                        hover:bg-zinc-900
+                      "
                       checked={animationDirection === "alternate"}
                       onCheckedChange={(checked) => {
                         setAnimationDirection(
@@ -235,18 +276,23 @@ const AnimationDetailsModal: React.FC<Props> = ({
               </div>
               {codeHTML.length > 0 && (
                 <div className="mb-8">
-                  <p className="mb-2 text-zinc-200 font-medium">
+                  <p className="mb-2 font-medium text-zinc-200">
                     Tailwind Config:
                   </p>
                   <div className="relative rounded-md bg-[#0D1116] px-3 py-1">
-                    <pre className="max-h-[300px] max-w-[400px] overflow-auto p-3">
+                    <pre className="max-h-75 max-w-100 overflow-auto p-3">
                       <code
                         className="font-mono text-sm"
                         dangerouslySetInnerHTML={{ __html: codeHTML }}
                       />
                     </pre>
                     <button
-                      className="absolute right-2 top-2 rounded-sm cursor-pointer p-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-hidden"
+                      className="
+                        absolute top-2 right-2 cursor-pointer rounded-sm p-2
+                        text-zinc-300
+                        hover:bg-zinc-950 hover:text-zinc-200
+                        focus:bg-zinc-950 focus:outline-hidden
+                      "
                       disabled={isConfigCopied}
                       onClick={() => {
                         copyToClipboard(tailwindKeyframes)
@@ -266,11 +312,21 @@ const AnimationDetailsModal: React.FC<Props> = ({
                 </div>
               )}
               <div>
-                <p className="mb-2 text-zinc-200 font-medium">Class Name:</p>
-                <code className="flex min-w-[400px] items-center justify-between rounded-md bg-[#0D1116] text-[#FFA656] py-1 pl-3 pr-1 font-mono text-sm leading-7">
+                <p className="mb-2 font-medium text-zinc-200">Class Name:</p>
+                <code
+                  className="
+                    flex min-w-100 items-center justify-between rounded-md
+                    bg-[#0D1116] py-1 pr-1 pl-3 font-mono text-sm/7
+                    text-[#FFA656]
+                  "
+                >
                   {animationClassName}
                   <button
-                    className="rounded-sm cursor-pointer p-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-hidden"
+                    className="
+                      cursor-pointer rounded-sm p-2 text-zinc-300
+                      hover:bg-zinc-950 hover:text-zinc-200
+                      focus:bg-zinc-950 focus:outline-hidden
+                    "
                     disabled={isClassCopied}
                     onClick={() => {
                       copyToClipboard(animationClassName)

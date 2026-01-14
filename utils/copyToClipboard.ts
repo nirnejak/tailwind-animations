@@ -1,10 +1,5 @@
-const copyToClipboard = (content: string): void => {
-  navigator.clipboard
-    .writeText(content)
-    .then(() => {})
-    .catch((error) => {
-      console.log(error)
-    })
+const copyToClipboard = async (content: string): Promise<void> => {
+  await navigator.clipboard.writeText(content)
 }
 
 export default copyToClipboard

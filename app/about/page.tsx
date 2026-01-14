@@ -13,7 +13,13 @@ export const metadata: Metadata = generateMetadata({
 const AboutPage: React.FC = () => {
   return (
     <main className="container my-40 min-h-[calc(100vh-450px)]">
-      <h1 className="mb-20 text-4xl font-semibold tracking-tight leading-normal text-zinc-100 md:text-6xl lg:text-7xl">
+      <h1
+        className="
+          mb-20 text-4xl/normal font-semibold tracking-tight text-zinc-100
+          md:text-6xl
+          lg:text-7xl
+        "
+      >
         About
       </h1>
       <div className="mb-40 font-medium">
@@ -21,7 +27,10 @@ const AboutPage: React.FC = () => {
           This project is built by{" "}
           <a
             href="https://nirnejak.com/"
-            className="text-zinc-300 underline underline-offset-4 hover:no-underline"
+            className="
+              text-zinc-300 underline underline-offset-4
+              hover:no-underline
+            "
             target="_blank"
           >
             Jitendra Nirnejak

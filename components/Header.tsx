@@ -15,19 +15,32 @@ const Header: React.FC = () => {
       }}
     >
       <div className="mx-auto mt-5 max-w-[1080px] px-4">
-        <div className="flex flex-col items-center justify-between font-medium gap-3 md:flex-row">
+        <div
+          className="
+            flex flex-col items-center justify-between gap-3 font-medium
+            md:flex-row
+          "
+        >
           <Link
             href={"/"}
-            className="flex text-zinc-100 tracking-tighter font-medium"
+            className="flex font-medium tracking-tighter text-zinc-100"
           >
             Tailwind Animations
           </Link>
-          <p className="text-sm hidden md:flex gap-1">
+          <p
+            className="
+              hidden gap-1 text-sm
+              md:flex
+            "
+          >
             <span>Designed and built by </span>
             <Link
               href={"https://nirnejak.com/"}
               target="_blank"
-              className="font-medium text-zinc-300 underline underline-offset-4 hover:no-underline"
+              className="
+                font-medium text-zinc-300 underline underline-offset-4
+                hover:no-underline
+              "
             >
               Jitendra Nirnejak
             </Link>

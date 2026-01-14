@@ -25,7 +25,13 @@ const features = [
 const Roadmap: React.FC = () => {
   return (
     <main className="container my-40">
-      <h1 className="mb-20 text-4xl font-semibold tracking-tight leading-normal text-zinc-100 md:text-6xl lg:text-7xl">
+      <h1
+        className="
+          mb-20 text-4xl/normal font-semibold tracking-tight text-zinc-100
+          md:text-6xl
+          lg:text-7xl
+        "
+      >
         Roadmap
       </h1>
       <div className="mb-40 flex flex-col gap-2">

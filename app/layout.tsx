@@ -56,7 +56,7 @@ const RootLayout: React.FC<Props> = ({ children }) => {
           ></script>
         </head>
 
-        <body className="overflow-x-hidden bg-zinc-900 text-zinc-400 font-sans">
+        <body className="overflow-x-hidden bg-zinc-900 font-sans text-zinc-400">
           <Header />
           {children}
 

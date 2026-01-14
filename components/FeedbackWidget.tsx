@@ -82,7 +82,11 @@ const FeedbackWidget: React.FC = () => {
     return (
       <div
         ref={ref}
-        className="fixed bottom-4 right-4 w-[320px] animate-scale rounded-lg bg-zinc-700 p-5 text-sm md:min-w-[400px]"
+        className="
+          fixed right-4 bottom-4 w-[320px] animate-scale rounded-lg bg-zinc-700
+          p-5 text-sm
+          md:min-w-100
+        "
         style={{
           animationIterationCount: "1",
           transformOrigin: "bottom right",
@@ -128,7 +132,12 @@ const FeedbackWidget: React.FC = () => {
             <div className="text-center text-xs">or</div>
             <a
               href="https://github.com/nirnejak/tailwind-animations/issues/new"
-              className="flex items-center outline-hidden justify-center gap-1.5 rounded-lg px-4 py-2 text-zinc-400 transition-all bg-zinc-800 hover:bg-zinc-900 focus:bg-zinc-900"
+              className="
+                flex items-center justify-center gap-1.5 rounded-lg bg-zinc-800
+                px-4 py-2 text-zinc-400 outline-hidden transition-all
+                hover:bg-zinc-900
+                focus:bg-zinc-900
+              "
               target="_blank"
             >
               <GithubFill size={14} />
@@ -144,7 +153,9 @@ const FeedbackWidget: React.FC = () => {
         onClick={() => {
           setIsWidgetOpen(true)
         }}
-        className="fixed bottom-4 right-4 flex w-[120px] items-center justify-center gap-1.5"
+        className="
+          fixed right-4 bottom-4 flex w-30 items-center justify-center gap-1.5
+        "
       >
         <span>Feedback</span>
         <ThumbsUp size={15} />

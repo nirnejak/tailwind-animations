@@ -28,7 +28,13 @@ const AnimationGallery: React.FC = () => {
           icon={<Search size={15} />}
         />
       </div>
-      <motion.div className="mt-5 grid gap-3 md:grid-cols-3 lg:grid-cols-5">
+      <motion.div
+        className="
+          mt-5 grid gap-3
+          md:grid-cols-3
+          lg:grid-cols-5
+        "
+      >
         <AnimatePresence>
           {allAnimations
             .filter((animation) =>

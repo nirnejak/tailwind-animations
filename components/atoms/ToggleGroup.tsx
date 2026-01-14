@@ -21,7 +21,14 @@ const CustomToggleGroup: React.FC<Props> = ({ options, value, setValue }) => {
         {options.map((option, index) => (
           <ToggleGroup.Item
             key={index}
-            className="flex items-center justify-center bg-zinc-800 p-3 text-base leading-4 first:rounded-l-lg last:rounded-r-lg hover:bg-zinc-950 focus:z-10 focus:outline-hidden data-[state=on]:bg-zinc-700"
+            className="
+              flex items-center justify-center bg-zinc-800 p-3 text-base/4
+              first:rounded-l-lg
+              last:rounded-r-lg
+              hover:bg-zinc-950
+              focus:z-10 focus:outline-hidden
+              data-[state=on]:bg-zinc-700
+            "
             value={value}
             aria-label={value}
           >
