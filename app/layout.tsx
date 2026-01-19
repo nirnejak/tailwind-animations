@@ -9,7 +9,7 @@ import classNames from "@/utils/classNames"
 import FeedbackWidget from "@/components/FeedbackWidget"
 import Header from "@/components/Header"
 
-import "../styles/main.css"
+import "./main.css"
 
 const sansFont = localFont({
   variable: "--sans-font",
