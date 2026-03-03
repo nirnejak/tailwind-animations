@@ -1,4 +1,4 @@
-import { type Metadata } from "next"
+import type { Metadata } from "next"
 
 export const BASE_URL = "https://tailwindanimations.vercel.app" // Don't include slash at the end
 

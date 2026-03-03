@@ -1,13 +1,11 @@
-import * as React from "react"
-
 import type { Viewport } from "next"
 import { JetBrains_Mono } from "next/font/google"
 import localFont from "next/font/local"
 import { ViewTransitions } from "next-view-transitions"
-
-import classNames from "@/utils/classNames"
+import type * as React from "react"
 import FeedbackWidget from "@/components/FeedbackWidget"
 import Header from "@/components/Header"
+import classNames from "@/utils/classNames"
 
 import "./main.css"
 

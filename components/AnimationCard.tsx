@@ -1,11 +1,10 @@
 "use client"
-import * as React from "react"
-
-import { motion } from "motion/react"
 import { Enlarge } from "akar-icons"
 
-import { type IAnimation } from "@/utils/animations"
+import { motion } from "motion/react"
+import type * as React from "react"
 import Button from "@/components/atoms/Button"
+import type { IAnimation } from "@/utils/animations"
 
 interface Props {
   animation: IAnimation
@@ -21,11 +20,8 @@ const AnimationCard: React.FC<Props> = ({ animation, setAnimation }) => {
       className="relative rounded-xl bg-zinc-800 px-14 pt-24 pb-20 text-center"
     >
       <button
-        className="
-          absolute top-2 right-2 cursor-pointer rounded-md p-2 text-zinc-300
-          hover:bg-zinc-950 hover:text-zinc-200
-          focus:bg-zinc-950 focus:outline-hidden
-        "
+        type="button"
+        className="absolute top-2 right-2 cursor-pointer rounded-md p-2 text-zinc-300 hover:bg-zinc-950 hover:text-zinc-200 focus:bg-zinc-950 focus:outline-hidden"
         onClick={() => {
           setAnimation(animation)
         }}

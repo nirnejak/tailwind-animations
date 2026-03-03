@@ -1,6 +1,6 @@
-import * as React from "react"
+import type * as React from "react"
 
-import { type JSX } from "react/jsx-runtime"
+import type { JSX } from "react/jsx-runtime"
 
 import classNames from "@/utils/classNames"
 
@@ -32,7 +32,7 @@ const Textarea: React.FC<Props> = ({
   return (
     <label htmlFor={id} className="relative">
       {label !== "undefined" && (
-        <div className="mb-1 text-xs font-medium text-zinc-700">{label}</div>
+        <div className="mb-1 font-medium text-xs text-zinc-700">{label}</div>
       )}
       {typeof icon !== "undefined" && (
         <span className="absolute top-3.75 left-4 text-zinc-400">{icon}</span>
@@ -44,7 +44,7 @@ const Textarea: React.FC<Props> = ({
         className={classNames(
           className,
           typeof icon !== "undefined" && "pl-10",
-          "w-full rounded-lg text-zinc-300 px-4 py-2.5 text-sm bg-zinc-800 outline-hidden placeholder:text-zinc-500"
+          "w-full rounded-lg bg-zinc-800 px-4 py-2.5 text-sm text-zinc-300 outline-hidden placeholder:text-zinc-500"
         )}
         onChange={onChange}
         required={required}

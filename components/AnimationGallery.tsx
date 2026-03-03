@@ -1,14 +1,12 @@
 "use client"
-import * as React from "react"
 
 import { Search } from "akar-icons"
 import { AnimatePresence, motion } from "motion/react"
-
-import { type IAnimation, allAnimations } from "@/utils/animations"
-
-import Input from "@/components/atoms/Input"
+import * as React from "react"
 import AnimationCard from "@/components/AnimationCard"
 import AnimationDetailsModal from "@/components/AnimationDetailsModal"
+import Input from "@/components/atoms/Input"
+import { allAnimations, type IAnimation } from "@/utils/animations"
 
 const AnimationGallery: React.FC = () => {
   const [search, setSearch] = React.useState("")
@@ -28,13 +26,7 @@ const AnimationGallery: React.FC = () => {
           icon={<Search size={15} />}
         />
       </div>
-      <motion.div
-        className="
-          mt-5 grid gap-3
-          md:grid-cols-3
-          lg:grid-cols-5
-        "
-      >
+      <motion.div className="mt-5 grid gap-3 md:grid-cols-3 lg:grid-cols-5">
         <AnimatePresence>
           {allAnimations
             .filter((animation) =>
@@ -42,9 +34,9 @@ const AnimationGallery: React.FC = () => {
                 .toLocaleLowerCase()
                 .includes(search.toLocaleLowerCase())
             )
-            .map((animation, index) => (
+            .map((animation) => (
               <AnimationCard
-                key={index}
+                key={animation.title}
                 animation={animation}
                 setAnimation={setAnimation}
               />

@@ -27,7 +27,6 @@ const Button: React.FC<Props> = ({
 }) => {
   const buttonStyleClassName = React.useMemo(() => {
     switch (variant) {
-      case "primary":
       default:
         return `bg-neutral-200 text-neutral-800 hover:bg-neutral-300 focus:bg-neutral-300`
     }
@@ -47,7 +46,7 @@ const Button: React.FC<Props> = ({
         }
       }}
       className={classNames(
-        "rounded-lg px-4 py-2 text-sm transition-all focus:outline-hidden active:scale-95 cursor-pointer",
+        "cursor-pointer rounded-lg px-4 py-2 text-sm transition-all focus:outline-hidden active:scale-95",
         buttonStyleClassName,
         isBlock && "block",
         className

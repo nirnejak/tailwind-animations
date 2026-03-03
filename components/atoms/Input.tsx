@@ -1,6 +1,6 @@
-import * as React from "react"
+import type * as React from "react"
 
-import { type JSX } from "react/jsx-runtime"
+import type { JSX } from "react/jsx-runtime"
 
 import classNames from "@/utils/classNames"
 
@@ -68,7 +68,7 @@ const Input: React.FC<Props> = ({
     return (
       <label htmlFor={id} className="relative">
         {label !== "undefined" && (
-          <div className="mb-2 text-sm font-medium text-zinc-200">{label}</div>
+          <div className="mb-2 font-medium text-sm text-zinc-200">{label}</div>
         )}
         {typeof icon !== "undefined" && (
           <span
@@ -88,7 +88,7 @@ const Input: React.FC<Props> = ({
           className={classNames(
             className,
             typeof icon !== "undefined" && "pl-10",
-            "w-full rounded-lg text-zinc-300 px-4 py-2.5 text-sm bg-zinc-800 outline-hidden placeholder:text-zinc-500"
+            "w-full rounded-lg bg-zinc-800 px-4 py-2.5 text-sm text-zinc-300 outline-hidden placeholder:text-zinc-500"
           )}
           onChange={onChange}
           required={required}
